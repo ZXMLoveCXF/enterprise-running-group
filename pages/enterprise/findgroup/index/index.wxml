@@ -1,0 +1,19 @@
+<!-- pages/enterprise/findgroup/index/index.wxml -->
+<loading id="loading"></loading>
+<view class="search">
+    <view bindtap="toSearch" class="toSearch">
+        <image src="{{ imgPath }}search.png" />
+        搜索跑团名称
+    </view>
+    <view class="create" bindtap="toCreate" style="color:{{ fontColor }}">创建兴趣跑团</view>
+</view>
+<view class="groupList">
+    <groupMini bind:toIntroduction="toIntroduction" wx:if="{{ groupList.length > 0 }}" wx:for="{{ groupList }}" wx:key="" bIsShow="{{ index != (groupList.length - 1) }}" groupId="{{ item.id }}" face="{{ item.logo }}" title="{{ item.name }}" num="{{ item.memberNum }}" km="{{ item.totalRunKm }}"></groupMini>
+    <view class="noGroup" wx:if="{{ groupList.length == 0 }}">
+        <view class="img">
+            <image mode="widthFix" src="{{ imgPath }}icon_none_team.png" />
+        </view>
+        <view class="text">没有发现任何跑团</view>
+    </view>
+</view>
+<view wx:if="{{ !isMore && groupList.length > 0 }}" class="noMore">没有更多跑团</view>

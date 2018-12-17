@@ -1,0 +1,136 @@
+/* pages/enterprise/createchildgroup/createchildgroup.wxss */
+.container {
+    width: 100%;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+}
+
+.container .label {
+    font-weight: bold;
+    margin: 30rpx 0
+}
+
+.container .bgImg {
+    background-color: #f8f8f8;
+    max-height: 345rpx;
+    overflow: hidden;
+    border-radius: 30rpx;
+}
+
+.container .bgImg image {
+    width: 100%;
+    border-radius: 30rpx
+}
+
+.container .faceImg {
+    width: 180rpx;
+    background-color: #f8f8f8;
+    overflow: hidden;
+    border-radius: 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.container .faceImg image {
+    width: 180rpx;
+    height: 180rpx;
+    border-radius: 30rpx
+}
+
+.thickLine {
+    height: 30rpx;
+    background-color: #f6f7ff;
+    width: 100%;
+}
+
+.container .input-tool {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .input-tool .title {
+    font-weight: bold;
+    line-height: 100rpx;
+    height: 100rpx;
+}
+
+.container .input-tool .input {
+    flex: 1
+}
+
+.container .input-tool .input input {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 30rpx;
+    line-height: 100rpx;
+    height: 100rpx;
+}
+
+.container textarea {
+    background-color: #f8f8f8;
+    padding: 20rpx;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.container .switch-tool {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .switch-tool .title {
+    font-weight: bold;
+    line-height: 100rpx;
+    height: 100rpx;
+}
+
+.container .switch-tool .switch {
+    flex: 1;
+    position: relative;
+    height: 100rpx;
+}
+
+.container .switch-tool .switch switch {
+    position: absolute;
+    zoom: .8;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.submit {
+    /* position: fixed; */
+    height: 120rpx;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 0 30rpx;
+    /* bottom: 0; */
+    width: 100%;
+    border-top: 1rpx solid #e6e6e6
+}
+
+.submit button {
+    /* position: absolute;
+    top: 50%;
+    transform: translateY(-50%); */
+    color: #fff;
+    font-size: 30rpx;
+    border-radius: 100rpx;
+    width: 690rpx;
+    height: 88rpx;
+    margin-top: 16rpx;
+    line-height: 88rpx;
+}
+
+.tip{
+    font-size: 26rpx;
+    color: #a9a9a9;
+    background: #f6f7ff;
+    text-align: center;
+    padding: 20rpx 0 0 0;
+}
+.tip image{
+    width: 26rpx;
+    height: 26rpx;
+}

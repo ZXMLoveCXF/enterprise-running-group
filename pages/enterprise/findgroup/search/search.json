@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "搜索跑团",
+    "enablePullDownRefresh": false,
+    "backgroundTextStyle": "white",
+    "usingComponents": {
+        "groupMini": "/pages/components/groupMini/groupMini",
+        "loading": "/pages/components/loading/loading"
+    }
+}

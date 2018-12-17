@@ -1,0 +1,114 @@
+picker {
+    position: relative;
+}
+
+.container {
+    box-sizing: border-box;
+    margin: 0 30rpx;
+    width: 690rpx;
+    padding-bottom: 150rpx;
+}
+
+.container .title {
+    font-weight: bold;
+    margin: 30rpx 0
+}
+
+.container .content,
+.container .reason {
+    box-sizing: border-box;
+    border-radius: 30rpx;
+    box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+.container textarea{
+    width: 100%;
+    padding: 30rpx;
+}
+.name,
+.sex,
+.idCard,
+.phone,
+.detailAdd,
+.zipCode,
+.cloth,
+.pants,
+.shoes,
+.emergencyUser,
+.emergencyPhone {
+    display: flex;
+    justify-content: space-between;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.detailAdd {
+    height: 200rpx;
+    line-height: 100rpx;
+}
+
+.label {
+    text-align: center;
+    font-weight: bold;
+    padding-left: 30rpx;
+    box-sizing: border-box
+}
+
+.input {
+    flex: 1;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-bottom: 1rpx solid rgba(255, 255, 255, 0.1);
+    margin-left: 30rpx;
+}
+
+.input .inputBox {
+    line-height: 100rpx;
+    height: 100rpx;
+    position: relative;
+}
+
+.arrow {
+    width: 10rpx;
+    height: 20rpx;
+    position: absolute;
+    right: 30rpx;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.gray {
+    color: #666;
+}
+
+.black {
+    color: #000;
+}
+
+.accept {
+    position: fixed;
+    height: 120rpx;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 0 30rpx;
+    bottom: 0;
+    width: 100%;
+    border-top: 1rpx solid #e6e6e6
+}
+
+.accept button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 30rpx;
+    border-radius: 100rpx;
+    width: 690rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.lightLine {
+    height: 1rpx;
+    width: 100%;
+    background-color: #f1f1f1
+}

@@ -1,0 +1,42 @@
+<!-- pages/enterprise/createchildgroup/createchildgroup.wxml -->
+<loading id="loading"></loading>
+<view class="container">
+    <view class="label">跑团背景图</view>
+    <view class="bgImg">
+        <image data-type="banner" bindtap="chooseImage" mode="widthFix" src="{{ sBannerUrl ? sBannerUrl : (imgPath + 'addBgImg.png') }}" />
+    </view>
+    <view class="label">跑团头像</view>
+    <view class="faceImg">
+        <image data-type="head" bindtap="chooseImage" src="{{ sHeadUrl ? sHeadUrl : (imgPath + 'addFaceImg.png') }}" />
+    </view>
+</view>
+<view class="thickLine"></view>
+<view class="container">
+    <view class="input-tool">
+        <view class="title">跑团名称</view>
+        <view class="input">
+            <input placeholder="请输入跑团名称" value="{{ sInputVal }}" bindinput="sInput" placeholder-class="placeholder" />
+        </view>
+    </view>
+</view>
+<view class="thickLine"></view>
+<view class="container">
+    <view class="label">跑团简介</view>
+    <textarea placeholder="请输入跑团简介" value="{{ sTextareaVal }}" bindinput="sTextarea" placeholder-class="placeholder"></textarea>
+</view>
+<view class="thickLine"></view>
+<view class="container" wx:if="{{ obj.type != 3 }}">
+    <view class="switch-tool">
+        <view class="title">入团审核</view>
+        <view class="switch">
+            <switch color="{{ bgColor }}" checked="{{ bIsReview }}" bindchange="changeSwitch" />
+        </view>
+    </view>
+</view>
+<view wx:if="{{ sType == 1 || sType == 2 }}" class="tip"><image src="{{ imgPath }}icon_notice.png" />子级跑团由上级跑团团长或管理员审核通过后创建成功</view>
+<view class="thickLine" ></view>
+<view class="submit">
+    <form report-submit="true" bindsubmit="create">
+        <button form-type="submit" style="background-color:{{ bgColor }}">{{ btnText }}</button>
+    </form>
+</view>

@@ -1,0 +1,155 @@
+/* pages/enterprise/bind/bind.wxss */
+Page {
+  background: rgba(248, 248, 248, 1);
+}
+
+.tel-box{
+  padding-right: 30rpx;
+  padding-left: 30rpx;
+  height: 100%;
+}
+
+.tel-headview{
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  font-size: 32rpx;
+  align-items: center;
+  padding-top: 30rpx;
+  padding-bottom: 38rpx;
+}
+
+.tel-headview image{
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.tel-headview .name {
+  margin-top: 10rpx;
+  font-weight: bold;
+  font-size: 36rpx;
+}
+
+.tel-headview .tip {
+  margin-top: 5rpx;
+  font-size: 28rpx;
+  color: #1E1E1E;
+}
+
+.graybg {
+  padding: 30rpx;
+  background-color: white;
+  border-radius: 30rpx;
+  box-shadow: 0rpx 0rpx 16rpx rgba(0, 0, 0, 0.04);
+}
+
+.graybg .tip {
+  display: flex;
+  margin-top: 10rpx;
+  align-items: center;
+  font-size: 26rpx;
+  color: #c1c1c1;
+}
+
+.tip .tipicon {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+  margin-left: 16rpx;
+}
+
+.tel-phone{
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #E6E6E6;
+  height: 120rpx;
+  margin-top: 40rpx;
+}
+
+.tel-phone input{
+  flex: 1;
+  padding-left: 20rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.tel-code{
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+  border-bottom: 1rpx solid #E6E6E6;
+}
+
+.tel-code-input{
+  display: flex;
+  /* border-bottom: 1rpx solid #E6E6E6; */
+  flex: 1;
+  height: 120rpx;
+  margin-right: 20rpx;
+}
+
+.tel-code-input input{
+  flex: 1;
+  padding-left: 20rpx;
+  height: 120rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+/* .tel-code {
+  width: 6em;
+  padding: 0rpx 20rpx 0 20rpx;
+  text-align: center;
+  height: 66rpx;
+  line-height: 66rpx;
+} */
+
+.tel-btn{
+  width: 160rpx;
+  padding: 0rpx 20rpx 0 20rpx;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  border-radius: 32rpx;
+}
+
+.tel-bind{
+  color: white;
+  border-radius: 49rpx;
+  margin-top: 80rpx;
+  width: 100%;
+  height: 98rpx;
+  line-height: 98rpx;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
+  font-weight: bold;
+}
+
+.tel-bind::after{
+  border: 0
+}
+.tel-bind .name{
+  padding: 0;
+  font-size: 30rpx;
+}
+.tel-bind .num{
+  padding: 0;
+  color: #ffd74f;
+  font-size: 22rpx;
+}
+
+.download321 {
+  border-radius: 49rpx;
+  margin-top: 30rpx;
+  margin-bottom: 50rpx;
+  width: 100%;
+  height: 98rpx;
+  line-height: 98rpx;
+  font-size: 28rpx;
+  background-color: white;
+}
+
+/* .tel-bind::after{
+  border: 2rpx solid #4db0f4 
+} */

@@ -1,0 +1,83 @@
+<!-- pages/enterprise/groupintroduction/index/index.wxml -->
+<loading id="loading"></loading>
+<view class="head-content">
+    <image class="bg" mode="aspectFill" src="{{ obj.banner }}" />
+    <view class="detail">
+        <view class="head">
+            <view class="face">
+                <image src="{{ obj.logo }}" />
+            </view>
+            <view class="title">{{ obj.name }}</view>
+        </view>
+        <view class="data">
+            <view class="item">
+                <view class="num">{{ obj.totalRunKm }}</view>
+                <view class="title">跑团总跑量/KM</view>
+            </view>
+            <view wx:if="{{ sType == 0 || obj.hadChildFlg }}" class="item">
+                <view class="num">{{ obj.childGroupNum }}</view>
+                <view class="title">子级跑团</view>
+            </view>
+            <view class="item">
+               <view class="num">{{ obj.memberNum }}</view>
+                <view class="title">跑团成员</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="chart">
+    <view class="head">
+        <view class="run">
+            <view class="icon">
+                <image src="{{ imgPath }}speed.png" />
+            </view>
+            <view class="num">
+                {{ obj.weekMemberRunKm }}<text>km</text>
+            </view>
+            <view class="label">周人均跑量</view>
+        </view>
+        <view class="signIn">
+            <view class="image">
+                <image mode="widthFix" src="{{ obj.weekRunPercUrl }}" />
+                <view class="num">
+                    {{ obj.weekRunPerc }}<text>%</text>
+                </view>
+            </view>
+            <view class="label">周打卡率</view>
+        </view>
+        <view class="speed">
+            <view class="icon">
+                <image src="{{ imgPath }}speed.png" />
+            </view>
+            <view class="num">{{ obj.groupPace }}</view>
+            <view class="label">跑团配速</view>
+        </view>
+    </view>
+</view>
+<view class="description">
+    <view class="label">跑团简介</view>
+    <view class="des">{{ obj.description }}</view>
+</view>
+<view wx:if="{{ sType == 1 }}" class="notice">
+    <image src="{{ imgPath }}icon_notice.png" />
+    审核通过自动加入跑团
+</view>
+
+
+<form wx:if="{{ sType == 2 }}" report-submit="true" bindsubmit="operFunc">
+  <view class='btmBtn'>
+    <button formType="submit" class='infoGoEdit' style='color:{{fontColor}};border: 2rpx {{fontColor}} solid' data-type='2'>拒绝</button>
+    <button formType="submit" class='infoGoEdit' style='background-color:{{bgColor}}' data-type='1'>通过</button>
+  </view>
+</form>
+
+<view class="btn" wx:elif="{{ bJoinBtnFlg }}">
+    <form wx:if="{{ sStatus == 2 || sStatus == 3 }}" report-submit="true" bindsubmit="joinIn">
+        <button class="joinIn" style="background-color:{{ bgColor }}" form-type="submit">
+            申请加入
+        </button>
+    </form>
+    <button wx:elif="{{ sType == 1 || sStatus == 0 }}" class="wait">已提交加入申请,请耐心等待管理员审核</button>
+</view>
+<returnhome bindtap="returnHome" wx:if="{{returnHome}}"></returnhome>
+

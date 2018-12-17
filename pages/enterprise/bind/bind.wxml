@@ -1,0 +1,30 @@
+<!--pages/enterprise/bind/bind.wxml-->
+<form bindsubmit='setBindPhone'>
+  <view class='tel-box' style="display:{{isLoading?'none':'block'}}">
+    <view class='tel-headview'>
+      <image src='{{appData.logo}}'></image>
+      <view class='name'>{{appData.appname}}</view>
+      <view class='tip'>绑定后将同步你的跑步记录</view>
+    </view>
+    <view class='graybg'> 
+      <view class='tip' style='display:flex;'>
+        <image class='tipicon' src='/resources/images/phone_warm.png'></image>
+        <view>登录APP手机号必须与绑定手机号一致</view>
+      </view>
+
+      <view class='tel-phone'>
+        <input name='phone' type='number' maxlength='11' placeholder='输入手机号码' placeholder-style='color:#c1c1c1' bindinput='getPhone'></input>
+      </view>
+      <view class='tel-code'>
+        <view class='tel-code-input'>
+          <input name='code' type='number' placeholder='输入手机验证码' placeholder-style='color:#c1c1c1'></input>
+        </view>
+        <view class='tel-btn' style='{{enable?("color:"+fontColor+";border: 2rpx solid "+fontColor):("color:#c1c1c1;border: 2rpx solid #c1c1c1;")}}' bindtap='getCode'>{{ codeTxt }}</view>
+      </view>
+      <button formType="submit" class='tel-bind' style='background-color:{{bgColor}};'>
+        <view class='name'>绑定APP</view>
+      </button>
+      <button class='download321' style='color: {{fontColor}};border: 2rpx solid {{fontColor}}' bindtap='download321'>立即下载{{appData.appname}} APP</button>
+      </view>
+  </view>
+</form>

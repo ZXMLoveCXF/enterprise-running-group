@@ -1,0 +1,64 @@
+<loading id="loading"></loading>
+<form report-submit="true" bindsubmit="accept">
+    <view class='container'>
+        <view class="title">个人信息</view>
+        <view class="content">
+            <block wx:for="{{ list }}" wx:key="item">
+                <view wx:if="{{ item.inputFlg }}" class='name'>
+                    <view class='label'>
+                        {{ item.name }}
+                    </view>
+                    <view class='input'>
+                        <input class='inputBox' disabled="{{ item.disabled }}" data-index="{{ index }}" maxlength='{{ item.maxLength }}' type='{{ item.typeVal }}' placeholder='请输入{{ item.placeholder }}' placeholder-class='gray' bindinput='inputMonitor' value='{{ item.defaultVal }}' />
+                    </view>
+                </view>
+                <view wx:if="{{ !item.inputFlg && item.type != 10 && item.type != 3 }}" class='sex'>
+                    <view class='label'>
+                        {{ item.name }}
+                    </view>
+                    <picker disabled="{{ item.disabled }}" class='input' data-index="{{ index }}" bindchange="singlePicker" value="{{ item.defaultVal }}" range="{{ item.labelJson }}">
+                        <view class="inputBox {{ item.labelJson[item.defaultVal]?'black':'gray' }}">
+                            {{ item.labelJson[item.defaultVal]?item.labelJson[item.defaultVal]:('请选择' + item.placeholder) }}
+                            <image wx:if="{{ !item.disabled }}" class='arrow' src='{{ imgPath }}arrow.png'></image>
+                        </view>
+                    </picker>
+                </view>
+                <view wx:if="{{ !item.inputFlg && item.type == 3 }}" class='sex'>
+                    <view class='label'>
+                        {{ item.name }}
+                    </view>
+                    <picker disabled="{{ item.disabled }}" mode="date" class='input' data-index="{{ index }}" bindchange="datePicker" value="{{ item.defaultVal }}">
+                        <view class="inputBox {{ item.defaultVal?'black':'gray' }}">
+                            {{ item.defaultVal?item.defaultVal:('请选择' + item.placeholder) }}
+                            <image wx:if="{{ !item.disabled }}" class='arrow' src='{{ imgPath }}arrow.png'></image>
+                        </view>
+                    </picker>
+                </view>
+                <view wx:if="{{ !item.inputFlg && item.type == 10 }}" class='detailAdd'>
+                    <view class='label'>
+                        {{ item.name }}
+                    </view>
+                    <view class='input'>
+                        <picker disabled="{{ item.disabled }}" mode="region" data-index="{{ index }}" bindchange="cityPicker" value="{{ item.defaultVal }}">
+                            <view class="inputBox {{ (item.defaultVal.length == 0)?'gray':'black' }}">
+                                {{ (item.defaultVal.length == 0)?'请选择所在城市':(item.defaultVal[0] + ',' + item.defaultVal[1] + ',' + item.defaultVal[2]) }}
+                            </view>
+                            <image wx:if="{{ !item.disabled }}" class='arrow' src='{{ imgPath }}arrow.png'></image>
+                        </picker>
+                        <view class='input' style='margin: 0;'>
+                            <input class='inputBox' data-index="{{ index }}" bindinput='detailAdd' type='text' placeholder='请输入详细地址' placeholder-class='gray' />
+                        </view>
+                    </view>
+                </view>
+                <view class="lightLine"></view>
+            </block>
+        </view>
+        <view class="title">申请理由</view>
+        <view class="reason">
+            <textarea name="reason" placeholder="请输入申请理由"></textarea>
+        </view>
+    </view>
+    <view class='accept'>
+        <button formType="submit" style="background-color:{{ bgColor }}">提交申请</button>
+    </view>
+</form>

@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "跑团简介",
+    "navigationBarBackgroundColor":"#2c2c2c",
+    "navigationBarTextStyle":"#ffffff",
+    "enablePullDownRefresh": false,
+    "backgroundTextStyle": "white",
+    "usingComponents": {
+        "loading": "/pages/components/loading/loading",
+        "returnhome":"/pages/components/returnHome/returnHome"
+    }
+}

@@ -1,0 +1,280 @@
+/* pages/enterprise/groupintroduction/index/index.wxss */
+page {
+    background-color: #f6f7ff
+}
+
+.head-content .bg {
+    width: 100%;
+    height: 550rpx;
+}
+
+.head-content .detail {
+    width: 100%;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 550rpx;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.head-content .detail .head {
+    margin-top: 50rpx;
+    text-align: center
+}
+
+.head-content .detail .head .face image {
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 30rpx;
+    border: 6rpx solid #595959;
+}
+
+.head-content .detail .head .title {
+    color: #a9a9a9;
+    font-size: 32rpx;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.head-content .data {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    top: 340rpx;
+    left: 0;
+}
+
+.head-content .data .item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+.head-content .data .item::before {
+    content: '|';
+    color: rgba(255, 255, 255, .3);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.head-content .data .item:nth-child(1)::before {
+    content: '|';
+    color: rgba(255, 255, 255, 0);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.head-content .data .item view {
+    color: #a9a9a9;
+    font-size: 26rpx
+}
+
+.head-content .data .item .num {
+    font-size: 36rpx
+}
+
+.head-content .data .item image {
+    width: 46rpx;
+    height: 42rpx;
+}
+
+.chart,
+.description {
+    background-color: #fff;
+    width: 690rpx;
+    margin: 0 30rpx;
+    border-radius: 30rpx;
+    box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+    padding: 20rpx 0;
+    box-sizing: border-box;
+    z-index: 99;
+    position: relative;
+}
+
+.chart {
+    margin-top: -100rpx
+}
+
+.description {
+    margin-top: 30rpx;
+    padding: 20rpx 30rpx 40rpx 30rpx;
+}
+.description .des{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+
+.chart .head {
+    display: flex;
+    width: 100%;
+    justify-content: space-between
+}
+
+.chart .head .run,
+.chart .head .signIn,
+.chart .head .speed {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.chart .head .run .label,
+.chart .head .signIn .label,
+.chart .head .speed .label {
+    font-size: 28rpx
+}
+
+.chart .head .signIn {
+    position: relative;
+}
+
+.chart .head .signIn .image {
+    position: relative;
+}
+
+.chart .head .signIn image {
+    width: 180rpx;
+}
+
+.chart .head .run .icon image,
+.chart .head .speed .icon image {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.chart .head .run .num,
+.chart .head .speed .num {
+    font-family: 'DIN Engschrift Std';
+    font-size: 50rpx;
+    font-weight: bold
+}
+
+.chart .head .signIn .num {
+    font-family: 'DIN Engschrift Std';
+    font-size: 54rpx;
+    font-weight: bold;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1995;
+}
+
+.chart .head .run .num text,
+.chart .head .signIn .num text {
+    font-size: 30rpx
+}
+
+.chart .labels {
+    display: flex;
+    justify-content: space-between;
+    text-align: center
+}
+
+.chart .labels .label {
+    flex: 1;
+    font-size: 28rpx
+}
+
+.description .label {
+    margin: 20rpx 0;
+    font-weight: bold;
+    font-size: 32rpx
+}
+
+.notice {
+    width: 100%;
+    text-align: center;
+    color: #a9a9a9;
+    padding: 30rpx 0 150rpx 0;
+    font-size: 28rpx
+}
+
+.notice image {
+    width: 30rpx;
+    height: 30rpx;
+    position: relative;
+    top: 4rpx
+}
+
+.btn {
+    position: fixed;
+    height: 120rpx;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 0 30rpx;
+    bottom: 0;
+    width: 100%;
+    border-top: 1rpx solid #e6e6e6;
+    display: flex;
+    align-items: center;
+    z-index: 1995
+}
+
+.btn .joinIn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 30rpx;
+    border-radius: 100rpx;
+    width: 690rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+}
+
+.btn .wait {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 30rpx;
+    border-radius: 100rpx;
+    width: 690rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    background-color: #f7c20b
+}
+
+.btmBtn {
+  background: white;
+  width: 100%;
+  font-size: 30rpx;
+  text-align: center;
+  height: 120rpx;
+  border-radius: 0;
+  position: fixed;
+  bottom: 0rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-top: 2rpx #e0e0e0 solid;
+  z-index: 999
+}
+
+.btmBtn .infoGoEdit {
+  width: 300rpx;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 88rpx;
+  height: 88rpx;
+  border-radius: 45rpx;
+  background-color:white;
+}

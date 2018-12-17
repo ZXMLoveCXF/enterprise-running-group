@@ -1,0 +1,64 @@
+/* pages/enterprise/findgroup/search/search.wxss */
+.search{
+    width: 690rpx;
+    left: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+}
+.search .toSearch{
+    background-color: #f6f7ff;
+    height: 80rpx;
+    flex: 1;
+    border-radius: 100rpx;
+    position: relative;
+    line-height: 80rpx;
+    color: #c1c1c1;
+    padding-left: 70rpx;
+    box-sizing: border-box;
+    margin-right: 20rpx;
+}
+.search .toSearch image{
+    position: absolute;
+    left: 30rpx;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30rpx;
+    height: 30rpx;
+}
+.search .toSearch input{
+    line-height: 80rpx;
+    height: 80rpx;
+    color: #000
+}
+.search .cancel{
+    line-height: 80rpx;
+}
+.groupList{
+    width: 100%;
+    padding: 100rpx 30rpx 0 30rpx;
+    box-sizing: border-box;
+}
+.noMore{
+    text-align: center;
+    color: #c1c1c1;
+    width: 100%;
+    margin: 20rpx 0;
+    font-size: 26rpx;
+}
+.groupList .noGroup{
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left: 50%;
+}
+.groupList .noGroup .img image{
+    width: 100rpx;
+}
+.groupList .noGroup .text{
+    color: #c1c1c1;
+    margin-top: 20rpx;
+}

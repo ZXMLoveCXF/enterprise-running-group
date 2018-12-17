@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "发现跑团",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "white",
+    "usingComponents": {
+        "groupMini": "/pages/components/groupMini/groupMini",
+        "authorization": "/pages/components/authorization/authorization",
+        "loading": "/pages/components/loading/loading"
+    }
+}

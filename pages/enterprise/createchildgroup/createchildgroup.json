@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "创建子级跑团",
+    "enablePullDownRefresh": false,
+    "backgroundTextStyle": "white",
+    "usingComponents": {
+        "loading": "/pages/components/loading/loading"
+      }
+}
