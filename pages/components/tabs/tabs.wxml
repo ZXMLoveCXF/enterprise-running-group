@@ -1,0 +1,9 @@
+<!-- pages/components/reviewitem/panel.wxml -->
+<view class="staticTabs {{ bFixed?'posFix':'' }}" style="background-color:{{ tabBgColor }}">
+  <block wx:key="" wx:for="{{ tabs }}">
+    <view bindtap="onSwitch" data-id="{{ index }}" class="item" style="height:{{ tabHeight }}rpx;line-height:{{ tabHeight }}rpx;background-color:{{ index == activeKey?activeItemColor:itemColor }};color:{{ index == activeKey?activeFontColor:fontColor }};border-radius:{{ borderRadius }}rpx;font-weight:{{ index==activeKey?activeFontWeight:fontWeight }};font-size:{{ index==activeKey?activeFontSize:fontSize }}rpx">
+      {{ item.title }}
+    </view>
+  </block>
+  <view wx:if="{{ showLine }}" class="tab_line animate" style="left:{{move}}rpx; width: {{lineWidth}}rpx; background-color: {{lineColor}};"></view>
+</view>

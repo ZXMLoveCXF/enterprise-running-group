@@ -1,0 +1,15 @@
+<!--pages/components/reviewitem/reviewitem.wxml-->
+<view class='contentinfo' bindtap='jumpToDetail'>
+  <view class='content-left'>
+    <view style='font-weight: bold;'>申请人：{{detailData.applyUserName}}</view>
+    <view style='font-size: 28rpx;'>{{tipString1}}
+      <view class='state'>{{detailData.applyTime}}</view>
+    </view>
+  </view>
+  <view class='content-right'>
+    <view style='color:{{fontColor}}'>{{tipString2}}</view>
+    <image class='arrow' src='../../../resources/images/icon_More.png'></image>
+  </view>
+  <view class='numtip'></view>
+</view>
+<view class='normalLine'></view>

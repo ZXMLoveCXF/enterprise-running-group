@@ -1,0 +1,7 @@
+<!-- pages/components/actitem/actitem.wxml -->
+<view class="topBar" style="height: {{ height*2 + 20}}px;line-height: {{ height*2 + 44}}px;">
+  <view class="left-icon" bindtap="option">
+    <image src="{{ icon }}" />
+  </view>
+  <view class="title" style=''>{{ title }}</view>
+</view>

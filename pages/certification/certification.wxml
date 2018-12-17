@@ -1,0 +1,43 @@
+<!-- pages/certification/certification.wxml -->
+
+<authorization isshow="{{ authFlg }}" bind:alertClick="AuthorCallback"></authorization>
+
+<image wx:if="{{ auth }}" class="bgImg" src="{{ customer.adMap }}"></image>
+<view wx:if="{{ !auth }}" class="welcome">
+    <view class="hi">嗨!</view>
+    <view class="name">{{ nickname }}</view>
+    <view class="sentence">{{ customer.welcome }}</view>
+    <block wx:if="{{ !auth }}">
+        <view class="inputs">
+            <input class="tel" data-name="tel" type="number" bindinput="input" maxlength="11" placeholder-style="color:#c1c1c1" placeholder="请输入手机号" />
+            <view class="code">
+                <view class="input">
+                    <input data-name="code" type="number" bindinput="input" placeholder-style="color:#c1c1c1" placeholder="请输入验证码" />
+                </view>
+                <view class="btn">
+                    <form report-submit="true" bindsubmit="sendCode">
+                        <button data-text="{{ sCodeBtnText }}" form-type="submit" style="color:{{ fontColor }};border:1rpx solid {{ fontColor }}">
+                            {{ sCodeBtnText }}
+                        </button>
+                    </form>
+                </view>
+            </view>
+        </view>
+        <form report-submit="true" bindsubmit="certification">
+            <button class="certification {{ bIsSubmit?'':'opacity' }}" style="background-color: {{ bgColor }};" form-type="submit">
+                认证
+            </button>
+        </form>
+    </block>
+    <view wx:if="{{ errorText }}" class="notice">
+        <view class="icon">
+            <icon type="clear" size="15" color="#c22525" />
+        </view>
+        <view class="errorText">{{ errorText }}</view>
+    </view>
+</view>
+<view wx:if="{{ auth }}" bindtap="jump" class="jump">跳过 {{ wait }}</view>
+<view class="company">
+    <image mode="widthFix" src="{{ customer.logo  }}" />
+    <view class="name">{{ customer.name }}</view>
+</view>

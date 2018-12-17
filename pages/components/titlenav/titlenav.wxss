@@ -1,0 +1,38 @@
+/* pages/components/titlenav/titlenav.wxss */
+.scroll_box{
+  width: 100%;
+  height: 70rpx;
+  overflow: hidden;
+  background: #fff;
+  white-space: nowrap;
+}
+
+.titlenav {
+  width: auto;
+  overflow:hidden;
+  position: relative;
+}
+
+.posFix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 19950104;
+}
+
+.normalview {
+  margin-left: 20rpx;
+  border-radius: 20rpx; 
+  height: 40rpx;
+  margin-top: 20rpx;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  text-align: center;
+  color: #a9a9a9;
+  display: inline-block;
+  padding: 0 16rpx;
+}
+
+.selectview {
+  color: white
+}

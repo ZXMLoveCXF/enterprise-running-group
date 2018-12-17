@@ -1,0 +1,4 @@
+<!--pages/components/warp-line.wxml-->
+  <view class="singleLine {{line > 1 ? 'multipleWrap' : ''}}" style="{{line > 1 ? '-webkit-line-clamp:' + line + ' ;' : ''}}">
+    <slot></slot>
+  </view>

@@ -1,0 +1,26 @@
+/* pages/components/mask.wxss */
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.mask.bg {
+  width: 100%;
+  height: 100%;
+}
+
+.mask.content {
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+}
+
+.mask.status.hide {
+  opacity: 0;
+  display: none;
+  z-index: -10;
+}

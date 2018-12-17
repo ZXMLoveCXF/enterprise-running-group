@@ -1,0 +1,7 @@
+<!-- pages/components/mask.wxml -->
+<view class="mask status {{status}}" style="z-index: {{zIndex}};">
+  <view class="mask bg" style="background: rgba({{backgroundColor}},{{opacity}});" bindtap="onMaskTap"></view>
+  <view class="mask content {{cAlign}}" style="{{positionStyle}}" bindtap="onMaskTap">
+    <slot></slot>
+  </view>
+</view>

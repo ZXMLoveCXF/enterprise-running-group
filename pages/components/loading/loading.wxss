@@ -1,0 +1,19 @@
+/* pages/components/loading.wxss */
+
+.loading-content {
+  position: fixed;
+  z-index: 199603130321;
+  top: 0;
+  left: 0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, .5)
+}
+
+.loading-content image {
+  width: 110rpx;
+  height: 110rpx;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

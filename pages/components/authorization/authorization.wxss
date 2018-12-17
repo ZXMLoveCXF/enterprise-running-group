@@ -1,0 +1,33 @@
+/* pages/components/my-alert.wxss */
+
+.alertBox{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 199603130321;
+}
+.alertBox .box{
+  width: 600rpx;
+  background-color: white;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.alertBox .box .top{
+  text-align: center;
+  color: black;
+  padding: 30rpx 0;
+}
+.alertBox .box .top image{
+  width: 120rpx;
+  height: 120rpx;
+}
+.alertBox .box button{
+  color: white;
+  border-radius: 0
+}

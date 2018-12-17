@@ -1,0 +1,37 @@
+<!--pages/components/actitem/actitem.wxml-->
+
+<view class='cell-container' bindtap="tapPageToDetail" hidden="{{!activity}}" style="height:{{isOneline?'425rpx':'475rpx'}}">
+  <image class='cell-image' src="{{activity.image}}" mode="aspectFill"></image>
+  <block wx:if='{{isMode}}'>
+    <!-- <view class='editview' bindtap='tapPageToEdit'>重新编辑</view> -->
+    <view class='editview'>重新编辑</view>
+  </block>
+  <block wx:else>
+    <!-- <text style='background-color: {{bgColor}};'>{{statuList[activity.status]}}</text> -->
+    <text wx:if="{{ activity.status==1 }}" style='background-color: #5F73D2;'>未开始</text>
+    <text wx:if="{{ activity.status==2 }}" style='background-color: #F7C20B;'>进行中</text>
+    <text wx:if="{{ activity.status==3 }}" style='background-color: #A3A3A3;'>已结束</text>
+    <text wx:if="{{ activity.status==4 }}" style='background-color: #A3A3A3;'>已取消</text>
+    <text wx:if="{{ activity.status==5 }}" style='background-color: ##5F73D2;'>报名截止</text>
+    <text wx:if="{{ activity.status==6 }}" style='background-color: {{bgColor}};'>报名中</text>
+    <text wx:if="{{ activity.status==7 }}" style='background-color: #F7C20B;'>签到中</text>
+  </block>
+  
+  <view class='cell-title'><view>{{activity.title}}</view></view>
+  <view class='cell-top'>
+    <view class='bottom-top'>
+    <image src='/resources/images/active_time.png'></image>
+    {{activity.activeTime}}</view>
+    <view wx:if="{{!isOneline}}" class='bottom-right'>
+      <image src='/resources/images/active_men.png'></image>
+      {{activity.userCount}}人报名
+    </view>
+  </view>
+  <view wx:if="{{!isOneline}}" class='cell-bottom'>
+    <view class='bottom-left'>
+      <image src='/resources/images/active_postion.png'></image>
+      {{activity.locationName}}
+    </view>
+  </view>
+</view>
+<view class='lightColorLine'></view>

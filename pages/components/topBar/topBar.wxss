@@ -1,0 +1,22 @@
+/* pages/components/actitem/actitem.wxss */
+.topBar {
+  box-sizing: border-box;
+  display: flex;
+  padding: 0 30rpx
+}
+
+.topBar .left-icon {
+  width: 40rpx;
+}
+
+.topBar .left-icon image {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle
+}
+
+.topBar .title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%)
+}

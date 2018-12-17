@@ -1,0 +1,13 @@
+<!-- pages/components/loading.wxml -->
+<view class="content" bindtap="toIntroduction" data-id="{{ groupId }}">
+  <view class="mini-item">
+    <view class="face">
+      <image src="{{ face }}" />
+    </view>
+    <view class="detail">
+      <view class="title">{{ title }}</view>
+      <view class="num">成员{{ num }} | 总跑量{{ km }}KM</view>
+    </view>
+  </view>
+  <view wx:if="{{ bIsShow }}" class="lightLine"></view>
+</view>

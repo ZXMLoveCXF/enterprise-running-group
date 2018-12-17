@@ -1,0 +1,21 @@
+/* pages/components/returnHome/returnHome.wxss */
+.return-home{
+    position: fixed;
+    width: 118rpx;
+    height: 118rpx;
+    right: 32rpx;
+    bottom: 150rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 28rpx;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 2rpx 2rpx 10rpx rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+.return-home image{
+    width: 46rpx;
+    height: 42rpx;
+}

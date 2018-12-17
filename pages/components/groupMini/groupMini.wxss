@@ -1,0 +1,50 @@
+/* pages/components/loading.wxss */
+.mini-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+}
+
+.mini-item .face {
+  width: 140rpx;
+}
+
+.mini-item .face image {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 30rpx;
+}
+
+.mini-item .detail {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+  margin-left: 20rpx;
+}
+
+.mini-item .detail .title {
+  font-weight: bold;
+  max-height: 80rpx;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.mini-item .detail .num {
+  color: #a9a9a9;
+  font-size: 26rpx;
+}
+
+.content .lightLine {
+  background-color: #e6e6e6;
+  height: 1rpx;
+  width: 100%;
+}

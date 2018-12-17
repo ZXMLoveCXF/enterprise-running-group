@@ -1,0 +1,29 @@
+/* pages/components/reviewitem/panel.wxss */
+.staticTabs {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.staticTabs .item {
+  flex: 1;
+  text-align: center;
+}
+
+.staticTabs .tab_line {
+  height: 4rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.tab_line.animate {
+  transition: left .3s cubic-bezier(.645, .045, .355, 1);
+}
+.posFix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 19950104;
+}

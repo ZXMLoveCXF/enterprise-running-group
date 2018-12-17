@@ -1,0 +1,5 @@
+<!--pages/components/returnHome/returnHome.wxml-->
+<view class="return-home" style="color:{{fontColor}}">
+    <image src="{{imgPath}}tpt_fxym_fhsy.png" />
+    首页
+</view>

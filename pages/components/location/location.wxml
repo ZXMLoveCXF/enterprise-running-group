@@ -1,0 +1,9 @@
+<!--pages/components/my-alert.wxml-->
+<view class='alertBox' wx:if="{{ !isshow }}">
+  <view class='box'>
+    <view class='top'>
+      <view>请允许使用地理位置</view>
+    </view>
+    <button open-type="openSetting" bindopensetting="getWxUser" >授权</button>
+  </view>
+</view>

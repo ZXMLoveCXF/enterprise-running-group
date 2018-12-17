@@ -1,0 +1,10 @@
+<!--pages/components/my-alert.wxml-->
+<view class='alertBox' wx:if="{{ !isshow }}">
+  <view class='box'>
+    <view class='top'>
+      <image src='/resources/images/wxlogo.png'></image>
+      <view>使用微信账号授权登录</view>
+    </view>
+    <button disabled="{{ bAuthorizationing }}" data-focus="false" open-type="getUserInfo" style="background-color:{{ bgColor }}" bindgetuserinfo="getWxUser" >确定登录</button>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+<!--pages/components/titlenav/titlenav.wxml-->
+<view class="scroll_box {{bFixed?'posFix':''}}" style='{{bFixed?("top:"+topValue+"rpx;"):""}}'> 
+  <scroll-view scroll-x class='titlenav' scroll-left='{{scrollleft}}'>
+    <block wx:for='{{titleInfoList}}' wx:for-item='data' wx:key="">
+      <view class="normalview"  style="background:{{index==selectIndex?bgColor:''}};color:{{index==selectIndex?'#fff':'#a9a9a9'}}" bindtap='selectTitle' data-type="{{data.type}}" data-index='{{index}}'>{{data.val}}</view>
+      </block>
+     </scroll-view>
+</view>

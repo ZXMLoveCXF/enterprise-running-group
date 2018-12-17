@@ -1,0 +1,54 @@
+<!-- pages/components/loading.wxml -->
+<view class="content" bindtap="toDetail" data-id="{{ groupId }}">
+  <view class="head">
+    <image mode="aspectFill" class="bgImg blur" src="{{ banner }}" />
+    <view class="mask"></view>
+    <view class="mini-item">
+      <view class="face">
+        <image mode="aspectFill" src="{{ face }}" />
+      </view>
+      <view class="detail">
+        <!-- <view class="container"> -->
+          <view class="title">{{ title }}</view>
+          <view class="num">
+            <image src="{{ imgPath }}groupNum.png" /> {{ num }}
+          </view>
+        <!-- </view> -->
+      </view>
+    </view>
+  </view>
+  <view class="body">
+    <view class="totleNum">
+      <view class="title">
+        <image src='{{ imgPath }}rankSmall.png'></image>
+        <text>跑团总跑量</text>
+      </view>
+      <view class="num">{{ totleNum }}<text>KM</text>
+      </view>
+    </view>
+    <view class="detail">
+      <view class="run">
+        <view>{{ weekNum }}KM</view>
+        <view class="label">周人均跑量</view>
+      </view>
+      <view class="verticalLine"></view>
+      <view class="punch">
+        <view>{{ weekPunch }}%</view>
+        <view class="label">周打卡率</view>
+      </view>
+      <view class="verticalLine" style="left:66.66%"></view>
+      <view class="speed">
+        <view>{{ speed }}</view>
+        <view class="label">跑团配速</view>
+      </view>
+    </view>
+    <view class="notice">
+      <view class="title">
+        <image src='{{ imgPath }}noticeSmall.png'></image>跑团公告
+        </view>
+      <view class="num">{{ noticeTime }}</view>
+    </view>
+    <view class="noticeDetail">{{ noticeDetail?noticeDetail:'暂无公告' }}
+    </view>
+  </view>
+</view>

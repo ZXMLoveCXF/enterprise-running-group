@@ -1,0 +1,14 @@
+<!--pages/components/reviewalert/reviewalert.wxml-->
+<view class='alertBox' wx:if="{{ isshow }}">
+  <view class='box'>
+    <view style='height:1rpx;'></view>
+    <view class="reason" style="{{selectIndex==0?('border: 2rpx ' + fontColor + ' solid;color:'+ fontColor):'border: 2rpx #e0e0e0 solid;color: #c1c1c1;' }}" bindtap='selectone'>{{refuseStr1}}</view>
+
+    <view class='reason' style="{{selectIndex==1?('border: 2rpx ' + fontColor + ' solid;color:'+ fontColor):'border: 2rpx #e0e0e0 solid;color: #c1c1c1;' }}" bindtap='selecttwo'>{{refuseStr2}}</view>
+
+    <view class='bottom'>
+      <view class='left' bindtap='cancelAction'>取消</view>
+      <view class='right' style='color: {{fontColor}};' bindtap='refuseAction'>拒绝</view>
+    </view>
+  </view>
+</view>

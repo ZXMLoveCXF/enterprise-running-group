@@ -1,0 +1,4 @@
+<!--pages/components/loading.wxml-->
+<view catch:touchmove="false" class='loading-content' style="width:{{ width }}px;height:{{ height }}px" wx:if="{{ bIsShow }}">
+  <image src='/resources/images/loading.gif'></image>
+</view>

@@ -1,0 +1,5 @@
+<!-- pages/components/pop.wxml -->
+<mask status="{{maskStatus}}" locked="{{locked}}" bind:masktap="maskTap"></mask>
+<view style="z-index: {{zIndex}};top:{{ topDistance }}rpx;" class="popup {{status}} {{align}} animotion-{{animationMode}}" bindtap="popupTap">
+  <slot></slot>
+</view>

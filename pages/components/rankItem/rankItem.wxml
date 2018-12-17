@@ -1,0 +1,57 @@
+<!-- pages/components/loading.wxml -->
+<block wx:if="{{isHead}}">
+  <view class="content" bindtap="toInformation" data-id="{{ memberId }}" wx:if="{{!isMe||(rankNum != 1&&rankNum != 2&&rankNum != 3)}}">
+    <view class="rank-item {{ isMe?'me':'' }}">
+      <view class="rankNum" wx:if="{{ isRank }}">
+        <image wx:if="{{ rankNum == 1 }}" src="{{ imgPath }}rankOne.png" />
+        <image wx:elif="{{ rankNum == 2 }}" src="{{ imgPath }}rankTwo.png" />
+        <image wx:elif="{{ rankNum == 3 }}" src="{{ imgPath }}rankThree.png" />
+        <text wx:else>{{ rankNum }}</text>
+      </view>
+      <view class="face">
+        <image class="{{ (gender == 1)?'male':'female' }}" src="{{ face }}" />
+        <text>{{ name }}</text>
+      </view>
+      <view class="data">
+        <block wx:if="{{ select == '1' }}">
+          <view class="num">{{ num }}</view>
+          <view class="time small">{{ time }}</view>
+        </block>
+        <block wx:elif="{{ select == '0' }}">
+          <view class="time">{{ time }}</view>
+          <view class="num small">{{ num }}</view>
+        </block>
+        <view wx:else class="num">{{ num }}</view>
+      </view>
+    </view>
+    <view wx:if="{{index < length - 1}}" class="lightLine {{ isDetail?'detail':'' }}"></view>
+  </view>
+</block>
+<block wx:else>
+  <view class="content" bindtap="toInformation" data-id="{{ memberId }}" >
+    <view class="rank-item {{ isMe?'me':'' }}">
+      <view class="rankNum" wx:if="{{ isRank }}">
+        <image wx:if="{{ rankNum == 1 }}" src="{{ imgPath }}rankOne.png" />
+        <image wx:elif="{{ rankNum == 2 }}" src="{{ imgPath }}rankTwo.png" />
+        <image wx:elif="{{ rankNum == 3 }}" src="{{ imgPath }}rankThree.png" />
+        <text wx:else>{{ rankNum }}</text>
+      </view>
+      <view class="face">
+        <image class="{{ (gender == 1)?'male':'female' }}" src="{{ face }}" />
+        <text>{{ name }}</text>
+      </view>
+      <view class="data">
+        <block wx:if="{{ select == '1' }}">
+          <view class="num">{{ num }}</view>
+          <view class="time small">{{ time }}</view>
+        </block>
+        <block wx:elif="{{ select == '0' }}">
+          <view class="time">{{ time }}</view>
+          <view class="num small">{{ num }}</view>
+        </block>
+        <view wx:else class="num">{{ num }}</view>
+      </view>
+    </view>
+    <view wx:if="{{index < length - 1}}" class="lightLine {{ isDetail?'detail':'' }}"></view>
+  </view>
+</block>

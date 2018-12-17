@@ -1,0 +1,13 @@
+<!--pages/components/actCard/actCard.wxml-->
+<view class="card-content">
+    <!-- src="{{imgPath}}logo.png" -->
+    <image src="{{bgImg}}" mode="aspectFill"/>
+    <view class="bg-mask"></view>
+    <view class="title">{{title}}</view>
+    <view class="num"wx:if="{{bnum}}">报名跑团数  {{num}}</view>
+    <view class="bottom">
+        <view class="tip" style="background-color:{{bgColor}}"><image src="{{imgPath}}hdgc_ssbq.png"/>{{actType}}</view>
+        <view class="time"><image src="{{imgPath}}hdgc_time.png" /><text>{{time}}</text></view>
+    </view>
+    <slot wx:if="{{slotFlg}}"></slot>
+</view>

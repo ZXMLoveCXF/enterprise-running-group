@@ -1,0 +1,12 @@
+/* pages/components/warp-line.wxss */
+.singleLine {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.multipleWrap {
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
