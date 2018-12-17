@@ -1,0 +1,143 @@
+/* pages/enterprise/groupdetail/actlist/publish/coach/coach.wxss */
+page {
+  background: white;
+}
+
+.container {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding-bottom: 120rpx;
+  width: 750rpx;
+  background: white;
+}
+
+.coachcontainer {
+  margin: 30rpx;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30rpx;
+  box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.ablumadd {
+  width: 202rpx;
+  height: 202rpx;
+  background: #f6f6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30rpx;
+}
+
+.ablumaddbig {
+  width: 630rpx;
+  height: 630rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30rpx;
+  position: relative;
+}
+
+.ablumaddbig image:first-child {
+  width: 630rpx;
+  height: 630rpx;
+  position: absolute;
+}
+
+.ablumaddbig image:last-child {
+  left: 247rpx;
+  top: 219rpx;
+  width: 136rpx;
+  height: 136rpx;
+  position: absolute;
+}
+
+.ablumadd image{
+  width: 54rpx;
+  height: 54rpx;
+}
+
+.coachdetail {
+  width: 690rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative
+}
+
+.coachdetail .deletev {
+  height: 52rpx;
+  width: 52rpx;
+  right: 0;
+  position: absolute;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  border-bottom-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+}
+
+.coachdetail .coachname {
+  margin: 40rpx 160rpx 30rpx;
+  height: 86rpx;
+  border-bottom: 2rpx solid #e7e7e7;
+  text-align: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.coachdetail .coachname input {
+  color: #1e1e1e;
+  text-align: center;
+  margin: 0;
+  height: 86rpx;
+  font-size: 32rpx;
+}
+
+.coachdetail .coachinfo {
+  width: 630rpx;
+  height: 280rpx;
+  display: flex;
+  align-items: center;
+}
+
+.coachdetail .coachinfo textarea {
+  width: 638rpx;
+  height: 280rpx;
+  font-size: 28rpx;
+  color: #1e1e1e;
+}
+
+.btmBtn {
+  width: 100%;
+  font-size: 34rpx;
+  height: 118rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  background: white;
+  box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+  z-index: 999
+}
+
+.addcoach {
+  line-height: 118rpx;
+  width: 240rpx;
+  text-align: center;
+}
+
+.downset {
+  flex: 1;
+  line-height: 118rpx;
+  text-align: center;
+  color: white;
+  border-radius: 0;
+}
+
+.downset ::after {
+  border-radius: 0;
+}

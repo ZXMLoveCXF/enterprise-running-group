@@ -1,0 +1,256 @@
+/* pages/enterprise/groupdetail/actlist/publish/index/index.wxss */
+
+.background, .commonSetting, .moreSetting, .detail {
+  border-radius: 30rpx;
+  margin: 30rpx 30rpx;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.background .selected {
+  width: 100%;
+  height: 358rpx;
+  border-radius: 30rpx;
+  box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.background .operation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.background .operation image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.background .operation .text {
+  font-size: 26rpx;
+  color: #a9a9a9;
+}
+
+.background .cancel {
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  background-color: #f7c20b;
+  border-radius: 100rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #fff;
+  padding: 0 20rpx;
+}
+
+.background .cancel image {
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+  margin-top: -4rpx;
+}
+
+.moreSetting, .commonSetting, .detail {
+  box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.moreSetting .review, .moreSetting .prize, .moreSetting .coach,
+.moreSetting .signIn, .moreSetting .information, .moreSetting .limit,
+.moreSetting .pull, .commonSetting .title, .commonSetting .time,
+.commonSetting .location, .commonSetting .locationRemarks,
+.commonSetting .joinFlag {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.detail .label, .moreSetting .label, .commonSetting .label {
+  font-weight: bold;
+  line-height: 100rpx;
+}
+
+.moreSetting .limit .operate, .commonSetting .locationRemarks .operate,
+.commonSetting .title .operate, .commonSetting .location .operate {
+  flex: 1;
+  position: relative;
+  padding-left: 20rpx;
+}
+
+.commonSetting .location .operate {
+  position: relative;
+  padding-left: 20rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+}
+
+.moreSetting .limit .operate input,
+.commonSetting .locationRemarks .operate input,
+.commonSetting .title .operate input {
+  width: 100%;
+  line-height: 100rpx;
+  height: 100rpx;
+  box-sizing: border-box;
+}
+
+.commonSetting .time .startTime, .commonSetting .time .beginTime,
+.commonSetting .time .endTime, .commonSetting .time .overTime {
+  flex: 1;
+  padding-left: 20rpx;
+  font-size: 28rpx;
+}
+
+.commonSetting .time .picker {
+  color: #a9a9a9;
+}
+
+.black {
+  color: #000 !important;
+}
+
+.gray {
+  color: #9a9a9a !important;
+}
+
+.commonSetting .location .operate image {
+  width: 24rpx;
+  height: 32rpx;
+  position: absolute;
+  right: 0rpx;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+.moreSetting .review .operate switch, .commonSetting .joinFlag .operate switch {
+  zoom: 0.8;
+}
+
+.moreSetting {
+  overflow: hidden;
+  height: 100rpx;
+}
+
+.moreSetting .pull image {
+  width: 18rpx;
+  height: 10rpx;
+  vertical-align: middle;
+}
+
+.detail .operate, .moreSetting .prize .operate, .moreSetting .coach .operate,
+.moreSetting .information .operate {
+  text-align: right;
+  padding-right: 30rpx;
+  color: #9a9a9a;
+  position: relative;
+}
+
+.moreSetting .signIn .operate {
+  position: relative;
+  flex: 1;
+  padding-left: 20rpx;
+}
+
+.moreSetting .signIn .operate .picker {
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.detail .operate image, .moreSetting .prize .operate image,
+.moreSetting .coach .operate image, .moreSetting .signIn .operate image,
+.moreSetting .information .operate image {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10rpx;
+  height: 20rpx;
+}
+
+.moreSetting .review .result {
+  color: #9a9a9a;
+  text-align: left;
+  flex: 1;
+  padding-left: 20rpx;
+}
+
+.lightLine {
+  width: 630rpx;
+  margin: 0 auto;
+  height: 1rpx;
+  box-sizing: border-box;
+  background-color: #f1f1f1;
+}
+
+.block {
+  width: 100%;
+  height: 140rpx;
+  background-color: transparent;
+}
+
+.btns {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 120rpx;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  line-height: 120rpx;
+  box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+  z-index: 1995;
+}
+
+.btns .mode {
+  width: 30%;
+  background-color: #fff;
+}
+
+.btns .mode image {
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+
+.btns .publish {
+  flex: 1;
+}
+
+.btns .publish button {
+  width: 100%;
+  line-height: 120rpx;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  display: inline-block;
+  font-size: 30rpx;
+}
+
+.btns .publish button image {
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+}
+
+.fwBold {
+  font-weight: bold;
+}

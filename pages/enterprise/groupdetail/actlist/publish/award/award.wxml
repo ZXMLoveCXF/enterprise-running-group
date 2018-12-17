@@ -1,0 +1,106 @@
+<!--pages/enterprise/groupdetail/actlist/publish/award/award.wxml-->
+<template name="award">
+  <block wx:for="{{awardArr}}" wx:for-item="awardData">
+    <view class='award-detail'>
+      <view class='award-input_name'>
+        <input name="{{ 'actTitle' + index}}" value="{{awardData.name}}" placeholder-class='inputPH' placeholder='请填写奖品名称' maxlength='20' type='text' bindinput="nameChange" data-index='{{index}}'></input>
+      </view>
+      <view class='award-name'>X</view>
+      <view class='award-input_num'>
+        <input name="{{'actNumber'+index}}" value="{{awardData.num}}" placeholder-class='inputPH' placeholder='奖品数量' maxlength='9' type='number' bindinput="numChange" data-index='{{index}}'></input>
+      </view>
+      <image class='delete' src="{{(templateUrl+'delete_btn.png')}}" mode='aspectFit' bindtap='deleteAward' data-index="{{index}}"></image>
+    </view>
+  </block>
+</template>
+
+<!--pages/award/award.wxml-->
+<form bindsubmit="formSubmit" style="display:{{isLoading?'none':'block'}}">
+  <view class='award-container'>
+
+    <view class='tip'>温馨提示：活动开始后不能再修改奖品设置。</view>
+
+    <view class='awards'>
+      <view  class='bgimage'><image src="/resources/images/award_img.png"></image></view>
+      <view class='award-title bold'>奖品信息：</view>
+
+      <!--奖品内容按钮-->
+      <view class='award-detail' style='margin-top:50rpx;'>
+        <view class='award-input_name'>
+          <input name="actTitle" value="{{awardName}}" placeholder-class='inputPH' placeholder='请填写奖品名称' maxlength='20' type='text'></input>
+        </view>
+        <view class='award-name'>X</view>
+        <view class='award-input_num'>
+          <input name="actNumber" value="{{awardNum}}" placeholder-class='inputPH' placeholder='奖品数量' maxlength='9' type='number'></input>
+        </view>
+        <image class='delete' src="" mode='aspectFit'></image>
+      </view>
+
+      <!--新增奖品的循环-->
+      <template is="award" data="{{ awardArr:awardArr,templateUrl:templateUrl }}" />
+
+      <!--添加奖品按钮-->
+      <view class='btn-centerarea'>
+        <view class='add-award' bindtap='bindAddAward' style='color:{{fontColor}}'>
+          添加奖品
+        </view>
+      </view>
+
+    </view>
+    
+    
+    <!--开奖方式-->
+    <view class='styles'>
+      <view class='award-det padding-30 border-bottom'>
+      <view class='award-name bold'>开奖方式:</view>
+      <radio-group class="radio-group" bindchange="radioChange" id='1'>
+        <label class="radio" wx:for="{{conditionArrayTip}}" wx:key="">
+          <radio value="{{index}}" hidden='true'/>
+            <image class='radio-image' src="{{(templateUrl+'ic_choice_up.png')}}" hidden='{{conditionIndex==index ? true: false}}'></image>  
+            <image class='radio-image' src="{{(templateUrl+'ic_choice_down.png')}}" hidden='{{conditionIndex==index ? false: true}}'></image> 
+          <text class="label-1__text">{{item}}</text>
+        </label>
+      </radio-group>
+      <picker mode="multiSelector" value="{{lotteryDateTime}}" bindcolumnchange="changeDateTimeColumn" bindchange="changeLotteryDateTime" range="{{lotteryTimeArray}}" class='picker' name='dateValue'>
+        <view class='tip2' hidden='{{conditionIndex==0 ? true: false}}'>
+          <view class="award-input {{(lotteryDate == '请选择开奖时间')?'holder':''}}">{{lotteryDate}}</view>
+          <image class='tip-image' src='/resources/images/arrow.png'></image>
+        </view>
+      </picker>
+    </view>
+
+    <!--中奖方式-->
+    <view class='award-det padding-30 border-bottom'>
+      <view class='award-name bold'>中奖方式:</view>
+        <radio-group class="radio-group" bindchange="radioChange" id='2'>
+          <label class="radio" wx:for="{{array1}}" wx:key="">
+            <radio value="{{index}}" hidden='true'/>
+              <image class='radio-image' src="{{(templateUrl+'ic_choice_up.png')}}" hidden='{{index1==index ? true: false}}'></image>  
+              <image class='radio-image' src="{{(templateUrl+'ic_choice_down.png')}}" hidden='{{index1==index ? false: true}}'></image> 
+            <text class="label-1__text">{{item}}</text>
+          </label>
+        </radio-group>
+      </view>
+
+      <!--发奖方式-->
+      <view class='award-det padding-30'>
+        <view class='award-name bold'>发奖方式:</view>
+        <radio-group class="radio-group" bindchange="radioChange" id='3'>
+          <label class="radio" wx:for="{{array2}}" wx:key="">
+            <radio value="{{index}}" hidden='true'/>
+              <image class='radio-image' src="{{(templateUrl+'ic_choice_up.png')}}" hidden='{{index2==index ? true: false}}'></image>  
+              <image class='radio-image' src="{{(templateUrl+'ic_choice_down.png')}}" hidden='{{index2==index ? false: true}}'></image> 
+            <text class="label-1__text">{{item}}</text>
+          </label>
+        </radio-group>
+      </view>
+    </view>
+    
+    
+  </view>
+  
+  <view class="btn-area">
+    <button class='btn-reset' bindtap='formReset' style='color:{{fontColor}}'>清除设置</button>
+    <button formType="submit" class='btn-commit' style='background:{{bgColor}}'>保存设置</button>
+  </view>
+</form>

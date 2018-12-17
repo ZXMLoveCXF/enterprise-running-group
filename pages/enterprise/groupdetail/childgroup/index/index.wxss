@@ -1,0 +1,55 @@
+/* pages/enterprise/groupdetail/childgroup/index/index.wxss */
+.title {
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30rpx;
+}
+
+.create {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    line-height: 100rpx;
+    box-sizing: border-box;
+    bottom: 0;
+    left: 0;
+}
+.create image{
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 20rpx;
+    vertical-align: middle
+}
+
+.lightLine {
+    height: 1rpx;
+    width: 100%;
+    background-color: #f1f1f1
+}
+
+.container {
+    padding: 0 30rpx 120rpx 30rpx;
+    box-sizing: border-box;
+}
+.noMore{
+    text-align: center;
+    color: #c1c1c1;
+    width: 100%;
+    margin: 20rpx 0;
+    font-size: 26rpx;
+}
+.noGroup{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    color: #c1c1c1
+}
+.noGroup image{
+    width: 100rpx;
+    height: 100rpx;
+}

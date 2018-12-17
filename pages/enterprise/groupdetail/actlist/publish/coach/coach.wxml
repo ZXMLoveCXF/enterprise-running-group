@@ -1,0 +1,38 @@
+<!--pages/enterprise/groupdetail/actlist/publish/coach/coach.wxml-->
+<template name="coach">
+  <view class='coachcontainer'>
+    <view class='coachdetail'>
+      <view class='deletev' style='background:{{bgColor}}' bindtap='deleteCoach' data-index='{{index}}' hidden='{{index==0}}'>-</view>
+      <view class='coachname'><input name="{{ 'name' + index}}" data-statu="open" placeholder='请输入教练名称' maxlength='10' placeholder-style='color:#a9a9a9' value="{{coachData.name}}" data-index='{{index}}' bindinput="nameChange"/></view>
+      <view class='coachinfo'>
+        <textarea value="{{coachData.content}}" name="{{ 'content' + index}}" maxlength='9999999' placeholder='请输入教练简介' placeholder-style='color:#a9a9a9' data-index='{{index}}' bindinput='infoChange'>
+        </textarea>
+      </view>
+    </view>
+    <view wx:if='{{coachData.img.length>0}}' class='ablumaddbig' bindtap='addHead' data-index='{{index}}'>
+      <image src='{{coachData.img}}' mode='aspectFill'></image>
+      <image src="/resources/images/addImg.png"></image>
+    </view>
+
+    <view wx:if='{{coachData.img.length<=0}}' class='ablumadd' bindtap='addHead' data-index='{{index}}'>
+      <image src="{{(templateUrl+'coach_head_add.png')}}"></image>
+    </view>
+    <!-- <view class='ablumadd' bindtap='addHead' data-index='{{index}}'>
+      <image src="{{coachData.img.length>0?coachData.img:(templateUrl+'coach_head_add.png')}}" style="{{coachData.img.length>0?'width: 202rpx;height: 202rpx;margin-left: 0;margin-top: 0;':''}}"></image>
+    </view> -->
+  </view>
+</template>
+
+<form bindsubmit="downSet">
+<view class='container'>
+  <block wx:for="{{coachList}}" wx:for-item="coachData" wx:key="">
+    <template is="coach" data="{{coachData,bgColor:bgColor,index,templateUrl:templateUrl}}" />
+  </block>
+</view>
+
+<view class='btmBtn'>
+  <view class='addcoach' style='color:{{fontColor}}' bindtap='addCoach'>增加教练</view>
+  <button formType="submit" class='downset' style='background:{{bgColor}}'>设置完成</button>
+</view>
+
+</form>

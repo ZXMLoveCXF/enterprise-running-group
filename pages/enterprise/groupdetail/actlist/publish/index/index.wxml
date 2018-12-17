@@ -1,0 +1,155 @@
+<!-- pages/enterprise/groupdetail/actlist/publish/index/index.wxml -->
+<loading id="loading"></loading>
+<view class="background">
+    <image class="selected" src="{{ imgBgUrl }}" mode="aspectFill" />
+    <view wx:if="{{ oPerm.delPermFlg }}" bindtap="cancel" class="cancel">
+        <image src="{{ imgPath }}cancel.png" />取消活动
+    </view>
+    <view class="operation" bindtap="chooseImage">
+        <view>
+            <image src="{{ imgPath }}addImg.png" />
+        </view>
+        <view class="text">添加活动背景图片</view>
+    </view>
+</view>
+<form report-submit="true" bindsubmit="submit">
+    <view class="commonSetting">
+        <view class="title">
+            <view class="label">输入活动名称:</view>
+            <view class="operate">
+                <input name="title" value="{{ sTitle }}" placeholder="请输入活动名称" placeholder-class="gray" type="text" />
+            </view>
+        </view>
+        <view class="lightLine"></view>
+        <view class="time">
+            <view class="label">活动时间:</view>
+            <view class="startTime">
+                <picker mode="multiSelector" value="{{startDateTime}}" bindchange="changeStartDateTime" range="{{startDateTimeArray}}" class="picker">
+                    <view class="{{ startBlack?'black':'' }}">{{ startDate }}</view>
+                </picker>
+            </view>
+            <view class="fwBold">至</view>
+            <view class="endTime">
+                <picker mode="multiSelector" bindcolumnchange="changeDateTimeColumn" value="{{endDateTime}}" bindchange="changeEndDateTime" range="{{endDateTimeArray}}" class='picker' style=''>
+                    <view class="{{ endBlack?'black':'' }}">{{ endDate }}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="lightLine"></view>
+        <view class="time">
+            <view class="label">报名时间:</view>
+            <view class="beginTime">
+                <picker mode="multiSelector" value="{{beginDateTime}}" bindchange="changeBeginDateTime" range="{{beginDateTimeArray}}" class="picker">
+                    <view class="{{ beginBlack?'black':'' }}">{{ beginDate }}</view>
+                </picker>
+            </view>
+            <view class="fwBold">至</view>
+            <view class="overTime">
+                <picker mode="multiSelector" bindcolumnchange="changeOverDateTimeColumn" value="{{overDateTime}}" bindchange="changeOverDateTime" range="{{overDateTimeArray}}" class='picker'>
+                    <view class="{{ overBlack?'black':'' }}">{{ overDate }}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="lightLine"></view>
+        <view class="location">
+            <view class="label">活动地点:</view>
+            <view class="operate {{ sLocationName?'black':'gray' }}" bindtap="chooseLocation">
+                {{ sLocationName?sLocationName:'请选择活动地点' }}
+                <image src="{{ templateUrl }}location.png" />
+            </view>
+        </view>
+        <view class="lightLine"></view>
+        <view class="locationRemarks">
+            <view class="label">地址备注:</view>
+            <view class="operate">
+                <input name="locationRemarks" value="{{ sLocationRemark }}" placeholder-class="gray" type="text" placeholder="非必填" />
+            </view>
+        </view>
+        <view class="lightLine"></view>
+        <view class="joinFlag">
+            <view class="label">限本团成员参加</view>
+            <view class="operate">
+                <switch color="{{ fontColor }}" bindchange="bindJoinSwitch" checked="{{ bJoinSwitch }}" />
+            </view>
+        </view>
+    </view>
+    <view class="moreSetting" animation="{{ oCardAnimation }}">
+        <view class="pull" bindtap="writeMore">
+            <view class="label">更多设置</view>
+            <view>
+                <image animation="{{ oArrowAnimation }}" src="{{ imgPath }}arrow_down.png" />
+            </view>
+        </view>
+        <view class="lightLine"></view>
+        <view class="limit">
+            <view class="label">报名人数限制:</view>
+            <view class="operate">
+                <input name="limit" value="{{ sLimitNum }}" placeholder-class="gray" type="number" placeholder="不填写默认为不限制" />
+            </view>
+        </view>
+        <view class="lightLine"></view>
+        <view class="information" bindtap="toInformation">
+            <view class="label">报名信息设置:</view>
+            <view class="operate">
+                {{ sSetInfor }}
+                <image src="{{ imgPath }}icon_More.png" />
+            </view>
+        </view>
+        <view class="lightLine"></view>
+        <view class="review">
+            <view class="label">报名审核设置:</view>
+            <view class="result">{{ bReviewSwitch?'需要审核':'不需要审核' }}</view>
+            <view class="operate">
+                <switch color="{{ fontColor }}" bindchange="bindReviewSwitch" checked="{{ bReviewSwitch }}" />
+            </view>
+        </view>
+        <view class="lightLine"></view>
+        <view class="signIn">
+            <view class="label">签到模式设置:</view>
+            <view class="operate">
+                <picker mode="multiSelector" class='picker' bindchange="bindSignIn" value="{{ aSignInSelected }}" range="{{aSignInList}}">
+                    {{ aSignInList[0][nSignInMode] + ' ; ' + aSignInList[1][nSignInTime] }}
+                </picker>
+                <image src="{{ imgPath }}icon_More.png" />
+            </view>
+        </view>
+        <view class="lightLine"></view>
+        <view class="coach" bindtap="toCoach">
+            <view class="label">教练设置</view>
+            <view class="operate">
+                {{ sSetCoach }}
+                <image src="{{ imgPath }}icon_More.png" />
+            </view>
+        </view>
+        <view class="lightLine"></view>
+        <view class="prize" bindtap="toPrize">
+            <view class="label">奖品设置</view>
+            <view class="operate">
+                {{ sSetPrize }}
+                <image src="{{ imgPath }}icon_More.png" />
+            </view>
+        </view>
+    </view>
+    <view class="detail" bindtap="toDetail">
+        <view class="label">活动详情</view>
+        <view class="operate">
+            {{ sSetDetail }}
+            <image src="{{ imgPath }}icon_More.png" />
+        </view>
+    </view>
+    <view class="block">
+
+    </view>
+    <view class="btns">
+        <view wx:if="{{ sFrom != 'mode' && sIsEdit == 0 }}" class="mode" bindtap="toModeList" style="color:{{ fontColor }}">
+            <image src="{{ templateUrl }}mode.png" />
+            历史模板
+        </view>
+        <view class="publish">
+            <button form-type="submit" style="background-color:{{ bgColor }}">
+                <image src="{{ imgPath }}publish.png" />
+                {{ (sIsEdit == 0)?'确认发布':'确认编辑' }}
+            </button>
+        </view>
+    </view>
+</form>

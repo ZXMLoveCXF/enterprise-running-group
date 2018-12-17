@@ -1,0 +1,13 @@
+<!-- pages/post/post.wxml -->
+<view class='addImg'>
+  <view class='chooseImg'>
+    <image bindtap="chooseImage" mode='widthFix' src="{{ (!uploadedImg)?(imgPath + 'addImage.png'):uploadedImg }}"></image>
+  </view>
+  <view class='indexImgText'>默认海报</view>
+  <view class='indexImg'>
+    <block wx:for="{{ aList }}" wx:key="">
+      <image src="{{ item.cover }}" bindtap='selceted' data-src="{{ item.cover }}" data-id="{{ item.imgId }}"></image>
+    </block>
+    <view style='clear:both'></view>
+  </view>
+</view>

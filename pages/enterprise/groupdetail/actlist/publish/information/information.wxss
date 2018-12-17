@@ -1,0 +1,84 @@
+/* pages/enterprise/groupdetail/actlist/publish/information/information.wxss */
+.top{
+  width: 100%;
+  background-color: #fff6e7;
+  color: #d0ad6f;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  border-top: 1rpx solid #fee9c2;
+  border-bottom: 1rpx solid #fee9c2;
+}
+.publishAct {
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 100rpx;
+}
+.publishAct .necessary {
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  font-size: 30rpx;
+  line-height: 50rpx;
+}
+
+.publishAct .necessary .labels {
+  margin-bottom: 30rpx;
+}
+
+.publishAct .necessary .labels .selBtn {
+  text-align: center;
+  width: 29.33%;
+  font-size: 28rpx;
+  border-radius: 60rpx;
+  color: #e0e0e0;
+  background-color: transparent;
+  border: 2rpx solid #e0e0e0;
+  line-height: 65rpx;
+  height: 66rpx;
+  margin-top: 30rpx;
+  float: left;
+  margin-left: 3%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.publishAct .necessary .labels .selBtn image {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top: -15rpx;
+  right: 0;
+}
+
+.publishAct .necessary .labels .addLabel {
+  text-align: center;
+  width: 30%;
+  font-size: 28rpx;
+  border-radius: 60rpx;
+  color: #e0e0e0;
+  background-color: transparent;
+  border: 2rpx dashed #e0e0e0;
+  line-height: 65rpx;
+  height: 65rpx;
+  margin-top: 30rpx;
+  float: left;
+  margin-left: 3%;
+  box-sizing: border-box;
+}
+
+.publishAct .necessary .labels .selBtn .btnInput {
+  line-height: 65rpx;
+  font-size: 28rpx;
+  height: 65rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  text-align: center
+}

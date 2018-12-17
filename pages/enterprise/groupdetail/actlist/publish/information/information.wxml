@@ -1,0 +1,22 @@
+<!--pages/enterprise/groupdetail/actlist/publish/information/information.wxml-->
+
+<view class='top'>选中表示报名活动需要填写</view>
+<view class='publishAct'>
+  <view class='necessary'>
+    <view class='labels'>
+      <block wx:for-items="{{ selectBtn }}" wx:key="">
+        <view class="selBtn" bindtap='select' data-id='{{ item.id }}' style="{{item.checked?('color: #fff;background-color:'+ bgColor+';border: 2rpx solid '+bgColor+';'):''}}">{{ item.title }}</view>
+      </block>
+      <block wx:for="{{ aAddBtn }}" wx:key="">
+        <view class="selBtn" data-id='{{ item.id }}' bindtap='addSelect' style="{{item.checked?('color: #fff;background-color:'+ bgColor+';border: 2rpx solid '+bgColor+';'):''}}">
+          <input focus='{{ bIsFocus }}' type='text' data-imgid='{{ item.id }}' class="btnInput" value="{{ item.name?item.name:'' }}" data-inputid='{{ item.id }}' data-sign="btnInput" disabled="{{ item.disabled?'disabled':'' }}" bindblur='inputCom'></input>
+          <image bindtap='delBtn' data-imgid='{{ item.id }}' src="{{(templateUrl+'options_delete_btn.png')}}"></image>
+        </view>
+      </block>
+      <view class="addLabel" bindtap='addBtn'>自定义添加</view>
+      <view style='clear:both'></view>
+    </view>
+  </view>
+</view>
+
+<view class='btn' bindtap='save' style='background-color:{{bgColor}}'>保存</view>

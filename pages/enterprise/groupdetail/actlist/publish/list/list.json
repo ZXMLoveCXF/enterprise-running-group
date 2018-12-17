@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "模板列表",
+  "usingComponents": {
+    "loading": "/pages/components/loading/loading",
+    "actitem": "/pages/components/actitem/actitem"
+  }
+}

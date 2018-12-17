@@ -1,0 +1,24 @@
+<!--pages/enterprise/groupdetail/actlist/publish/list/list.wxml-->
+<loading id="loading"></loading>
+
+<block wx:for='{{actList}}' wx:for-item='detailData' wx:key="">
+  <actitem activity="{{detailData}}" bind:jump="jumpToDetail" isMode='true'></actitem>
+</block>
+
+<block wx:if='{{actList.length<=0}}'>
+  <view class="empty-content" style="margin-top:{{500/2}}rpx">
+    <image src="/resources/images/icon_none_team.png"></image>
+    <view>
+      <view style='color:#c1c1c1'>暂无发布活动</view>
+    </view>
+  </view>
+</block>
+
+<!-- 活动列表 -->
+<block wx:else>
+  <view wx:if="{{!isMore}}">
+    <view class="loadstatus">
+      <text>没有更多内容了</text>
+    </view>
+  </view>
+</block>

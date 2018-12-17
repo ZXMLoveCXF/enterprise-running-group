@@ -1,0 +1,29 @@
+/* pages/post/post.wxss */
+
+.addImg {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.chooseImg image {
+  width: 200rpx;
+}
+
+.indexImgText {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+}
+
+.indexImg image {
+  float: left;
+  width: 330rpx;
+  height: 165rpx;
+  border-radius: 10rpx;
+  margin-bottom: 30rpx
+}
+.indexImg image:nth-child(2n) {
+  float: right;
+  width: 330rpx;
+  height: 165rpx
+}

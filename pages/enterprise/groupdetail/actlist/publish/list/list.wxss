@@ -1,0 +1,23 @@
+/* pages/enterprise/groupdetail/actlist/publish/list/list.wxss */
+.pubbtn image{
+  width: 28rpx;
+  height: 32rpx;
+}
+
+.empty-content{
+  padding:100rpx;
+  text-align:center;
+  align-items: center;
+}
+
+.empty-content image{width:81rpx;padding-bottom:20rpx;height: 81rpx;}
+
+.loadstatus{
+  display:flex;
+  align-items:center;
+  align-self:center;
+  justify-content:center;
+  font-size:28rpx;
+  color:#a9a9a9;
+  padding:15rpx 0;
+}

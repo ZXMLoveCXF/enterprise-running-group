@@ -1,0 +1,18 @@
+<!--pages/enterprise/groupdetail/actlist/publish/edit/edit.wxml-->
+<form report-submit="true" bindsubmit="print">
+  <textarea value="{{ text }}" name="actDetail" maxlength='9999999' placeholder='输入活动详情'>
+  </textarea>
+  <view class='addImg'>
+    <view class='img' wx:if="{{isShowAddImg}}">
+      <image bindtap="chooseImage" mode='aspectFill' src='' src="/resources/images/addImage.png"></image>
+      <view class='icon-del'></view>
+    </view>
+    <block wx:for="{{ uploadedImgs }}" wx:key="" wx:for-item="image" wx:for-index='idx'>
+      <view class='img' data-sign="del">
+        <image mode='aspectFill' src="{{ image.url }}" data-id="{{idx}}" data-src="{{image.url}}" bindtap="previewImage"></image>
+        <view class='icon-del' bindtap='delImg' data-delid='{{idx}}'></view>
+      </view>
+    </block>
+  </view>
+  <button class='save' formType="submit" style='background-color:{{bgColor}}'>保存编辑</button>
+</form>

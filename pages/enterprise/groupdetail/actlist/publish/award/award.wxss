@@ -1,0 +1,287 @@
+/* pages/enterprise/groupdetail/actlist/publish/award/award.wxss */
+.award-container {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding-bottom: 118rpx;
+  width: 750rpx;
+  background: white;
+}
+
+.awards {
+  margin: 105rpx 30rpx 30rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  border-radius: 30rpx;
+  box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.styles {
+  margin: 0rpx 30rpx 30rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  border-radius: 30rpx;
+  box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+
+.tip {
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 70rpx;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 28rpx;
+  padding-left: 26rpx;
+  line-height: 68rpx;
+}
+
+/* .ab-position {
+  position: absolute
+} */
+
+.bgimage {
+  width: 142rpx;
+  height: 142rpx;
+  margin-top: -75rpx;
+  border-radius: 50%;
+  border: 4rpx solid #fff;
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+}
+
+.bgimage image {
+  margin-left: 31rpx;
+  width: 82rpx;
+  height: 82rpx;
+}
+
+.award-title {
+  font-size: 28rpx;
+  top: 75rpx;
+  left: 30rpx;
+  position: absolute
+}
+
+.award-left {
+  height: 100rpx;
+  left: 0;
+  right: 0;
+  position: relative
+}
+
+.delete {
+  height: 38rpx;
+  width: 38rpx;
+  margin-left: 30rpx;
+}
+
+.border-bottom {
+  border-bottom: 1rpx solid #e0e0e0;
+}
+
+.award-detail {
+  width: 630rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+
+.padding-30 {
+  padding-top: 30rpx;
+}
+
+.award-det {
+  height: 200rpx;
+  flex-direction: column;
+  position: relative
+}
+
+.award-name {
+  margin-right: 30rpx;
+  font-size: 28rpx;
+}
+
+.award-input_num {
+  width: 120rpx;
+
+}
+
+.award-input_name {
+  font-size: 28rpx;
+  flex: 1;
+}
+
+ .inputPH {
+  color: #c1c1c1
+} 
+
+.award-input_name.holder,.award-input_num.holder {
+  font-size: 28rpx;
+  color: #c1c1c1
+}
+
+.btn-centerarea {
+  height: 146rpx;
+  background: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-award {
+  top: 26rpx;
+  height: 82rpx;
+  line-height: 82rpx;
+  border-radius: 41rpx;
+  width: 220rpx;
+  display: flex; 
+  align-items: center;
+  justify-content: center; 
+  font-size: 30rpx;
+  background: #f8f8f8;
+}
+
+.add-image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 8rpx;
+}
+
+.condition-top {
+  background: #f1f1f1;
+  width: 100%;
+  height: 70rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tip1 {
+  margin-left: 30rpx;
+  color: #c1c1c1;
+  font-size: 28rpx;
+}
+
+.tip2 {
+  top: 150rpx;
+  right: 0rpx;
+  position: absolute;
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: row
+}
+
+.lottory-select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.tip-content {
+  color: #4cb0f4;
+  font-size: 28rpx;
+}
+
+.tip-image {
+  margin-left: 10rpx;
+  lighting-color: #4cb0f4;
+  width: 12rpx;
+  height: 20rpx;
+}
+
+.condition-mid1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+
+.condition-mid2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.picker{
+  background-color: #FFFFFF;
+  width: 100%;  
+}
+
+.conditionpicker {
+  display: flex;
+  align-items: center;
+}
+
+.btn-area {
+  position: fixed;
+  bottom: 0;
+  height: 118rpx;
+  left: 0;
+  right: 0;
+  display: flex;
+  box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.btn-commit {
+  height: 118rpx;
+  text-align: center;
+  color: white;
+  border-radius: 0;
+  flex: 1;
+  font-size: 30rpx;
+  line-height: 118rpx;
+}
+
+.btn-reset {
+  height: 118rpx;
+  background: white;
+  text-align: center;
+  border-radius: 0;
+  width: 300rpx;
+  font-size: 30rpx;
+  line-height: 118rpx;
+}
+.btn-commit::after,.btn-reset::after{
+  border: none
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio {
+  padding-top: 25rpx;
+  font-size: 28rpx;
+}
+
+.radio-image {
+ position: relative;
+ display: inline-block;
+ vertical-align: middle;
+ margin-right: 10rpx;
+ margin-top: -5rpx;
+ width: 30rpx;
+ height: 30rpx;
+}
+ 
+.bold {
+  font-weight: bold
+}
