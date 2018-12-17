@@ -1,0 +1,122 @@
+<!-- pages/enterprise/index/index.wxml -->
+<loading id="loading"></loading>
+<authorization isshow="{{ authFlg }}" bind:option="AuthorCallback"></authorization>
+<!-- <topBar icon="{{ TBIcon }}" height="{{ height }}" bind:alertClick="topBarOption" title="{{ TBTitle }}" bgColor="{{ TBBgColor }}"></topBar> -->
+<view class="container">
+  <block wx:if="{{ isHeight }}">
+    <view class="goodmorning height">
+      <view class="face">
+        <image class='height' src="{{ sFace }}" />
+      </view>
+      <view class="name height">{{ sGreetings }}</view>
+    </view>
+  </block>
+  <block wx:if="{{ !isHeight }}">
+    <view class="goodmorning">
+      <view class="face">
+        <image src="{{ sFace }}" />
+      </view>
+      <view class="name">{{ sGreetings }}</view>
+    </view>
+  </block>
+
+  <block wx:if="{{ bBindFlg }}">
+    <block wx:if="{{ isHeight }}">
+      <view class="number">
+        <view class="weekNum">
+          <view class='weekTitle height'>
+            本周跑量
+          </view>
+          <view class="num" style='color:{{ fontColor }}'>
+            <view class="digital height">
+              <text>{{ sWeekRun?sWeekRun:'0.00' }}</text>
+              <text class="small">KM</text>
+            </view>
+          </view>
+        </view>
+        <view class="runNum">
+          <view style='margin-left:33rpx' class='weekTitle height'>
+            累计跑量
+          </view>
+          <view class="num" style='color:{{ fontColor }}'>
+            <view class="digital height">
+              <text>{{ sTotalRun?sTotalRun:'0.00' }}</text>
+              <text class="small">KM</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="verticalLine"></view>
+    </block>
+    <block wx:if="{{ !isHeight }}">
+      <view class="number">
+        <view class="weekNum">
+          <view class='weekTitle'>
+            本周跑量
+          </view>
+          <view class="num" style='color:{{ fontColor }}'>
+            <view class="digital">
+              <text>{{ sWeekRun?sWeekRun:'0.00' }}</text>
+              <text class="small">KM</text>
+            </view>
+          </view>
+        </view>
+        <view class="runNum">
+          <view class='weekTitle' style='margin-left:33rpx'>
+            累计跑量
+          </view>
+          <view class="num" style='color:{{ fontColor }}'>
+            <view class="digital">
+              <text>{{ sTotalRun?sTotalRun:'0.00' }}</text>
+              <text class="small">KM</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="verticalLine"></view>
+    </block>
+  </block>
+  <view wx:if="{{ !bBindFlg }}" class="bindApp" bindtap="bind" style="color:{{ bgColor }}">
+    绑定321GO APP
+  </view>
+</view>
+<view class="cards">
+  <view class="page-section page-section-spacing swiper">
+    <swiper class="swiper-box" indicator-dots="{{false}}" autoplay="{{false}}" circular="{{false}}" vertical="{{false}}" previous-margin="15px" next-margin="15px">
+      <block wx:for="{{aMyGroupList}}" wx:key="">
+        <swiper-item>
+          <view class="swiper-item">
+            <groupCard bind:toDetail="toDetail" groupId="{{ item.id }}" banner="{{ item.banner }}" face="{{ item.logo }}" title="{{ item.name }}" num="{{ item.memberNum }}" totleNum="{{ item.totalRunKm }}" weekNum="{{ item.weekMemberRunKm }}" weekPunch="{{ item.weekRunPerc }}"
+              speed="{{ item.groupPace }}" noticeTime="{{ item.lastNoticeDate }}" noticeDetail="{{ item.lastNoticeContent }}"></groupCard>
+          </view>
+        </swiper-item>
+      </block>
+      <swiper-item>
+        <view class="swiper-item">
+          <view class="content">
+            <view class="head">
+              <image class='findIcon' src='{{ imgPath }}compass.png'></image>发现兴趣跑团
+              <view bindtap="toMore" class="more" style="color:{{ fontColor }}">
+                更多跑团
+                <image src="https://xrun-pass.oss-cn-beijing.aliyuncs.com/deep_blue/group_more.png" />
+              </view>
+            </view>
+            <view class="body">
+              <groupMini bind:toIntroduction="toIntroduction" wx:if="{{ oInterestGroup.length > 0 }}" wx:for="{{ oInterestGroup }}" wx:key="" bIsShow="{{ index != (oInterestGroup.length - 1) }}" groupId="{{ item.id }}" face="{{ item.logo }}" title="{{ item.name }}"
+                num="{{ item.memberNum }}" km="{{ item.totalRunKm }}"></groupMini>
+              <view wx:if="{{ oInterestGroup.length == 0 }}" class="noGroup">
+                <view class="img">
+                  <image mode="widthFix" src="{{ imgPath }}icon_none_team.png" />
+                </view>
+                <view class="text">没有发现任何跑团</view>
+                <view class="btn" bindtap="toCreate" style="background-color:{{ bgColor }}">
+                  创建兴趣跑团
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

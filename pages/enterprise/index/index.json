@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "特跑团",
+    "enablePullDownRefresh": false,
+    "backgroundTextStyle": "white",
+    "usingComponents": {
+        "groupCard": "/pages/components/groupCard/groupCard",
+        "authorization": "/pages/components/authorization/authorization",
+        "groupMini": "/pages/components/groupMini/groupMini",
+        "loading": "/pages/components/loading/loading"
+    }
+}

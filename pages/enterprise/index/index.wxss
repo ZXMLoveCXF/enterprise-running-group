@@ -1,0 +1,226 @@
+/* pages/enterprise/index/index.wxss */
+
+page {
+  background-color: #f8f8f8;
+}
+
+swiper {
+  height: 860rpx;
+}
+
+.swiper-item {
+  padding-top: 30rpx;
+}
+
+.container {
+  box-sizing: border-box;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.06);
+  width: 100%;
+  padding: 30rpx;
+  position: relative;
+  background-color: #fff;
+}
+
+.container .goodmorning {
+  margin-bottom: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container .goodmorning .face {
+  /* width: 80rpx; */
+}
+
+.container .goodmorning .face image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 100%;
+}
+
+.container .goodmorning .name {
+  flex: 1;
+  text-align: left;
+  line-height: 60rpx;
+  font-weight: bold;
+  margin-left: 20rpx
+}
+
+.container .bindApp {
+  width: 100%;
+  height: 94rpx;
+  text-align: center;
+  background-color: #f8f8f8;
+  line-height: 94rpx;
+  font-weight: bold;
+  border-radius: 94rpx;
+}
+
+.container .number {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container .verticalLine {
+  position: absolute;
+  height: 70rpx;
+  width: 2rpx;
+  background-color: #ebebeb;
+  bottom: 26rpx;
+  left: 50%;
+}
+
+.container .number .weekNum, .container .number .runNum {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* .container .number .runNum::before {
+  content: "|";
+  position: absolute;
+  color: #ebebeb;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40rpx;
+} */
+
+.container .number .weekNum .num, .container .number .runNum .num {
+  flex: 1;
+  text-align: left;
+  margin-left: 23rpx;
+}
+
+.container .number .weekNum .num .digital,
+.container .number .runNum .num .digital {
+  font-family: 'DIN Engschrift Std';
+  font-size: 72rpx;
+  height: 72rpx;
+}
+
+.container .number .weekNum .num .digital text.small,
+.container .number .runNum .num .digital text.small {
+  font-size: 26rpx;
+}
+
+.content {
+  margin: 0 15rpx;
+  box-sizing: border-box;
+  border-radius: 30rpx;
+  box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+  padding: 30rpx;
+  height: 810rpx;
+}
+
+.content .head {
+  font-weight: bold;
+  font-size: 32rpx;
+  position: relative;
+  margin: 31rpx 0 46rpx 0
+}
+
+.content .head .more {
+  font-size: 26rpx;
+  position: absolute;
+  right: 0;
+  bottom: 2rpx;
+  font-weight: normal;
+}
+
+.content .head .more image {
+  width: 15rpx;
+  height: 15rpx;
+  margin-bottom: 4rpx
+}
+
+.content .body {
+  position: relative;
+  height: 100%;
+}
+
+.content .body .noGroup {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
+
+.content .body .noGroup .img image {
+  width: 100rpx;
+}
+
+.content .body .noGroup .text {
+  color: #c1c1c1;
+  margin-top: 20rpx;
+}
+
+.content .body .noGroup .btn {
+  width: 300rpx;
+  line-height: 70rpx;
+  color: #fff;
+  border-radius: 70rpx;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+
+/*
+* Swiper
+*/
+
+.page-section {
+  width: 100%;
+  margin-bottom: 60rpx;
+}
+
+.page-section:last-child {
+  margin-bottom: 0;
+}
+
+.page-section-spacing {
+  box-sizing: border-box;
+}
+
+/*新版本*/
+
+.weekTitle {
+  overflow: hidden;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  width: 52rpx;
+  font-size: 26rpx;
+  line-height: 32rpx;
+  margin-top: 4rpx;
+}
+
+.findIcon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 9rpx;
+  position: relative;
+  top: 4rpx;
+}
+
+/*兼容性*/
+
+.container .goodmorning.height {
+  margin:55rpx 0 30rpx 0
+}
+
+.container .goodmorning .face image.height {
+  width:100rpx;height:100rpx
+}
+
+.container .goodmorning .name.height {
+ line-height:100rpx;font-size:36rpx;
+}
+
+.container .number .weekNum .num .digital.height,
+.container .number .runNum .num .digital.height {
+ font-size:76rpx;height: 76rpx;
+}
+
+.weekTitle.height {
+font-size:30rpx;width:60rpx;
+}
