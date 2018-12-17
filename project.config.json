@@ -1,0 +1,353 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.0",
+	"appid": "",
+	"projectname": "企业跑团",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 16,
+			"list": [
+				{
+					"id": -1,
+					"name": "个人信息",
+					"pathName": "pages/mine/information/information",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "入团申请",
+					"pathName": "pages/mine/review/join/join",
+					"query": "aid=2c93e14866af35b40166af4cc0050003&src=temp"
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/mine/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/enterprise/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发现跑团",
+					"pathName": "pages/enterprise/findgroup/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "搜索跑团",
+					"pathName": "pages/enterprise/findgroup/search/search",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "创建兴趣跑团",
+					"pathName": "pages/enterprise/createchildgroup/createchildgroup",
+					"query": "type=2"
+				},
+				{
+					"id": 7,
+					"name": "跑团简介",
+					"pathName": "pages/enterprise/groupintroduction/index/index",
+					"query": "gid=2c93e148661ad9c40166235f72cd006e&type=0",
+					"scene": "1036",
+					"referrerInfo": {}
+				},
+				{
+					"id": 8,
+					"name": "申请加入",
+					"pathName": "pages/enterprise/groupintroduction/join/join",
+					"query": "gid=2c93e148661534bf01661547b2c90002"
+				},
+				{
+					"id": 9,
+					"name": "公告列表",
+					"pathName": "pages/enterprise/groupdetail/noticelist/index/index",
+					"query": "gid=e0366f74bd6711e8af3100163e04fabe"
+				},
+				{
+					"id": -1,
+					"name": "发布公告",
+					"pathName": "pages/enterprise/groupdetail/noticelist/publish/publish",
+					"query": "gid=e0366f74bd6711e8af3100163e04fabe"
+				},
+				{
+					"id": 11,
+					"name": "创建子级跑团",
+					"pathName": "pages/enterprise/createchildgroup/createchildgroup",
+					"query": "type=1&fatherGid=e0366f74bd6711e8af3100163e04fabe"
+				},
+				{
+					"id": 12,
+					"name": "子级跑团列表",
+					"pathName": "pages/enterprise/groupdetail/childgroup/index/index",
+					"query": "fatherGid=8a9a48856686c7fd01668aec8c520004"
+				},
+				{
+					"id": -1,
+					"name": "子级跑团权限设置",
+					"pathName": "pages/enterprise/groupdetail/childpermission/childpermission",
+					"query": ""
+				},
+				{
+					"id": 14,
+					"name": "跑团详情",
+					"pathName": "pages/enterprise/groupdetail/index/index",
+					"query": "gid=2c93e1486686591e0166865f6f61000a&from=index",
+					"scene": "1001"
+				},
+				{
+					"id": 15,
+					"name": "积分设置",
+					"pathName": "pages/enterprise/groupdetail/integral/integral",
+					"query": "gid=2c93e14866137819016613cf9c2b0006"
+				},
+				{
+					"id": 16,
+					"name": "跑团成员",
+					"pathName": "pages/enterprise/groupdetail/memberlist/index/index",
+					"query": "gid=8a9a48856686c7fd01668aec8c520004&viewMemberInfoFlg=false"
+				},
+				{
+					"id": -1,
+					"name": "搜索跑团成员",
+					"pathName": "pages/enterprise/groupdetail/memberlist/search/search",
+					"query": "gid=e0366f74bd6711e8af3100163e04fabe&type=time"
+				},
+				{
+					"id": -1,
+					"name": "编辑子级跑团",
+					"pathName": "pages/enterprise/createchildgroup/createchildgroup",
+					"query": "gid=e0366f74bd6711e8af3100163e04fabe&type=3"
+				},
+				{
+					"id": 19,
+					"name": "查看成员信息",
+					"pathName": "pages/enterprise/groupdetail/memberlist/information/information",
+					"query": "memberId=5028828165ac9e400165acdba62e0016&gid=e0366f74bd6711e8af3100163e04fabe&from=list"
+				},
+				{
+					"id": 20,
+					"name": "绑定APP",
+					"pathName": "pages/enterprise/bind/bind",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "跑团排行榜",
+					"pathName": "pages/enterprise/groupdetail/runningrank/runningrank",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "排行榜",
+					"pathName": "pages/ranklist/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "打卡列表",
+					"pathName": "pages/enterprise/groupdetail/punchlist/punchlist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "跑团打卡列表",
+					"pathName": "pages/enterprise/groupdetail/punchlist/punchlist",
+					"query": "gid=8a9a48856686c7fd01668aec8c520004",
+					"scene": "1001"
+				},
+				{
+					"id": 25,
+					"name": "数据报告",
+					"pathName": "pages/enterprise/groupdetail/datareport/datareport",
+					"query": "gid=8a9a48856686c7fd01668aec8c520004",
+					"scene": "1001"
+				},
+				{
+					"id": 26,
+					"name": "跑团活动列表",
+					"pathName": "pages/enterprise/groupdetail/actlist/index/index",
+					"query": "gid=8a9a488566624d83016675586e830002"
+				},
+				{
+					"id": -1,
+					"name": "创建跑团待审核",
+					"pathName": "pages/mine/review/create/create",
+					"query": "aid=2c93e14866af290b0166af32a9c6001b&cType=1&src=temp"
+				},
+				{
+					"id": -1,
+					"name": "教练设置",
+					"pathName": "pages/enterprise/groupdetail/actlist/publish/coach/coach",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "跑团动态列表",
+					"pathName": "pages/enterprise/groupdetail/moments/index/index",
+					"query": "gid=8a9a48856686c7fd01668aec8c520004"
+				},
+				{
+					"id": 30,
+					"name": "发布动态",
+					"pathName": "pages/enterprise/groupdetail/moments/publish/publish",
+					"query": "gid=8a9a48856686c7fd01668aec8c520004"
+				},
+				{
+					"id": 31,
+					"name": "发布活动",
+					"pathName": "pages/enterprise/groupdetail/actlist/publish/index/index",
+					"query": "gid=2c93e1486686591e0166865f6f61000a&isEdit=0&from=actlist"
+				},
+				{
+					"id": 32,
+					"name": "编辑活动",
+					"pathName": "pages/enterprise/groupdetail/actlist/publish/index/index",
+					"query": "isEdit=1&aid=2c93e14866f77d4901670586d83c004d&gid=2c93e1486686591e0166865f6f61000a"
+				},
+				{
+					"id": -1,
+					"name": "报名信息设置",
+					"pathName": "pages/enterprise/groupdetail/actlist/publish/information/information",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "奖品设置",
+					"pathName": "pages/enterprise/groupdetail/actlist/publish/award/award",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "跑团活动详情",
+					"pathName": "pages/enterprise/groupdetail/actlist/detail/index/index",
+					"query": "activeId=2c94bc1966a4c03d0166a4c0d65b0000&jump=0"
+				},
+				{
+					"id": -1,
+					"name": "组件",
+					"pathName": "pages/actsquare/publish/preview/preview",
+					"query": ""
+				},
+				{
+					"id": 37,
+					"name": "发起活动",
+					"pathName": "pages/actsquare/publish/choose/choose",
+					"query": ""
+				},
+				{
+					"id": 38,
+					"name": "跑团PK赛发布",
+					"pathName": "pages/actsquare/publish/index/index",
+					"query": ""
+				},
+				{
+					"id": 39,
+					"name": "PK属性选择",
+					"pathName": "pages/actsquare/publish/pkrank/pkrank",
+					"query": "title=跑团pk赛"
+				},
+				{
+					"id": -1,
+					"name": "发布活动预览",
+					"pathName": "pages/actsquare/publish/preview/preview",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "选择参赛跑团",
+					"pathName": "pages/actsquare/detail/selectgroup/selectgroup",
+					"query": ""
+				},
+				{
+					"id": 42,
+					"name": "跑团活动列表详情",
+					"pathName": "pages/actsquare/detail/index/index",
+					"query": "activePkId=2c93e148670ba17201670bbb1e520017"
+				},
+				{
+					"id": -1,
+					"name": "编辑活动",
+					"pathName": "pages/enterprise/groupdetail/actlist/publish/index/index",
+					"query": "isEdit=1&aid=2c93e14866d3a3040166e1776d8c0002"
+				},
+				{
+					"id": 44,
+					"name": "活动广场发起活动",
+					"pathName": "pages/actsquare/publish/index/index",
+					"query": "titles=跑团PK赛&actType=1"
+				},
+				{
+					"id": -1,
+					"name": "跑团公告列表",
+					"pathName": "pages/enterprise/groupdetail/noticelist/index/index",
+					"query": "gid=8a9a48856686c7fd01668aec8c520004&from=detail"
+				},
+				{
+					"id": -1,
+					"name": "活动广场",
+					"pathName": "pages/actsquare/index/index",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "数据报告",
+					"pathName": "pages/enterprise/groupdetail/datareport/datareport",
+					"query": "gid=2c93e1486686591e0166865f6f61000a",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "选择海报",
+					"pathName": "pages/enterprise/groupdetail/actlist/publish/poster/poster",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "待我审核",
+					"pathName": "pages/mine/review/index/index",
+					"query": "actType=1"
+				},
+				{
+					"id": -1,
+					"name": "预览发布",
+					"pathName": "pages/actsquare/publish/preview/preview",
+					"query": ""
+				}
+			]
+		}
+	}
+}

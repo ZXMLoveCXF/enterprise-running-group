@@ -1,0 +1,105 @@
+{
+  "pages": [
+    "pages/certification/certification",
+    "pages/enterprise/index/index",
+    "pages/enterprise/createchildgroup/createchildgroup",
+    "pages/enterprise/bind/bind",
+    "pages/enterprise/findgroup/index/index",
+    "pages/enterprise/findgroup/search/search",
+    "pages/enterprise/groupdetail/index/index",
+    "pages/enterprise/groupdetail/noticelist/index/index",
+    "pages/enterprise/groupdetail/noticelist/publish/publish",
+    "pages/enterprise/groupdetail/childgroup/index/index",
+    "pages/enterprise/groupdetail/childpermission/childpermission",
+    "pages/enterprise/groupdetail/integral/integral",
+    "pages/enterprise/groupdetail/memberlist/index/index",
+    "pages/enterprise/groupdetail/memberlist/search/search",
+    "pages/enterprise/groupdetail/memberlist/information/information",
+    "pages/enterprise/groupdetail/runningrank/runningrank",
+    "pages/enterprise/groupdetail/integralrank/integralrank",
+    "pages/enterprise/groupdetail/punchlist/punchlist",
+    "pages/enterprise/groupdetail/moments/index/index",
+    "pages/enterprise/groupdetail/moments/publish/publish",
+    "pages/enterprise/groupdetail/datareport/datareport",
+    "pages/enterprise/groupdetail/actlist/index/index",
+    "pages/enterprise/groupdetail/actlist/detail/index/index",
+    "pages/enterprise/groupdetail/actlist/detail/join/join",
+    "pages/enterprise/groupdetail/actlist/detail/sign/sign",
+    "pages/enterprise/groupdetail/actlist/detail/export/export",
+    "pages/enterprise/groupdetail/actlist/detail/enrolment/enrolment",
+    "pages/enterprise/groupdetail/actlist/detail/winners/winners",
+    "pages/enterprise/groupdetail/actlist/detail/awardmember/index/index",
+    "pages/enterprise/groupdetail/actlist/detail/awardmember/awardaddress/awardaddress",
+    "pages/enterprise/groupdetail/actlist/detail/share/qrcode/qrcode",
+    "pages/enterprise/groupdetail/actlist/detail/share/picture/picture",
+    "pages/enterprise/groupdetail/actlist/detail/cancel/cancel",
+    "pages/enterprise/groupdetail/actlist/publish/index/index",
+    "pages/enterprise/groupdetail/actlist/publish/coach/coach",
+    "pages/enterprise/groupdetail/actlist/publish/award/award",
+    "pages/enterprise/groupdetail/actlist/publish/edit/edit",
+    "pages/enterprise/groupdetail/actlist/publish/information/information",
+    "pages/enterprise/groupdetail/actlist/publish/poster/poster",
+    "pages/enterprise/groupdetail/actlist/publish/list/list",
+    "pages/enterprise/groupintroduction/index/index",
+    "pages/enterprise/groupintroduction/join/join",
+    "pages/ranklist/index/index",
+    "pages/actsquare/index/index",
+    "pages/actsquare/publish/index/index",
+    "pages/actsquare/publish/choose/choose",
+    "pages/actsquare/publish/pkrank/pkrank",
+    "pages/actsquare/publish/preview/preview",
+    "pages/actsquare/detail/index/index",
+    "pages/actsquare/detail/selectgroup/selectgroup",
+    "pages/mine/index/index",
+    "pages/mine/information/information",
+    "pages/mine/rundata/rundata",
+    "pages/mine/review/index/index",
+    "pages/mine/review/join/join",
+    "pages/mine/review/create/create",
+    "pages/mine/review/setnotification/setnotification",
+    "pages/mine/application/index/index",
+    "pages/mine/activity/index/index",
+    "pages/cropper/cropper",
+    "utils/webview/webview"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "XRun-PaaS",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "selectedColor": "#3851d0",
+    "color": "#a9a9a9",
+    "list": [
+      {
+        "pagePath": "pages/enterprise/index/index",
+        "text": "首页",
+        "iconPath": "resources/images/tabbar_run_n.png",
+        "selectedIconPath": "resources/images/tabbar_run_p.png"
+      },
+      {
+        "pagePath": "pages/ranklist/index/index",
+        "text": "排行榜",
+        "iconPath": "resources/images/tabbar_ranking_n.png",
+        "selectedIconPath": "resources/images/tabbar_ranking_p.png"
+      },
+      {
+        "pagePath": "pages/actsquare/index/index",
+        "text": "活动广场",
+        "iconPath": "resources/images/tabbar_activity_n.png",
+        "selectedIconPath": "resources/images/tabbar_activity_p.png"
+      },
+      {
+        "pagePath": "pages/mine/index/index",
+        "text": "我的",
+        "iconPath": "resources/images/tabbar_man_n.png",
+        "selectedIconPath": "resources/images/tabbar_man_p.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 20000
+  }
+}
