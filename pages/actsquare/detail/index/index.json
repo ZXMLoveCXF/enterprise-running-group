@@ -1,0 +1,11 @@
+{
+    "backgroundTextStyle":"dark",
+    "usingComponents": {
+        "actcard":"/pages/components/actCard/actCard",
+        "tabs":"/pages/components/tabs/tabs",
+        "titlenav": "/pages/components/titlenav/titlenav",
+        "returnhome":"/pages/components/returnHome/returnHome",
+        "loading": "/pages/components/loading/loading"
+      },
+      "enablePullDownRefresh":true
+}

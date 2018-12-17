@@ -1,0 +1,14 @@
+<!-- pages/actsquare/publish/choose/choose.wxml -->
+<view class="list-content">
+    <view class="list" bindtap="chooseActivity" wx:for="{{list}}" wx:key="" data-title="{{item.title}}" data-type="{{item.actType}}">
+        <image src="{{item.image}}" class="title-img" />
+        <view class="list-right">
+            <view class="title">{{item.title}}</view>
+            <text>{{item.intro}}</text>
+        </view>
+        <image class="right" src="{{imgPath}}icon_More.png" />
+    </view>
+    
+    
+</view>
+<text class="tip-text">不同的活动形式可以体验不同的乐趣，快发起参与体验吧！</text>

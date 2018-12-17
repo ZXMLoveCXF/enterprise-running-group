@@ -1,0 +1,48 @@
+/* pages/actsquare/index/index.wxss */
+page{
+  background: white
+}
+.bg-gradient{
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+.actqure-content{
+  padding-top: 20rpx;
+  position: relative;
+  z-index: 2;
+}
+.fixed-btn{
+  position: fixed;
+  right: 30rpx;
+  bottom: 102rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 118rpx;
+  height: 118rpx;
+  background: #ffffff;
+  border-radius: 50%;
+  font-size: 26rpx;
+  z-index:10;
+  font-weight: bold;
+  text-align: center;
+  opacity: .8;
+}
+.fixed-btn image{
+  width: 42rpx;
+  height: 42rpx;
+}
+.no-data{
+  margin-top: 300rpx;
+  text-align: center;
+  
+}
+.no-data image{
+  width: 340rpx;
+  height: 220rpx;
+}

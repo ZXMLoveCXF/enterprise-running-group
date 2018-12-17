@@ -1,0 +1,81 @@
+<!-- pages/actsquare/publish/index/index.wxml -->
+<view class="upload-bg bg-bor">
+    <form bindsubmit="cancelBtn" report-submit="true" wx:if="{{edit}}">
+        <button formType="submit" class="cancel-btn">
+            <image src="{{imgPath}}cancel.png" />
+            取消活动
+        </button>
+    </form>
+    <view wx:if="{{!uploadImgPath}}" class="no-bg" id="bgImg" bindtap="chooseImage">
+        <image src="{{imgPath}}addImg.png" />
+        <text>添加活动背景图片</text>
+    </view>
+    <view  wx:else id="bgImg" bindtap="chooseImage">
+        <image src="{{uploadImgPath}}" mode="aspectFill" class="bg-img"  />
+        <image src="{{imgPath}}addImg.png" class="addimg"/>
+    </view>
+</view>
+<view class="bg-bor">
+    <input type="text" placeholder="请输入活动名称" value="{{title}}" bindinput="bindActivityName" />
+</view>
+<view class="bg-bor">
+    <view class="title">活动时间:</view>
+    <view class="startTime">
+        <picker mode="multiSelector" value="{{startDateTime}}" bindchange="changeStartDateTime" range="{{startDateTimeArray}}" class="picker">
+            <view class="{{startBlack?'':'gray'}}">{{startDate}}</view>
+        </picker>
+    </view>
+    <view class="title">至</view>
+    <view class="endTime">
+        <picker mode="multiSelector" bindcolumnchange="changeDateTimeColumn" value="{{endDateTime}}" bindchange="changeEndDateTime" range="{{endDateTimeArray}}" class='picker' style=''>
+            <view class="{{endBlack?'':'gray'}}">{{endDate}}</view>
+        </picker>
+    </view>
+</view>
+<view class="bg-bor">
+    <view class="title">活动说明</view>
+    <textarea class="textarea" placeholder="请输入说明" bindinput="bindTextAreaBlur" maxlength='-1' auto-height="true" value="{{textarea}}"></textarea>
+</view>
+<view class="bg-bor">
+    <view class="title">奖品设置</view>
+    <view class="prize-box">
+        <view class="prize-list" wx:for="{{prizeList}}" wx:index="{{index}}" wx:key="">
+            <view>
+                <image src="{{imgPath}}gchd_fqhd_scjp.png" class="del-btn" data-index="{{index}}" bindtap="delList" />
+                <view class="prize-img-box" data-index="{{index}}" bindtap="chooseImage">
+                    <view wx:if="{{!item.img}}">
+                        <image src="{{imgPath}}pthd_jlsz_tjtx.png" />
+                        <text>奖品图片</text>
+                    </view>
+                    <image wx:else src="{{item.img}}" class="prize-img" mode="widthFix" />
+                </view>
+                <view class="input-right">
+                    <input placeholder="请输入奖品名称" type="text" value="{{item.name}}" data-index="{{index}}" data-name="name" bindinput="iptPrize" />
+                    <input placeholder="请输入奖品数量" type="number" value="{{item.num}}" data-index="{{index}}" data-name="num" bindinput="iptPrize" />
+                </view>
+            </view>
+            <textarea placeholder="请输入获奖条件" maxlength='-1' auto-height="true"  type="text" data-index="{{index}}" value="{{item.demand}}" class="input-bottom" data-name="conditions" bindinput="iptPrize" ></textarea>
+            <hr class="hr" wx:if="{{index!=prizeList.length-1}}"></hr>
+        </view>
+    </view>
+    <button class="btn add-btn" style="color:{{fontColor}}" type="default" bindtap="addList">
+        增加奖品
+    </button>
+</view>
+<view class="bg-bor switch-list">
+    <view class="switch">
+        <text>是否开放:不开放的活动仅通过团长分享可见</text>
+        <switch color="{{ fontColor }}" bindchange="bindOpenSwitch" checked="{{ openFlg }}" />
+    </view>
+    <view class="hr"></view>
+    <view class="switch">
+        <text>是否审核：审核通过才可参与PK赛</text>
+        <switch color="{{ fontColor }}" bindchange="bindentrySwitch" checked="{{entryCheckFlg}}" />
+    </view>
+</view>
+<view class="switch-list"></view>
+<form bindsubmit="publishSend" report-submit="true">
+    <button formType="submit" class="next-btn" style="background:{{bgColor}};color:#fff;">
+        下一步
+    </button>
+</form>

@@ -1,0 +1,17 @@
+<!-- pages/actsquare/publish/pkrank/pkrank.wxml -->
+<view class="bg-bor">
+    <view class="title">PK排行榜设置</view>
+    <view class="checkbox-box" wx:for="{{checkItem}}" wx:key="" data-checked="{{item.checked}}" data-index="{{index}}" bindtap="checkChange">
+        <view class="checkbox">
+            <image wx:if="{{item.checked}}" src="{{imgPath}}hdgc_xz_yx.png" />
+            <image wx:else src="{{imgPath}}hdgc_xz_wx.png" />
+            <text>{{item.val}}</text>
+        </view>
+        <view wx:if="{{index!=checkItem.length-1}}" class="hr"></view>
+    </view>
+</view>
+<form bindsubmit="send" report-submit="true">
+    <button form-type="submit" class="next-btn" style="background:{{bgColor}};color:#fff;" >
+        下一步
+    </button>
+</form>

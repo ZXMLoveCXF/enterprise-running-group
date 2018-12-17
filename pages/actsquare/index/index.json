@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "活动广场",
+  "backgroundTextStyle":"white",
+  "usingComponents": {
+    "actcard":"/pages/components/actCard/actCard",
+    "authorization": "/pages/components/authorization/authorization"
+  },
+  "enablePullDownRefresh":true
+}

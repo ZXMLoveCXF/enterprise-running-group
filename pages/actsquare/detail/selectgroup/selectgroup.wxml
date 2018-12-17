@@ -1,0 +1,24 @@
+<!-- pages/actsquare/detail/selectgroup/selectgroup.wxml -->
+<view class="bg-bor">
+    <view class="title">选择参赛跑团</view>
+    <view class="checkbox-box" wx:for="{{teamList}}" wx:key="" data-checked="{{item.checked}}" data-index="{{index}}" bindtap="checkChange">
+        <view class="checkbox">
+            <image src="{{item.groupLogo}}" class="group-img" mode="aspectFill" />
+            <view class="group-center">
+                <text>{{item.groupName}}</text>
+                <view class="center-b">
+                    <image src="{{imgPath}}active_men.png" />
+                    <text>{{item.groupMemberNum}}</text>
+                </view>
+            </view>
+            <image class="right-img" src="{{item.checked?imgPath+'hdgc_xz_yx.png':imgPath+'hdgc_xz_wx.png'}}" />
+        </view>
+        <view wx:if="{{index!=teamList.length-1}}" class="hr"></view>
+    </view>
+</view>
+<view class="mb"></view>
+<form bindsubmit="send" report-submit="true">
+    <button form-type="submit" class="next-btn" style="background:{{bgColor}};color:#fff;">
+        确定
+    </button>
+</form>

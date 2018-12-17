@@ -1,0 +1,121 @@
+<!-- pages/actsquare/detail/index/index.wxml -->
+<loading id="loading"></loading>
+<tabs bind:tabchange="onClick" id="tabs" bFixed="true" tabs="{{tabs}}" activeFontWeight="bold" activeFontColor="{{fontColor}}" fontColor="#A9A9A9" lineColor="{{fontColor}}" tabBgColor="#fff"></tabs>
+<view class="pheight" hidden="{{headerIndex != 0}}">
+<!-- <view wx:if="{{headerIndex == 0}}" class="pheight"> -->
+    <view class="bg-bor bg-card" wx:if="{{checkFlg==1}}">
+        <swiper class="swiper-box" indicator-dots="{{true}}" autoplay="{{false}}" indicator-active-color="{{bgColor}}" indicator-color="rgba(169,169,169,1)" circular="{{false}}" vertical="{{false}}">
+            <block>
+                <swiper-item class="swiper-item" wx:for="{{groupList}}" wx:key="">
+                    <image src="{{item.groupLogo}}" class="slide-logo" />
+                    <text class="name">{{item.groupName}}</text>
+                    <view class="item-bar">
+                        <view>
+                            <view class="num">{{item.num}}</view>
+                            <text>成员人数</text>
+                        </view>
+                        <view>
+                            <view class="num">
+                                {{item.km}}
+                                <text>KM</text>
+                            </view>
+                            <text>总跑量</text>
+                        </view>
+                        <view>
+                            <view class="num">{{item.pace}}</view>
+                            <text>人均配速</text>
+                        </view>
+                    </view>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <actcard bgImg="{{bgImg}}" class="card" title="{{title}}" num="{{groupNum}}" slotFlg="{{sponsorFlg}}" actType="{{actType}}" time="{{diffTime}}">
+        <view class="sign" bindtap="editBtn" wx:if="{{status!=3}}">
+            <image src="{{imgPath}}hdgc_yfb_bjhd.png" alt="" />
+            编辑
+        </view>
+    </actcard>
+    <view class="bg-bor">
+        <view class="title">活动说明</view>
+        <text class="text-content">{{content}}</text>
+    </view>
+    <view class="bg-bor switch-list" wx:if="{{prizeList.length>0}}">
+        <view class="title">活动奖品</view>
+        <view class="prize-box">
+            <view class="prize-list" wx:for="{{prizeList}}" wx:key="">
+                <view>
+                    <view class="prize-img-box">
+                        <image src="{{item.img}}" class="prize-img" mode="widthFix" />
+                    </view>
+                    <view class="input-right">
+                        <view>{{item.name}}</view>
+                        <view>奖品数量 {{item.num}}</view>
+                    </view>
+                </view>
+                <view class="input-bottom">{{item.demand}}</view>
+                <hr class="hr" wx:if="{{index!=prizeList.length-1}}"></hr>
+            </view>
+        </view>
+    </view>
+    <form bindsubmit="signUp" report-submit="true" wx:if="{{checkFlg==-2&&status!=3}}">
+        <button formType="submit" class="complete-btn" style="background:{{bgColor}};color:#fff;">
+            报名参加
+        </button>
+    </form>
+    <form report-submit="true" wx:if="{{checkFlg==0}}">
+        <button formType="submit" class="complete-btn" style="background:#F7C20B;color:#fff;">
+            审核中
+        </button>
+    </form>
+    <form  wx:if="{{checkFlg==-3}}">
+        <button formType="submit" open-type="share" class="complete-btn" style="background:#F7C20B;color:#fff;">
+            通知团长报名参加
+        </button>
+    </form>
+</view>
+<view class="pheight" hidden="{{headerIndex != 1}}">
+<!-- <view wx:if="{{headerIndex == 1}}" class="pheight"> -->
+    <titlenav bFixed='true' topValue='100' bind:tapTitleNavIndex='tapTitleNavIndex' titleInfoList='{{pkTitle}}'></titlenav>
+    <view class="pk-box" wx:if="{{teamList.length>0}}">
+        <view class="checkbox-box" wx:for="{{teamList}}" wx:key="" data-index="{{index}}" >
+            <view class="checkbox">
+                <view class="team-index tip-img" wx:if="{{index==0}}">
+                    <image src="{{imgPath}}rankOne.png" />
+                </view>
+                <view class="team-index tip-img" wx:elif="{{index==1}}">
+                    <image src="{{imgPath}}rankTwo.png" />
+                </view>
+                <view class="team-index tip-img" wx:elif="{{index==2}}">
+                    <image src="{{imgPath}}rankThree.png" />
+                </view>
+                <view class="team-index" wx:else>{{index+1}}</view>
+                <image src="{{item.logo}}" class="group-img" mode="aspectFill" />
+                <view class="group-center">
+                    <text>{{item.name}}</text>
+                    <view class="center-b">
+                        <image src="{{imgPath}}active_men.png" />
+                        <text>{{item.totalNum}}</text>
+                    </view>
+                </view>
+                <!-- <view class="right-img" wx:if="{{pkTypes==1||pkTypes==6}}">{{item.result}}<view class="result-tip" >km</view></view>
+                <view class="right-img" wx:elif="{{pkTypes==3}}">{{item.result}}<view class="result-tip" >次</view></view>
+                <view class="right-img" wx:elif="{{pkTypes==4}}">{{item.result}}<view class="result-tip" >人</view></view>
+                <view class="right-img" wx:else>{{item.result}}</view> -->
+                <view class="right-img">
+                    {{item.result}}
+                    <view class="result-tip" wx:if="{{pkTypes==1||pkTypes==6}}">km</view>
+                    <view class="result-tip" wx:elif="{{pkTypes==3}}">次</view>
+                    <view class="result-tip" wx:elif="{{pkTypes==4}}">人</view>
+                    <!-- <view class="result-tip" wx:else></view> -->
+                </view>
+            </view>
+            <view wx:if="{{index!=teamList.length-1}}" class="hrs"></view>
+        </view>
+    </view>
+    <view class="pk-box none-box" wx:else>
+        <image src="{{imgPath}}hdgc_pks_k.png" />
+        暂无排行数据
+    </view>
+</view>
+<returnhome bindtap="returnHome" wx:if="{{returnHome}}"></returnhome>

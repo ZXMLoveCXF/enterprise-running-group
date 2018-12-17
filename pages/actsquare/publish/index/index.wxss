@@ -1,0 +1,238 @@
+/* pages/actsquare/publish/index/index.wxss */
+
+.bg-bor {
+    width: 630rpx;
+    padding: 30rpx;
+    margin: 20rpx 30rpx;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+    border-radius: 30rpx;
+    overflow: hidden;
+}
+
+.bg-bor .no-bg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 26rpx;
+    color: #A9A9A9;
+}
+
+.bg-bor .no-bg image {
+    height: 108rpx;
+    width: 108rpx;
+    margin-bottom: 16rpx;
+}
+
+.upload-bg {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 298rpx;
+}
+
+.bg-img {
+    /* display: none; */
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.addimg {
+    position: absolute;
+    height: 108rpx;
+    width: 108rpx;
+    margin-left: -54rpx;
+    margin-top: -54rpx;
+}
+
+.bg-bor .title {
+    color: #1E1E1E;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.startTime,
+.endTime {
+    display: inline-block;
+    margin: 6rpx 4rpx;
+    width: 220rpx;
+    padding-left: 6rpx;
+}
+
+.bg-bor .textarea {
+    width: 590rpx;
+    min-height: 154rpx;
+    border: 1rpx solid rgba(231, 231, 231, 1);
+    border-radius: 20rpx;
+    margin-top: 30rpx;
+    padding: 20rpx;
+    font-size: 28rpx;
+    z-index: 1;
+}
+
+.add-btn {
+    width: 276rpx;
+    height: 82rpx;
+    line-height: 82rpx;
+    background: rgba(248, 248, 248, 1);
+    border-radius: 40rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+    margin-top: 30rpx;
+}
+
+.hr {
+    width: 660rpx;
+    height: 1rpx;
+    background: rgba(231, 231, 231, 1);
+    margin-left: -15rpx;
+    margin-top: 26rpx;
+}
+
+.prize-list {
+    margin-top: 30rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.prize-list view {
+    display: flex;
+    position: relative;
+}
+
+.prize-list .del-btn {
+    width: 42rpx;
+    height: 42rpx;
+    position: absolute;
+    right: -4rpx;
+    top: -4rpx;
+    z-index: 2;
+}
+
+.input-right {
+    display: flex;
+    flex-direction: column;
+    width: 438rpx;
+    z-index: 0;
+}
+
+.input-bottom {
+    width: 554rpx;
+    padding: 20rpx 38rpx;
+    border-radius: 10rpx;
+    margin-bottom: 12rpx;
+    border: 1rpx solid rgba(231, 231, 231, 1);
+    min-height: 44rpx;
+    font-size: 28rpx;
+    z-index: 1;
+}
+
+.input-right input {
+    width: 400rpx;
+    height: 82rpx;
+    padding-left: 38rpx;
+    border: 1rpx solid rgba(231, 231, 231, 1);
+    border-radius: 10rpx;
+    margin-bottom: 12rpx;
+    font-size: 28rpx;
+}
+
+.prize-img-box {
+    width: 180rpx;
+    height: 180rpx;
+    background: #F8F8F8;
+    border-radius: 20rpx;
+    overflow: hidden;
+    margin-right: 12rpx;
+}
+
+.prize-img {
+    width: 180rpx;
+}
+
+.prize-img-box view {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.prize-img-box view image {
+    width: 54rpx;
+    height: 54rpx;
+    margin-bottom: 14rpx;
+}
+
+.prize-img-box text {
+    color: #A9A9A9;
+    font-size: 24rpx;
+}
+
+.switch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 28rpx;
+    font-weight: bold;
+}
+
+.switch switch {
+    width: 86rpx;
+    height: 48rpx;
+    zoom: .8
+}
+
+.switch text {
+    margin-top: 18rpx;
+}
+
+.next-btn {
+    width: 100%;
+    height: 118rpx;
+    line-height: 118rpx;
+    font-size: 34rpx;
+    border-radius: 0;
+    position: fixed;
+    bottom: 0;
+    color: #fff;
+    font-weight: bold;
+    opacity: .94;
+    z-index: 100;
+}
+
+.switch-list {
+    height: 160rpx;
+}
+
+.cancel-btn {
+    position: absolute;
+    top: 30rpx;
+    right: 30rpx;
+    width: 186rpx;
+    height: 58rpx;
+    background: rgba(247, 194, 11, 1);
+    border-radius: 30rpx;
+    z-index: 2;
+    color: #fff;
+    font-size: 24rpx;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cancel-btn image {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 6rpx;
+}
+
+.gray {
+    font-size: 28rpx;
+    color: #A9A9A9
+}

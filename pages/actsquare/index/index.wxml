@@ -1,0 +1,16 @@
+<!-- pages/actsquare/index/index.wxml -->
+<authorization isshow="{{ authFlg }}" bind:alertClick="AuthorCallback"></authorization>
+<view class="bg-gradient" style="background:-webkit-linear-gradient({{bgColor}},rgba(255,255,255,1));"></view>
+<view class="actqure-content" >
+    <view wx:if="{{mylist.length!=0||list.length!=0}}">
+        <actcard wx:for="{{mylist}}" wx:key="" bgImg="{{item.image}}" title="{{item.title}}" actType="{{item.actType}}" num="{{item.groupNum}}" data-id="{{item.id}}" time="{{item.diffTime}}" bindtap="listDetail"></actcard>
+        <actcard wx:for="{{list}}" wx:key="" bgImg="{{item.image}}" title="{{item.title}}" actType="{{item.actType}}" num="{{item.groupNum}}" data-id="{{item.id}}" time="{{item.diffTime}}" bindtap="listDetail"></actcard>
+    </view>
+    <view wx:else class="no-data">
+        <image src="{{imgPath}}hdgc_k.png" />
+    </view>
+    <view wx:if="{{createPermFlg}}" class="fixed-btn" style="box-shadow:2rpx 2rpx 10rpx 0rpx {{bgColor}};color:{{fontColor}}" bindtap="publishBtn">
+        <image src="{{imgPath}}tabbar_activity_p.png" />
+        发起
+    </view>
+</view>

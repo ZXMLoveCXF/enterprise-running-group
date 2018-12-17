@@ -1,0 +1,29 @@
+<!-- pages/actsquare/publish/preview/preview.wxml -->
+<loading id="loading"></loading>
+<actcard bgImg="{{detail.cover}}" title="{{detail.title}}" actType="{{detail.titles}}" bnum="{{false}}"time="{{Vtime}}"></actcard>
+<view class="bg-bor">
+    <view class="title">活动说明</view>
+    <text class="text-content">{{detail.content}}</text>
+</view>
+<view class="bg-bor" wx:if="{{detail.prizeRuleJson.length!=0}}">
+    <view class="title">活动奖品</view>
+    <view class="prize-box">
+        <view class="prize-list" wx:for="{{detail.prizeRuleJson}}" wx:key="">
+            <view>
+                <view class="prize-img-box">
+                    <image src="{{item.img}}" class="prize-img" mode="widthFix" />
+                </view>
+                <view class="input-right">
+                    <view>{{item.name}}</view>
+                    <view>奖品数量 {{item.num}}</view>
+                </view>
+            </view>
+            <view class="input-bottom">{{item.demand}}</view>
+            <hr class="hr" wx:if="{{index!=detail.prizeRuleJson.length-1}}"></hr>
+        </view>
+    </view>
+</view>
+<view class="switch-list"></view>
+<form bindsubmit="complete" report-submit="true">
+  <button formType="submit" class="complete-btn" style="background:{{bgColor}};color:#fff;">完成</button>
+</form>

@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "actcard": "/pages/components/actCard/actCard",
+        "loading": "/pages/components/loading/loading"
+    }
+}
