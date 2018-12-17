@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "动态",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundTextStyle": "white",
+    "usingComponents": {
+        "loading": "/pages/components/loading/loading",
+        "tabs":"/pages/components/tabs/tabs"
+    },
+    "enablePullDownRefresh":true
+}

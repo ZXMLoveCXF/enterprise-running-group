@@ -1,0 +1,26 @@
+<!-- pages/enterprise/groupdetail/memberlist/index/index.wxml -->
+<loading id="loading"></loading>
+<view class="search">
+    <view bindtap="toSearch" class="toSearch">
+        <image src="{{ imgPath }}search.png" />
+        输入名称搜索
+    </view>
+    <picker class="choose" style="color:{{ fontColor }}" bindchange="bindPickerChange" value="{{ index }}" range="{{ aOptions }}">
+        <image src="{{ templateUrl }}choose.png" />
+        筛选
+    </picker>
+</view>
+<view class="lightLine"></view>
+<view class="container">
+    <block wx:if="{{ oHead }}">
+        <view class="label">团长</view>
+        <rankItem bind:toInformation="toInformation" wx:key="" isDetail="{{ false }}" isRank="{{ false }}" isMe="{{ false }}" memberId="{{ oHead.memberId }}" gender="{{ oHead.gender }}" face="{{ oHead.face }}" name="{{ oHead.name }}" num="{{ oHead.value }}" rankNum="{{ oHead.rank }}"></rankItem>
+    </block>
+    <block wx:if="{{ aAdminList.length > 0 }}">
+        <view class="label">管理员</view>
+        <rankItem wx:for="{{ aAdminList }}" bind:toInformation="toInformation" wx:key="" isDetail="{{ false }}" isRank="{{ false }}" isMe="{{ false }}" memberId="{{ item.memberId }}" gender="{{ item.gender }}" face="{{ item.face }}" name="{{ item.name }}" num="{{ item.value }}" rankNum="{{ item.rank }}"></rankItem>
+    </block>
+    <view class="label">团员</view>
+    <rankItem wx:for="{{ aMemberList }}" bind:toInformation="toInformation" wx:key="" isDetail="{{ false }}" isRank="{{ false }}" isMe="{{ false }}" memberId="{{ item.memberId }}" gender="{{ item.gender }}" face="{{ item.face }}" name="{{ item.name }}" num="{{ item.value }}" rankNum="{{ item.rank }}"></rankItem>
+    <view wx:if="{{ !isMore && aMemberList.length > 0 }}" class="noMore">没有更多跑团成员</view>
+</view>

@@ -1,0 +1,73 @@
+<!-- pages/enterprise/groupdetail/moments/index/index.wxml -->
+<tabs bind:tabchange="onClick" id="tabs" bFixed="true" tabs="{{tabs}}" activeFontWeight="bold" activeFontColor="{{fontColor}}" fontColor="#A9A9A9" lineColor="{{fontColor}}" tabBgColor="#fff"></tabs>   
+
+<view wx:for="{{tabs}}" wx:key="" wx:for-item="tab" class="pheight" hidden="{{ index!=headerIndex }}">
+        <block wx:if="{{tab.content == 1}}">
+            <view wx:if="{{dynamicList.length>0}}">
+                <view class="dynamic-list" wx:for="{{dynamicList}}" wx:key="" wx:for-index="indexs">
+                    <view class="head-img">
+                        <image src="{{item.face}}" />
+                    </view>
+                    <view class="list-right">
+                        <text class="list-name">{{item.name}}</text>
+                        <text class="list-text">{{item.word}}</text>
+                        <view class="list-img" wx:if="{{item.imgIds.length>0}}">
+                        <!-- finishLoadFlag?items:imgPath+'default.png' -->
+                            <image wx:for="{{ item.imgIds }}" wx:for-item="items" data-type="{{tab.content}}" bindload="imgLoad"  bindtap="previewImage" wx:key="" src="{{ imgLoad?items:imgPath+'default.png' }}" data-index="{{indexs}}" data-img="{{items}}" class="{{ item.imgIds.length == 1?'img-one':'img' }}" mode="{{item.imgIds.length==1?'widthFix':'aspectFill'}}" />
+                        </view>
+                        <view class="list-bottom">
+                            <view class="list-left">
+                                <view class="list-date">{{item.createDate}}</view>
+                            </view>
+                            <view class="list-praise" bindtap="zanToggle" data-type="{{tab.content}}" data-flg="{{flg}}" data-likeFlg="{{item.likeFlg}}" data-id='{{item.id}}' data-index="{{indexs}}" data-num="{{item.likeNum}}">
+                                <image src="{{item.likeFlg?templateUrl+'zan_click.png':imgPath+'zan.png'}}"  />
+                                <view style="color:{{item.likeFlg?fontColor:''}}">{{item.likeNum}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view wx:else class="no-content">
+                <image src="{{imgPath}}dynamic.png" />
+                <text>还没有动态哦</text>
+                <text>发布动态约起来吧！</text>
+            </view>
+        </block>
+        <block wx:if="{{tab.content == 2}}">
+            <view wx:if="{{dynamicMyList.length>0}}">
+                <view class="dynamic-list" wx:for="{{dynamicMyList}}" wx:key="" wx:for-index="indexs">
+                    <view class="head-img">
+                        <image src="{{item.face}}" />
+                    </view>
+                    <view class="list-right">
+                        <text class="list-name">{{item.name}}</text>
+                        <text class="list-text">{{item.word}}</text>
+                        <view class="list-img" wx:if="{{item.imgIds.length>0}}">
+                            <image wx:for="{{ item.imgIds }}" wx:for-item="items" data-type="{{tab.content}}" bindtap="previewImage" wx:key="" bindload="imgLoad" src="{{ imgLoad?items:imgPath+'default.png' }}" data-index="{{indexs}}" data-img="{{items}}" class="{{ item.imgIds.length == 1?'img-one':'img' }}" mode="{{item.imgIds.length==1?'widthFix':'aspectFill'}}"  />
+                        </view>
+                        <view class="list-bottom">
+                            <view class="list-left">
+                                <view class="list-date">{{item.createDate}}</view>
+                                <view class="del-btn" style="color:{{fontColor}}" bindtap="delList" data-id="{{item.id}}" data-index="{{indexs}}">
+                                    删除
+                                </view>
+                            </view>
+                            <view class="list-praise" bindtap="zanToggle" data-type="{{tab.content}}" data-flg="{{flg}}" data-likeFlg="{{item.likeFlg}}" data-id='{{item.id}}' data-index="{{indexs}}">
+                                <image src="{{item.likeFlg?templateUrl+'zan_click.png':imgPath+'zan.png'}}"  />
+                                <view style="color:{{item.likeFlg?fontColor:''}}">{{item.likeNum}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view wx:else class="no-content">
+                <image src="{{imgPath}}dynamic.png" />
+                <text>还没有动态哦</text>
+                <text>发布动态约起来吧！</text>
+            </view>
+        </block>
+</view>
+<button class="release-btn" bindtap="onTap" style="background:{{bgColor}}">
+    <image src="{{imgPath}}btn_img.png" class="btn-img" />
+    <text>发布动态</text>
+</button>

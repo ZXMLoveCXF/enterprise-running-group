@@ -1,0 +1,48 @@
+<!--pages/enterprise/groupdetail/actlist/detail/awardmember/index/index.wxml-->
+<!--报名成员-->
+<template name="member">
+  <view class='member-container'>
+    <image class="member-head {{(gender == 1)?'boy':''}}" src='{{face}}' mode="aspectFill"></image>
+    <view class='right-container'>
+      <view class='member-name'>{{name}}</view>
+      <view class='award-tip'>{{prizeName}} x1</view>
+    </view>
+  </view>
+</template>
+
+<view class='award-container' style="display:{{isLoading?'none':'block'}}">
+
+  <block wx:if='{{isShowNone}}'>
+    <view class="content" style="margin-top:{{scrollHeight/2}}rpx">
+      <view>
+        <image mode='widthFix' src="/resources/images/icon_none_team.png"></image>
+      </view>
+      <view>
+        <view>无人达成中奖条件</view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='member-container' style="display:{{existSelf?'flex':'none'}}">
+      <image class="member-head {{(mineData.gender == 1)?'boy':''}}" src='{{mineData.face}}' mode="aspectFill"></image>
+      <view class='right-container'>
+        <view class='member-name'>{{mineData.name}}</view>
+        <view class='award-tip' wx:if='{{hasAward==0}}'>未中奖</view>
+        <view class='award-tip' wx:else>{{mineData.prizeName}} x1</view>
+      </view>
+    </view>
+    <view class='container-bottom' style="display:{{existSelf?'flex':'none'}}"></view>
+
+    <block wx:key="" wx:for="{{memberlist}}" wx:for-item="memberData">
+      <template is="member" data="{{...memberData}}"/>
+    </block>
+
+  <!--0：未中奖  1：已中奖未领奖现场领奖 2: 已中奖未领奖填写收货地址 3：已中奖已领奖现场 4：已中奖已领奖查看收货地-->
+    <view class='bottom-area1' wx:if='{{hasAward==3}}'>已领取</view>
+    <view class='bottom-area' style='background: {{bgColor}};' bindtap='tapGoEditAddress' wx:elif='{{hasAward==2}}'>{{addressBtnStr}}</view>
+    <view class='bottom-area1' bindtap='tapGoEditAddress' wx:elif='{{hasAward==4}}'>{{addressBtnStr}}</view>
+    <view class='bottom-area' style='background: {{bgColor}};' bindtap='tapGetAward' wx:elif='{{hasAward==1}}'>恭喜您已中奖，点击领取奖品</view>
+  </block>
+  
+
+</view>

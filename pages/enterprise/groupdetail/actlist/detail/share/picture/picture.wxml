@@ -1,0 +1,9 @@
+<!--pages/enterprise/groupdetail/actlist/detail/share/picture/picture.wxml-->
+<view class="container">
+  <view class="can-box" style="height:{{pageHeight-50}}px">
+    <canvas canvas-id="myCanvas" style="width:{{pageWidth}}px;height:{{pageHeight-50}}px;"/>
+  </view>
+  <view class="btn-box" style="display:{{isLoadding?'none':'block'}}">
+    <button class="btn" bindtap="saveImage" style='background-color:{{bgColor}};'>保存图片</button>
+  </view>
+</view>

@@ -1,0 +1,86 @@
+/* pages/enterprise/groupdetail/noticelist/index/index.wxss */
+.title {
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30rpx;
+}
+.publish {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    line-height: 100rpx;
+    box-sizing: border-box;
+    bottom: 0;
+    left: 0;
+}
+.publish image{
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 20rpx;
+    vertical-align: middle
+}
+.lightLine {
+    height: 1rpx;
+    width: 100%;
+    background-color: #f1f1f1
+}
+
+.container {
+    width: 690rpx;
+    margin: 0 30rpx;
+    padding-bottom: 120rpx
+}
+
+.container .item {
+    padding: 30rpx 0;
+    border-bottom: 1rpx solid #f1f1f1
+}
+
+.container .item .head {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .item .head .icon {
+    width: 40rpx
+}
+
+.container .item .head .time {
+    text-align: left;
+    flex: 1
+}
+.container .item .body{
+    margin-top: 20rpx;
+    color: #c1c1c1;
+    line-height: 50rpx
+}
+
+.container .item .head .icon image {
+    width: 30rpx;
+    height: 30rpx;
+    position: relative;
+    top: 4rpx
+}
+.noMore{
+    text-align: center;
+    color: #c1c1c1;
+    width: 100%;
+    margin: 20rpx 0;
+    font-size: 26rpx;
+}
+.noNotice{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    color: #c1c1c1
+}
+.noNotice image{
+    width: 100rpx;
+    height: 100rpx;
+}

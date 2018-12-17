@@ -1,0 +1,95 @@
+/* pages/enterprise/groupdetail/actlist/detail/join/join.wxss */
+
+.userList {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  padding-bottom: 100rpx;
+}
+
+.user {
+  display: flex;
+}
+
+.user .face {
+  height: 108rpx;
+}
+
+.user .face image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+  box-sizing: border-box;
+}
+
+.user .name {
+  flex: 1;
+  text-align: left;
+  margin-left: 20rpx;
+  height: 100rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user .time {
+  text-align: right;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.user .time image {
+  width:14rpx;
+  vertical-align: middle;
+  margin-left: 10rpx;
+}
+
+.user .time .time-btn {
+  line-height: 46rpx;
+  padding: 3rpx 25rpx;
+  font-size: 28rpx;
+  color: #fff;
+  border-radius: 5rpx;
+  margin-top:5rpx;
+}
+
+.text-red {
+  color: #fc6b6b;
+}
+
+.male {
+  border: 4rpx solid #4db0f4;
+}
+
+.female {
+  border: 4rpx solid #fc7d92;
+}
+
+.line {
+  background-color: #f0f0f0;
+  height: 2rpx;
+  width: 100%;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+}
+
+.export {
+  width: 100%;
+  color: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.content{width:550rpx;margin:100rpx;text-align:center;}
+.content image{width:90rpx;padding-bottom:20rpx;}
+.content view view{color:#c2c2c2;line-height: 60rpx;}
+

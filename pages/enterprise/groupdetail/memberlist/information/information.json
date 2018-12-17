@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "成员信息",
+  "usingComponents": {
+    "rankItem": "/pages/components/rankItem/rankItem",
+    "loading": "/pages/components/loading/loading"
+}
+}

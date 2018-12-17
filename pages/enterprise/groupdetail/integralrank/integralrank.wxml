@@ -1,0 +1,71 @@
+<!-- pages/enterprise/groupdetail/integralrank/integralrank.wxml -->
+<view class="mask {{needAnimation ? (openPicker ? '' : 'dis-none') : 'dis-none'}}"></view>
+<view class="chooseContainer {{needAnimation ? (openPicker ? 'slidown' : 'slidup') : ''}}">
+    <view class='label'>排行周期:</view>
+    <view class='btns'>
+        <view wx:key="" bindtap='chooseBtn' wx:for="{{ aTimeChoose }}" class="CBtn {{ (oSelectedBtn.text == item.text)?'btnBlue':'btnGray' }}" data-id="{{ item.id }}" data-text="{{ item.text }}">
+            {{item.text}}
+        </view>
+    </view>
+    <view class='label'>自定义区间:</view>
+    <view class='btns'>
+        <view class='beginTime'>
+            <view class='btLabel'>开始时间</view>
+            <picker mode="date" value='{{ sBeginTimeDate }}' class="btPicker {{ sBeginTimeDate?'btnBlue':'btnGray' }}" bindchange="bindBeginTimeChange">
+                <view>
+                    {{ sBeginTimeDate?sBeginTimeDate:'请选择' }}
+                    <image src="/resources/images/date_{{ sBeginTimeDate?'blue':'gray' }}.png"></image>
+                </view>
+            </picker>
+        </view>
+        <view class='middle'>
+            <text>至</text>
+        </view>
+        <view class='endTime'>
+            <view class='etLabel'>结束时间</view>
+            <picker mode="date" start="{{ sLimitStartTime }}" value='{{ sEndTimeDate }}' class="etPicker {{ sEndTimeDate?'btnBlue':'btnGray' }}" bindchange="bindEndTimeChange">
+                <view>
+                    {{ sEndTimeDate?sEndTimeDate:'请选择' }}
+                    <image src="/resources/images/date_{{ sEndTimeDate?'blue':'gray' }}.png"></image>
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class='submit'>
+        <view class='submitCancel' bindtap='choose'>取消</view>
+        <view class="submitSub {{ bSelectItem?'blue':'gray' }}" bindtap='rearrange'>确定</view>
+    </view>
+</view>
+<view wx:if="{{ isShow }}">
+    <view class="navbar">
+        <view class='navbar-title'>积分排行榜</view>
+        <view class='navbar-pull' bindtap='choose'>
+            筛选
+            <image src='/resources/images/filter.png'></image>
+        </view>
+    </view>
+    <view class='box'>
+        <view class='list'>
+            <image wx:if="{{ rank == 1 && km != 0 }}" class='index' src='/resources/images/rankOne.png'></image>
+            <image wx:elif="{{ rank == 2 && km != 0 }}" class='index' src='/resources/images/rankTwo.png'></image>
+            <image wx:elif="{{ rank == 3 && km != 0 }}" class='index' src='/resources/images/rankThree.png'></image>
+            <view wx:else class='index num'>{{ rank? rank : "--" }}</view>
+            <image class='logo {{ sex == 2 ? "female" : "" }}' src='{{ face }}'></image>
+            <view class='name'>{{ nickname }}</view>
+            <view class='{{ km ? "runVolume" : "noRunVolume" }}'>{{ result }}</view>
+        </view>
+        <view class='line'></view>
+        <block wx:for="{{ list }}" wx:key="">
+            <view class='list'>
+                <image wx:if="{{ index == 0 && item.km != 0 }}" class='index' src='/resources/images/rankOne.png'></image>
+                <image wx:elif="{{ index == 1 && item.km != 0 }}" class='index' src='/resources/images/rankTwo.png'></image>
+                <image wx:elif="{{ index == 2 && item.km != 0 }}" class='index' src='/resources/images/rankThree.png'></image>
+                <view wx:else class='index num'>{{ index + 1 }}</view>
+                <image class='logo {{ item.sex == 2 ? "female" : "" }}' src='{{ item.face }}'></image>
+                <view class='name'>{{ item.nickname }}</view>
+                <view class='{{ item.km ? "runVolume" : "noRunVolume" }}'>{{ item.result }}</view>
+            </view>
+        </block>
+    </view>
+</view>
+<loading id="loading"></loading>

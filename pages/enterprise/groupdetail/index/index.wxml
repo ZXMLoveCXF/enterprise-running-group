@@ -1,0 +1,158 @@
+<!-- pages/enterprise/groupdetail/index/index.wxml -->
+<loading id="loading"></loading>
+<view class="head-content">
+    <image class="bg" mode="aspectFill" src="{{ obj.banner }}" />
+    <view class="detail">
+        <view class="right" wx:if="{{ bShowMoreFlg }}">
+            <view class="more" bindtap='powerDrawer' data-statu="open">更 多</view>
+        </view>
+        <view class="head" style="{{ bShowMoreFlg?'':'margin-top:90rpx' }}">
+            <view class="logoName">
+                <view class="face">
+                    <image src="{{ obj.logo }}" />
+                </view>
+            </view>
+            <view class="totalRun">
+                <view class="title">{{ obj.name }}</view>
+                <view class="totalRun-content">
+                    <view class="totalRun-num">{{ obj.totalRunKm }}</view>
+                    <view class="totalRun-title" style="color:{{ fontColor }}">
+                        <image src="{{ imgPath }}totalRun.png" />
+                        跑团总跑量/KM
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="data">
+            <view bindtap="toNotice" class="item">
+                <view>
+                    <image src="{{ imgPath }}notice.png" />
+                </view>
+                <view>公告</view>
+                <view wx:if="{{ bUnreadNoticeFlg }}" class="num point"></view>
+            </view>
+            <view class="item" bindtap='toActive'>
+                <view>
+                    <image src="{{ imgPath }}active.png" />
+                </view>
+                <view>活动</view>
+                <view wx:if="{{ bUnreadActiveFlg }}" class="num point"></view>
+            </view>
+            <view bindtap="toChild" class="item" wx:if="{{ obj.type != 2}}">
+                <view>
+                    <image src="{{ imgPath }}child.png" />
+                </view>
+                <view>子跑团</view>
+                <view class="num">{{ obj.childGroupNum }}</view>
+            </view>
+            <view bindtap="toMember" class="item">
+                <view>
+                    <image src="{{ imgPath }}member.png" />
+                </view>
+                <view>跑团成员</view>
+                <view class="num" style="right:{{ (obj.type == 2)?'80rpx':'50rpx' }}">{{ obj.memberNum }}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="chart">
+    <view class="head">
+        <view class="run">
+            <view class="icon">
+                <image src="{{ imgPath }}speed.png" />
+            </view>
+            <view class="num">
+                {{ obj.weekMemberRunKm }}<text>km</text>
+            </view>
+            <view class="label">周人均跑量</view>
+        </view>
+        <view class="signIn">
+            <view class="image">
+                <image mode="widthFix" src="{{ obj.weekRunPercUrl }}" />
+                <view class="num">
+                    {{ obj.weekRunPerc }}<text>%</text>
+                </view>
+            </view>
+            <view class="label">周打卡率</view>
+        </view>
+        <view class="speed">
+            <view class="icon">
+                <image src="{{ imgPath }}speed.png" />
+            </view>
+            <view class="num">{{ obj.groupPace }}</view>
+            <view class="label">跑团配速</view>
+        </view>
+    </view>
+</view>
+<view class="options">
+    <block wx:key="" wx:for="{{ options }}">
+        <view class="item" bindtap="{{ item.bind }}">
+            <view class="label">{{ item.title }}</view>
+            <view class="icon">
+                <image src="{{ imgPath }}arrow.png" />
+            </view>
+        </view>
+        <view wx:if="{{ index < options.length - 1 }}" class="lightLine"></view>
+    </block>
+</view>
+<view class="punchList">
+    <view class="rank-title">
+        <view class="label">今日打卡名单</view>
+        <view class="more" bindtap="toPunchList">
+            查看明细
+            <image src="{{ imgPath }}arrow.png" />
+        </view>
+    </view>
+    <view class="lightLine short"></view>
+    <view class="rank-body" style="margin-top:{{ (aPunchList.length == 0)?'0':'' }}" wx:if="{{aPunchList.length!=0}}">
+        <view wx:for="{{ aPunchList }}" wx:key="" class="item {{ (index < 8)?'btm30':'' }}">
+            <image class="punchImg" mode="widthFix" src="{{ item }}" />
+        </view>
+    </view>
+    <view class="rank-body rank-body-none" wx:else>暂无打卡记录</view>
+</view>
+<view class="runRank">
+    <view class="rank-title">
+        <view class="label">周跑量排行榜</view>
+        <view class="more" bindtap="toRunRank">
+            查看更多
+            <image src="{{ imgPath }}arrow.png" />
+        </view>
+    </view>
+    <view class="rank-body">
+        <rankItem wx:for="{{ aRunRankList }}" length="{{aRunRankList.length}}" index="{{index}}" wx:key="" isDetail="{{ true }}" isRank="{{ true }}" isMe="{{ index == 0 }}" gender="{{ item.gender }}" face="{{ item.face }}" name="{{ item.name }}" isHead="true" num="{{ item.value }}" rankNum="{{ item.rank?item.rank:'--' }}"></rankItem>
+    </view>
+</view>
+<view class="pointRank" wx:if="{{ bPointFlg }}">
+    <view class="rank-title">
+        <view class="label">周积分排行榜</view>
+        <view class="more" bindtap="toIntegralRank">
+            查看更多
+            <image src="{{ imgPath }}arrow.png" />
+        </view>
+    </view>
+    <view class="rank-body">
+        <rankItem wx:for="{{ aPointRankList }}" length="{{aPointRankList.length}}" index="{{index}}" wx:key="" isDetail="{{ true }}" isRank="{{ true }}" isMe="{{ index == 0 }}" gender="{{ item.gender }}" face="{{ item.face }}" name="{{ item.name }}" isHead="true" num="{{ item.value }}" rankNum="{{ item.rank?item.rank:'--' }}"></rankItem>
+    </view>
+</view>
+<view class="drawer_screen {{ hideBlack?'dis-none':'' }}" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
+    <view class="drawer_content">
+        <button class="drawer_title line" wx:if="{{ bShareGroupFlg }}" open-type="share">
+            邀请好友加入
+        </button>
+        <button class="drawer_title line" wx:if="{{ bEditGroupFlg }}" bindtap="toEdit">
+            编辑跑团信息
+        </button>
+        <button class="drawer_title line" wx:if="{{ bChildPermFlg }}" bindtap="toPermission">
+            子跑团权限
+        </button>
+        <button class="drawer_title line" wx:if="{{ bRunPointFlg }}" bindtap='toIntegral'>
+            积分设置
+        </button>
+        <button class="drawer_title line" wx:if="{{ bDisGroupFlg }}" bindtap='disband'>解散跑团</button>
+        <button class="drawer_title line" wx:if="{{ bQuitGroupFlg }}" bindtap='quit'>退出跑团</button>
+        <button class="drawer_title" data-statu="close" bindtap="powerDrawer">取消</button>
+    </view>
+</view>
+<returnhome bindtap="returnHome" wx:if="{{returnHome}}"></returnhome>

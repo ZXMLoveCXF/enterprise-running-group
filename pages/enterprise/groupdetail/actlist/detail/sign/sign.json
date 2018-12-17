@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "签到人员",
+  "usingComponents": {
+    "loading": "/pages/components/loading/loading"
+  }
+}

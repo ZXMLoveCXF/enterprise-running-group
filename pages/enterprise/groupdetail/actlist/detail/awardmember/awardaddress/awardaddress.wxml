@@ -1,0 +1,32 @@
+<!--pages/enterprise/groupdetail/actlist/detail/awardmember/awardaddress/awardaddress.wxml-->
+<view class="container" style="display:{{isLoading?'none':'block'}}">
+  <view class="award-container">
+    <view class='awardcontent'>{{dicData.prizeName}}</view>
+    <view class='awardcontent'>x1</view>
+  </view>
+  <view class='color-view'></view>
+  <form report-submit="true" bindsubmit="formSubmit">
+    <view class="box dis">
+      <view class="int sml">
+        <text>收货人：</text>
+        <input name="recName" disabled="{{isDisabled}}" data-statu="open" placeholder-class="phcolor" placeholder='请输入收货人' maxlength='10' placeholder-style='color:#c1c1c1' value="{{dicData.recName}}" />
+      </view>
+      <view class="int sml">
+        <text>手机号：</text>
+        <input name="recPhone" type="number" disabled="{{isDisabled}}" placeholder-class="phcolor" placeholder='请输入手机号' maxlength='11' placeholder-style='color:#c1c1c1' value="{{dicData.recPhone}}" />
+      </view>
+      <view class="text">
+        <text decode="{{true}}">地&nbsp;&nbsp;&nbsp;址：</text>
+        <textarea class='textarea' name="recAddress" disabled="{{isDisabled}}" placeholder-class="phcolor" placeholder='请输入地址' maxlength='255' placeholder-style='color:#c1c1c1' value="{{dicData.recAddress}}" />
+      </view>
+    </view>
+    <view class='color-view'></view>
+    <view class="box">
+      <view class="text">
+        <text decode="{{true}}">备&nbsp;&nbsp;&nbsp;注：</text>
+        <textarea class='textarea' name="recMark" disabled="{{isDisabled}}" placeholder-class="phcolor" placeholder="{{defaultMark}}" maxlength='255' placeholder-style='color:#c1c1c1' value="{{dicData.recMark}}" />
+      </view>
+    </view>
+    <button formType="submit" style="display:{{isDisabled?'none':'block'}}" class="btn" style='background-color:{{bgColor}};'>提交</button>
+  </form>
+</view>

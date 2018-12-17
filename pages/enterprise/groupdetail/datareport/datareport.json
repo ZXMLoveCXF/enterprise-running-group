@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "数据报告",
+    "enablePullDownRefresh": false,
+    "backgroundTextStyle": "white",
+    "usingComponents": {
+        "loading": "/pages/components/loading/loading",
+        "ec-canvas": "/pages/components/ec-canvas/ec-canvas",
+        "pop": "/pages/components/pop/pop",
+        "rankItem": "/pages/components/rankItem/rankItem",
+        "tabs":"/pages/components/tabs/tabs"
+    }
+}

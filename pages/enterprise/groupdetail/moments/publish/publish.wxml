@@ -1,0 +1,15 @@
+<!-- pages/enterprise/groupdetail/moments/publish/publish.wxml -->
+<loading id="loading"></loading>
+<form bindsubmit="send" report-submit="true">
+  <button form-type="submit" class="release-btn" style="color:{{bsend?fontColor:'#999999'}};background:#fff" disabled="{{!bsend}}">发布</button>
+</form>
+<textarea placeholder="这一刻的想法" class="textarea" bindinput="bindTextAreaBlur" maxlength="300"  auto-height="true"/>
+<view class="img-bar">
+  <view wx:for="{{ imgFilePaths }}" wx:key="" class="img-list">
+    <image src="{{item}}" class='add-img-btn' mode="scaleToFill" />
+    <image src="{{imgPath}}del_img.png" class="img-del" id="{{index}}" bindtap="delImg" />
+  </view>
+  <view class="img-list" wx:if="{{imgFilePaths.length<9}}">
+    <image src="{{imgPath}}addFaceImg.png" class="add-img-btn" bindtap='chooseImage' />
+  </view>
+</view>

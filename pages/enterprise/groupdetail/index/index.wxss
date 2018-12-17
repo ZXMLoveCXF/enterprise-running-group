@@ -1,0 +1,395 @@
+/* pages/enterprise/groupdetail/index/index.wxss */
+
+page {
+  background-color: #f6f7ff;
+  margin-bottom: 30rpx;
+}
+
+.rank-body-none {
+  color: #a9a9a9;
+  font-size: 28rpx;
+}
+
+.head-content .bg {
+  width: 100%;
+  height: 550rpx;
+}
+
+.head-content .detail {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 550rpx;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.head-content .detail .right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.head-content .detail .right .more {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 100rpx;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  border-radius: 80rpx;
+  color: #fff;
+  position: relative;
+  margin: 20rpx 0;
+}
+
+.head-content .detail .head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.head-content .detail .head .logoName {
+  text-align: center;
+}
+
+.head-content .detail .head .totalRun {
+  flex: 1;
+  position: relative;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 20rpx;
+}
+
+.head-content .detail .head .totalRun .title {
+  color: #fff;
+  font-weight: bold;
+  font-size: 32rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.head-content .detail .head .totalRun .totalRun-content .totalRun-num {
+  font-family: 'DIN Engschrift Std';
+  font-size: 70rpx;
+  font-weight: bold;
+  height: 60rpx;
+  background-image: -webkit-linear-gradient(top, #7085f2, #3851d0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.head-content .detail .head .totalRun .totalRun-content .totalRun-title {
+  font-size: 26rpx;
+}
+
+.head-content .detail .head .totalRun .totalRun-content .totalRun-title image {
+  width: 25rpx;
+  height: 20rpx;
+}
+
+.head-content .detail .head .face image {
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 30rpx;
+  border: 6rpx solid #595959;
+  box-sizing: border-box;
+}
+
+.head-content .data {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  top: 340rpx;
+  left: 0;
+}
+
+.head-content .data .item {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.head-content .data .item .num {
+  position: absolute;
+  color: #fff;
+  right: 50rpx;
+  top: -20rpx;
+  font-size: 26rpx;
+  text-align: center;
+  border-radius: 100%;
+}
+
+.head-content .data .item .num.point {
+  background-color: #c22525;
+  border-radius: 100%;
+  height: 10rpx;
+  width: 10rpx;
+  top: 0;
+}
+
+.head-content .data .item::before {
+  content: '|';
+  color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.head-content .data .item:nth-child(1)::before {
+  content: '|';
+  color: rgba(255, 255, 255, 0);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.head-content .data .item view {
+  color: #a9a9a9;
+  font-size: 26rpx;
+}
+
+.head-content .data .item image {
+  width: 46rpx;
+  height: 42rpx;
+}
+
+.chart, .runRank, .pointRank, .options, .punchList {
+  background-color: #fff;
+  width: 690rpx;
+  margin: 0 30rpx;
+  border-radius: 30rpx;
+  box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  z-index: 99;
+  position: relative;
+}
+
+.chart {
+  margin-top: -110rpx;
+}
+
+.options {
+  padding: 0;
+}
+
+.punchList, .runRank, .pointRank, .options {
+  margin-top: 30rpx;
+}
+
+.chart .head {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.chart .head .run, /* .chart .head .signIn, */
+.chart .head .speed {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.chart .head .signIn {
+  width: 300rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.chart .head .run .label, .chart .head .signIn .label,
+.chart .head .speed .label {
+  font-size: 28rpx;
+}
+
+.chart .head .signIn {
+  position: relative;
+}
+
+.chart .head .signIn .image {
+  position: relative;
+}
+
+.chart .head .signIn image {
+  width: 180rpx;
+}
+
+.chart .head .run .icon image, .chart .head .speed .icon image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.chart .head .run .num, .chart .head .speed .num {
+  font-family: 'DIN Engschrift Std';
+  font-size: 50rpx;
+  font-weight: bold;
+}
+
+.chart .head .signIn .num {
+  font-family: 'DIN Engschrift Std';
+  font-size: 54rpx;
+  font-weight: bold;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1995;
+}
+
+.chart .head .run .num text, .chart .head .signIn .num text {
+  font-size: 30rpx;
+}
+
+.punchList .rank-title, .runRank .rank-title, .pointRank .rank-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.punchList .rank-title .label, .runRank .rank-title .label,
+.pointRank .rank-title .label {
+  font-weight: bold;
+}
+
+.punchList .rank-title .more, .runRank .rank-title .more,
+.pointRank .rank-title .more {
+  color: #a9a9a9;
+  font-size: 28rpx;
+}
+
+.punchList .rank-title .more image, .runRank .rank-title .more image,
+.pointRank .rank-title .more image {
+  width: 10rpx;
+  height: 20rpx;
+  margin-left: 10rpx;
+}
+
+.runRank .rank-body, .pointRank .rank-body {
+  /* padding: 0 30rpx; */
+  box-sizing: border-box;
+}
+
+.punchList .rank-body {
+  padding: 0 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+}
+
+.punchList .rank-body .item {
+  width: 10%;
+  margin-left: 2.5%;
+}
+
+.punchList .rank-body .item.btm30 {
+  margin-bottom: 20rpx;
+}
+
+.punchList .rank-body .item:nth-child(1),
+.punchList .rank-body .item:nth-child(9) {
+  margin-left: 0;
+}
+
+.punchList .rank-body .item image {
+  width: 100%;
+}
+
+.punchImg {
+  border-radius: 100%;
+}
+
+.options .item {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  height: 120rpx;
+}
+
+.options .item .label {
+  color: #000;
+  line-height: 120rpx;
+  flex: 1;
+  font-weight: bold;
+}
+
+.options .item .icon {
+  line-height: 120rpx;
+}
+
+.options .item .icon image {
+  width: 10rpx;
+  height: 20rpx;
+}
+
+.lightLine {
+  width: 100%;
+  height: 1rpx;
+  background-color: #e6e6e6;
+}
+
+.lightLine.short {
+  width: 630rpx;
+  margin: 0 auto;
+}
+
+/*mask*/
+
+.drawer_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+}
+
+/*content*/
+
+.drawer_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1001;
+  background: #fff;
+}
+
+.drawer_content {
+  overflow-y: hidden;
+}
+
+.drawer_title {
+  padding: 30rpx;
+  font: 35rpx "microsoft yahei";
+  text-align: center;
+  border-radius: 0;
+  border-bottom: 1rpx solid #e7e7e7;
+}
+
+.drawer_title::after {
+  border: none;
+}
+
+.dis-none {
+  display: none !important;
+}

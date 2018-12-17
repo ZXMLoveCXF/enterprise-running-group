@@ -1,0 +1,167 @@
+<!-- pages/enterprise/groupdetail/datareport/datareport.wxml -->
+<loading id="loading"></loading>
+<view style="{{ (nSelectedKey == 0)?('background-image: -webkit-linear-gradient(-90deg, ' + bgColor + ', ' + bgColor + ', #fff);'):'background-color:#fff;'}}height:{{ height }}px;">
+  <tabs id="tabs" bFixed="{{ true }}" tabBgColor="{{ bgColor }}" bind:tabchange="onClick" activeFontSize="30" fontSize="30" activeFontWeight="bold" fontWeight="normal" showLine="{{ true }}" borderRadius="0" itemColor="{{bgColor}}" activeItemColor="{{bgColor}}"
+    tabHeight="66" tabs="{{ tabs }}" lineColor="#fff" lineWidth="40" activeFontColor="#fff" fontColor="rgba(255,255,255,.5)"></tabs>
+  <view class="tabPanel" hidden="{{index !== nSelectedKey}}" wx:for="{{ tabs }}" wx:for-item="tab" wx:key="">
+    <block wx:if="{{tab.content == 1}}">
+      <view class="data">
+        <view class="select">
+          <view class="selected" style="left:{{ nMove }}rpx;"></view>
+          <view wx:for="{{ aOptions }}" wx:key="" class="item" bindtap="onSwitch" data-title="{{ item.title }}" data-period="{{ item.period }}" data-key="{{item.id}}">
+            <view class="text {{ (currentId == index)?'white':'' }}">
+              {{ item.title }}
+            </view>
+          </view>
+        </view>
+        <view class="echart">
+          <ec-canvas id="mychart-dom-graph" canvas-id="mychart-graph" ec="{{ ec }}"></ec-canvas>
+        </view>
+        <view class="detail">
+          <view wx:for="{{ aCurArray }}" wx:key="" class="item">
+            <view class="label">{{ item.name }}</view>
+            <view class="data">{{ item.value }}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{tab.content == 2}}">
+      <view class="filter">
+        <view class="title">{{ sMemberPeriodTitle }}{{ sMemberStandardTitle }}排行榜</view>
+        <view class="icon" bindtap="showPopup">
+          筛选
+          <image src="{{ imgPath }}filter.png" />
+        </view>
+      </view>
+      <pop topDistance="168" locked="down" id="memberPop" animationMode="top" align="top">
+        <view class="pop_content">
+          <block wx:for="{{ filterOptions.member }}" wx:key="">
+            <view class="title">{{ item.title }}</view>
+            <view class="items">
+              <block wx:for="{{ item.options }}" wx:for-item="option" wx:key="">
+                <view wx:if="{{ option.key == 'point' }}" bindtap="choose" style="border:1rpx solid {{ (sMemberSexKey == option.key || sStandarKey == option.key || sMemberPeriodKey == option.key )?fontColor:'' }};color:{{ (sMemberSexKey == option.key || sMemberStandardKey == option.key || sMemberPeriodKey == option.key )?fontColor:'' }};display:{{ bPointOpenFlg?'':'none' }}"
+                  class="item {{ item.type }}" data-title="{{ option.name }}" data-key="{{ option.key }}" data-sign="{{ item.type }}">
+                  {{ option.name }}
+                </view>
+                <view wx:else bindtap="choose" style="border:1rpx solid {{ (sMemberSexKey == option.key || sStandarKey == option.key || sMemberPeriodKey == option.key )?fontColor:'' }};color:{{ (sMemberSexKey == option.key || sMemberStandardKey == option.key || sMemberPeriodKey == option.key )?fontColor:'' }}"
+                  class="item {{ item.type }}" data-title="{{ option.name }}" data-key="{{ option.key }}" data-sign="{{ item.type }}">
+                  {{ option.name }}
+                </view>
+              </block>
+
+            </view>
+          </block>
+          <view wx:if="{{ sMemberPeriodKey == 'customize' }}" class='btns'>
+            <view class='beginTime'>
+              <picker mode="date" value='{{ sMemberBeginTimeDate }}' style="border: 1rpx solid {{ sMemberBeginTimeDate?fontColor:''}};color: {{ sMemberBeginTimeDate?fontColor:''}};" class="btPicker" bindchange="bindBeginTimeChange">
+                <view>
+                  {{ sMemberBeginTimeDate?sMemberBeginTimeDate:'请选择' }}
+                  <image src="{{ sMemberBeginTimeDate?(templateUrl + 'date_deepBlue'):(imgPath + 'date_gray') }}.png"></image>
+                </view>
+              </picker>
+            </view>
+            <view class='middle'>至</view>
+            <view class='endTime'>
+              <picker mode="date" start="{{ sMemberLimitStartTime }}" value='{{ sMemberEndTimeDate }}' style="border: 1rpx solid {{ sMemberEndTimeDate?fontColor:''}};color: {{ sMemberEndTimeDate?fontColor:''}};" class="etPicker" bindchange="bindEndTimeChange">
+                <view>
+                  {{ sMemberEndTimeDate?sMemberEndTimeDate:'请选择' }}
+                  <image src="{{ sMemberEndTimeDate?(templateUrl + 'date_deepBlue'):(imgPath + 'date_gray') }}.png"></image>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <form report-submit="true" bindsubmit="allSubmit">
+            <button class="submit" style="background-color: {{ bgColor }}" form-type="submit">
+              确定
+            </button>
+          </form>
+        </view>
+      </pop>
+      <view class="rank-body">
+        <rankItem isDetail="{{ false }}" isRank="{{ true }}" isMe="{{ false }}" gender="{{ sMemberSex }}" face="{{ sMemberFace }}" name="{{ sMemberNickname }}" num="{{ sMemberResult }}" rankNum="{{ sMemberRank?sMemberRank:'--' }}"></rankItem>
+        <view style='height:20rpx;width:100%;background:#f5f5f5;'></view>
+        <rankItem wx:for="{{ aMemberList }}" wx:key="" isDetail="{{ false }}" isRank="{{ true }}" isMe="{{ (index + 1) == 0 }}" gender="{{ item.sex }}" face="{{ item.face }}" name="{{ item.nickname }}" num="{{ item.result }}" rankNum="{{ (index + 1) }}"></rankItem>
+        <view wx:if="{{ !bMemberIsNext && aMemberList.length > 0 }}" class="noMore">
+          没有更多成员数据
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{tab.content == 3}}">
+      <view class="filter">
+        <view class="title">{{ sChildPeriodTitle }}{{ sChildStandardTitle }}排行榜</view>
+        <view class="icon" bindtap="showPopup">
+          筛选
+          <image src="{{ imgPath }}filter.png" />
+        </view>
+      </view>
+      <pop topDistance="168" locked="down" id="childPop" animationMode="top" align="top">
+        <view class="pop_content">
+          <block wx:for="{{ filterOptions.child }}" wx:key="">
+            <view class="title">{{ item.title }}</view>
+            <view class="items">
+              <view bindtap="choose" wx:if="{{ !(!bPointOpenFlg && option.key == 'point') }}" style="border:1rpx solid {{ (sChildSexKey == option.key || sStandarKey == option.key || sChildPeriodKey == option.key )?fontColor:'' }};color:{{ (sChildSexKey == option.key || sChildStandardKey == option.key || sChildPeriodKey == option.key )?fontColor:'' }}"
+                wx:for="{{ item.options }}" wx:for-item="option" wx:key="" class="item child {{ item.type }}" data-title="{{ option.title }}" data-key="{{ option.key }}" data-sign="{{ item.type }}">
+                {{ option.name }}
+              </view>
+            </view>
+          </block>
+          <view wx:if="{{ sChildPeriodKey == 'customize' }}" class='btns'>
+            <view class='beginTime'>
+              <picker mode="date" value='{{ sChildBeginTimeDate }}' style="border: 1rpx solid {{ sChildBeginTimeDate?fontColor:''}};color: {{ sChildBeginTimeDate?fontColor:''}};" class="btPicker" bindchange="bindBeginTimeChange">
+                <view>
+                  {{ sChildBeginTimeDate?sChildBeginTimeDate:'请选择' }}
+                  <image src="{{ sChildBeginTimeDate?(templateUrl + 'date_deepBlue'):(imgPath + 'date_gray') }}.png"></image>
+                </view>
+              </picker>
+            </view>
+            <view class='middle'>至</view>
+            <view class='endTime'>
+              <picker mode="date" start="{{ sChildLimitStartTime }}" value='{{ sChildEndTimeDate }}' style="border: 1rpx solid {{ sChildEndTimeDate?fontColor:''}};color: {{ sChildEndTimeDate?fontColor:''}};" class="etPicker" bindchange="bindEndTimeChange">
+                <view>
+                  {{ sChildEndTimeDate?sChildEndTimeDate:'请选择' }}
+                  <image src="{{ sChildEndTimeDate?(templateUrl + 'date_deepBlue'):(imgPath + 'date_gray') }}.png"></image>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <form report-submit="true" bindsubmit="allSubmit">
+            <button class="submit" style="background-color: {{ bgColor }}" form-type="submit">
+              确定
+            </button>
+          </form>
+        </view>
+      </pop>
+      <view class="rank-body child">
+        <block wx:for="{{ aChildList }}" wx:key="">
+          <view class="infor">
+            <view class="face">
+              <image src="{{ item.logo }}" />
+            </view>
+            <view class="des">
+              <view class="titleNum">
+                <view class="title">{{ item.name }}</view>
+                <view wx:if="{{ sChildStandardTitle == '跑量' }}" class="num-none">{{ item.perRun }}</view>
+                 <view wx:if="{{ sChildStandardTitle == '积分' }}" class="num-none">{{ item.totalPoint}}<text style='font-size:20rpx'>积分</text></view>
+              </view>
+              <view class="runNum">
+                <image src="{{ imgPath }}active_men.png" /> {{ item.totalNum }} | 总跑量{{ item.totalRun }}
+              </view>
+              <view wx:if="{{ sChildStandardTitle == '跑量' }}" class="num">{{ item.perRun }}</view>
+              <view wx:if="{{ sChildStandardTitle == '积分' }}" class="num">{{ item.totalPoint }}<text style='font-size:20rpx'>积分</text></view>
+            </view>
+          </view>
+          <view class="lightLine"></view>
+        </block>
+        <view wx:if="{{ !bChildIsNext && aChildList.length > 0 }}" class="noMore">
+          没有更多数据
+        </view>
+        <view class="noGroup" wx:if="{{ aChildList.length == 0 }}">
+          <view>
+            <image src="{{ imgPath }}icon_none_team.png" />
+          </view>
+          暂无跑团数据
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

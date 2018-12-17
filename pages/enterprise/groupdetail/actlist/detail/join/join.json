@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "报名人员",
+  "usingComponents": {
+    "loading": "/pages/components/loading/loading"
+  }
+}

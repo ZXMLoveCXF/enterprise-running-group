@@ -1,0 +1,288 @@
+<!--pages/enterprise/groupdetail/actlist/detail/index/index.wxml-->
+<loading id="loading"></loading>
+<my-alert isshow="{{ showAlert }}" bind:alertClick="setShowAlert"></my-alert>
+<authorization isshow="{{ authFlg }}" bind:alertClick="AuthorCallback"></authorization>
+
+<view wx:if="{{ !loadFlag }}">
+
+  <view class="act-list">
+    <view class='act-img-box' style='height: 345rpx'>
+      <image class='cell-image' src="{{ obj.image }}"></image>
+      <text wx:if="{{ obj.status==1 }}" style='background-color: #5F73D2;'>未开始</text>
+      <text wx:if="{{ obj.status==2 }}" style='background-color: #F7C20B;'>进行中</text>
+      <text wx:if="{{ obj.status==3 }}" style='background-color: #A3A3A3;'>已结束</text>
+      <text wx:if="{{ obj.status==4 }}" style='background-color: #A3A3A3;'>已取消</text>
+      <text wx:if="{{ obj.status==5 }}" style='background-color: ##5F73D2;'>报名截止</text>
+      <text wx:if="{{ obj.status==6 }}" style='background-color: {{bgColor}};'>报名中</text>
+      <text wx:if="{{ obj.status==7 }}" style='background-color: #F7C20B;'>签到中</text>
+      <view class='cell-title'><view>{{obj.title}}</view></view>
+    </view>
+  </view>
+
+  <view class='act-list'>
+    <view class='act-img-box'>
+      <view class='time'>
+        <image class='tipimg' src="{{(templateUrl+'act_author.png')}}" mode='widthFix'></image>
+        <view>活动发起人</view>
+        <view class="usr-data">
+          <image src="{{ obj.face }}"></image>{{ obj.name }}</view>
+      </view>
+
+      <view class='time'>
+        <image class='tipimg' src="{{(templateUrl+'act_time.png')}}" mode='widthFix'></image>
+        <view>活动时间: {{ obj.activeTime }}</view>
+      </view>
+
+      <view class='time'>
+        <image class='tipimg' src="{{(templateUrl+'act_time.png')}}" mode='widthFix'></image>
+        <view>报名时间: {{ obj.entryTime }}</view>
+      </view>
+
+      <view class='location' bindtap='openLocation'>
+        <image class='tipimg' src="{{(templateUrl+'act_address.png')}}" mode='widthFix'></image>
+        <view>
+          <view>{{ obj.locationDesc?obj.locationDesc:'暂无数据' }}</view>
+          <view style='font-size: 24rpx;color:#a9a9a9'>{{ obj.locationName }}</view>
+          <view wx:if="{{ obj.locationRemark }}" style='font-size: 24rpx;color:#a9a9a9'>{{ obj.locationRemark }}</view>
+        </view>
+      </view>
+
+      <view class='time'>
+        <view class='flex1' bindtap='toUserCount'>
+          <view style='display: flex;align-items: center;'>
+            <image class='tipimg' src="{{(templateUrl+'act_people.png')}}" mode='widthFix'></image>
+            <view class='text'>{{ obj.quotaDesc }}</view>
+          </view>
+          <image class='rightPoint' mode='widthFix' src='/resources/images/arrow.png'></image>
+        </view>
+        <view style='padding-left:20rpx;'>|</view>
+        <view style='width:246rpx;padding-left:20rpx;display: flex;align-items: center;marign-right:0;justify-content: space-between;' bindtap='toUserSign'>
+          <view style='display: flex;align-items: center;'>
+            <image class='tipimg' src="{{(templateUrl+'act_sign.png')}}" mode='widthFix'></image>
+            <view class='text'>已签到 {{ obj.singinNum }}</view>
+          </view>
+          <image class='rightPoint' mode='widthFix' src='/resources/images/arrow.png'></image>
+        </view>
+        
+      </view>
+
+      <block wx:if='{{ prizeRuleId != "" }}'>
+        <view class='location' style='border-bottom: 1rpx solid rgba(0,0,0,0.0);'>
+          <image class='tipimg' src="{{(templateUrl+'act_award.png')}}" mode='widthFix'></image>
+          <view>
+            <view wx:for="{{ prizeJson }}" wx:key="">奖项{{index + 1}}：{{item.name}} x{{item.num}}</view>
+            <view style='font-size: 24rpx;color:#a9a9a9'>{{ lotteryTips }}</view>
+            <!-- <view>奖项1：袜子 x10</view>
+            <view>奖项1：袜子 x10</view>
+            <view style='font-size: 24rpx;color:#a9a9a9'>jdfhdjfg dsfhdsgfhjdsgfhjgdfhjgfgsfghjfdshjv  fdf</view> -->
+          </view>  
+        </view>
+      </block>
+
+      <block wx:if='{{ perm.createPermFlg == 1 && runLotteryFlg == 1 }}'>
+        <view class='time' style='border-bottom: 1rpx solid rgba(0,0,0,0.0);border-top: 1rpx solid #e7e7e7;' bindtap='toWinners'>
+          <image class='tipimg' src="{{(templateUrl+'act_award.png')}}" mode='widthFix'></image>
+          <view style='flex:1'>查看中奖者信息</view>
+          <view>{{ obj.hadReceiveNum }}/{{ obj.hadLotteryNum }}</view>
+          <image class='rightPoint' mode='widthFix' src='/resources/images/arrow.png'></image>
+        </view>
+      </block>
+
+      <block wx:if='{{ perm.createPermFlg == 1 && prizeRuleId != "" && runLotteryFlg == 0 && ruleType == 2 && isHand == 0 }}'>
+        <view style='padding-bottom:30rpx;'><view class='awardbtn' style='color:{{fontColor}}' bindtap='onWin'>开始抽奖</view></view>
+      </block>
+      <block wx:elif="{{prizeRuleId != ''}}">
+        <view wx:if='{{ runLotteryFlg == 0 }}'  style='padding-bottom:30rpx;'><view class='awardbtn'>等待开奖</view></view>
+        <view wx:else style='padding-bottom:30rpx;'><view class='awardbtn' style='color:{{fontColor}}' bindtap='toAwardmember'>查看中奖名单</view></view>
+      </block>
+
+    </view>
+  </view>
+
+  <view class='thickLine'></view>
+
+  <view class="act-list">
+    <view class='act-img-box'>
+      <view class="{{ bIsFixed?'navbar fixed':'navbar' }}">
+        <view class="inner">
+          <block wx:for="{{navData}}" wx:for-item="nav" wx:key="">
+            <view data-index="{{index}}" bindtap="switchNavData" class="nav">
+              <view style="{{nav.active ? ('color: '+fontColor+';font-size: 30rpx;font-weight: 600;') : ''}}">{{nav.title}}</view>
+              <view wx:if="{{ nav.active }}" class='underLine' style='background-color:{{bgColor}}'></view>
+            </view>
+          </block>
+        </view>
+      </view>
+
+      <view class='content' style=" {{ bIsFixed?'margin-top:150rpx;padding-top:30rpx;':'margin-top:26rpx' }}">
+        <block wx:if="{{curNavIndex==0}}">
+          <!-- <view wx:if="{{ obj.isHtml == 0 }}" class='actDetail'> -->
+          <view class='actDetail'>
+            <view wx:if="{{ (!obj.content || obj.content.length==0) && (!imgList||imgList.length==0) }}" style='text-align:center;line-height:160rpx;color:#d0d0d0'>
+              暂无活动详情
+            </view>
+
+            <view class='contentview'><text>{{ obj.content }}</text></view>
+            <view class='detailImg'>
+              <block wx:for="{{ imgList }}" wx:key="">
+                <image mode='widthFix' data-id='{{ item.id }}' src='{{ item.url }}'></image>
+              </block>
+            </view>
+          </view>
+        </block>
+
+        <block wx:if="{{curNavIndex==1}}">
+          <view class='actDetail'>
+            <view wx:if="{{ !coach || coach == 'undefined' || coach.length == 0}}" style='text-align:center;line-height:160rpx;color:#d0d0d0'>
+            暂无活动教练
+            </view>
+            <block wx:for="{{ coach }}" wx:key="">
+              <view class='contentview' style='font-weight:bold;padding-bottom:10rpx;'>{{ item.name }}</view>
+              <view class='contentview'><text>{{ item.content }}</text></view>
+              <view class='detailImg'>
+                <image mode='widthFix' src='{{ item.img }}'></image>
+              </view>
+              <view wx:if='{{index!=coach.length-1}}' class='coachsepline'></view>
+            </block>
+          </view>
+        </block>
+
+        <block wx:if="{{curNavIndex==2}}">
+          <view bindtap="chooseImage" wx:if="{{ uploadedImgs.length == 0 && obj.status != 4 }}" style='text-align:center'>
+            <image style='width:100rpx;height:100rpx' src='/resources/images/addImg.png'></image>
+            <view style='margin-top:20rpx;color:#d0d0d0'>暂无相片,点击上传</view>
+          </view>
+          <view wx:if="{{ uploadedImgs.length == 0 && obj.status == 4 }}" style='text-align:center;line-height:160rpx;color:#d0d0d0'>
+            暂无活动相册
+          </view>
+          <view wx:if="{{ uploadedImgs.length > 0 }}" class='photoAlbum'>
+            <view class='addImg'>
+              <view class='img' wx:if="{{isShowAddImg && obj.status != 4 }}">
+                <image bindtap="chooseImage" mode='aspectFill' src='' src="/resources/images/addImage.png"></image>
+                <view class='icon-del'></view>
+              </view>
+              <block wx:for="{{ uploadedImgs }}" wx:for-item="image" wx:for-index='idx'>
+                <view class='img' data-sign="del">
+                  <image src="{{ image.imgUrl + suffix }}" data-imgid='{{ image.id }}' data-id="{{idx}}" data-src="{{image.imgUrl}}" bindtap="previewImage" mode='aspectFill'></image>
+                  <view wx:if="{{ perm.createPermFlg == 1 }}" data-imgid='{{ image.id }}' class='icon-del' bindtap='delImg' data-delid='{{idx}}'></view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+  
+
+  <view wx:if="{{ (perm.createPermFlg ||perm.editPermFlg) && actSinginFlg == -1 && (obj.status == 6 || obj.status == 1)}}" class='act-tag' style='box-shadow: 0rpx 0rpx 10rpx rgba(0,0,0,0.12);'>
+    <image src="{{(templateUrl+'act_edit.png')}}" bindtap='editAct'></image>
+  </view>
+  <view wx:elif="{{perm.delPermFlg&&obj.status!=3}}" class='act-tag' style='box-shadow: 0rpx 0rpx 10rpx rgba(0,0,0,0.12);'>
+    <image src="{{(templateUrl+'act_delete.png')}}" bindtap='deleteAct'></image>
+  </view>
+  
+  
+  <view style='height:148rpx;'></view>
+  <view class='inviteJoin' wx:if="{{ !authFlg && obj.status != 4 }}" style='z-index:19960313;'>
+    <button open-type="getUserInfo" class="noForward" bindgetuserinfo="getWxUser">报名参加
+      <text style='font-size:25rpx' wx:if="{{ joinBtnTips }}">{{ joinBtnTips }}</text>
+    </button>
+  </view>
+  <view class='inviteJoin' wx:if="{{ obj.status != 4 }}">
+    <view bindtap='powerDrawer' data-statu="open" class='invite' wx:if="{{ shareBtnStatus == 1 }}" style='color:{{fontColor}}'>
+      <image style='margin-right:10rpx;' src="{{(templateUrl+'act_share.png')}}"></image>
+      <text>邀请报名</text>
+    </view>
+    <form wx:if="{{ joinBtnStatus == 1 && authFlg }}" report-submit="true" class="noForward" style='background-color: {{bgColor}} !important;' bindsubmit="wannerJoin">
+      <button formType="submit">
+        报名参加
+        <text style='font-size:25rpx' wx:if="{{ joinBtnTips }}">{{ joinBtnTips }}</text>
+      </button>
+    </form>
+    <form wx:if="{{ joinBtnStatus == 2 }}" report-submit="true" class="noForward btn-color-gray" bindsubmit="wannerJoin">
+      <button formType="submit">
+        报名人数已满
+        <text style='font-size:25rpx' wx:if="{{ joinBtnTips }}">{{ joinBtnTips }}</text>
+      </button>
+    </form>
+    <form wx:if="{{ joinBtnStatus == 3 }}" report-submit="true" class="noForward btn-color-gray" bindsubmit="wannerJoin">
+      <button formType="submit">
+        报名已截止
+        <text style='font-size:25rpx' wx:if="{{ joinBtnTips }}">{{ joinBtnTips }}</text>
+      </button>
+    </form>
+    <form wx:if="{{ joinBtnStatus == 4 }}" report-submit="true" class="noForward" style='background-color: {{bgColor}} !important;' bindsubmit="wannerJoin">
+      <button formType="submit">
+        取消报名
+        <text style='font-size:25rpx' wx:if="{{ joinBtnTips }}">{{ joinBtnTips }}</text>
+      </button>
+    </form>
+    <form wx:if="{{ joinBtnStatus == 5 }}" report-submit="true" class="noForward" style='background-color: {{bgColor}} !important;' bindsubmit="wannerJoin">
+      <button formType="submit">
+        签到
+        <text style='font-size:25rpx' wx:if="{{ joinBtnTips }}">{{ joinBtnTips }}</text>
+      </button>
+    </form>
+    <form wx:if="{{ joinBtnStatus == 6 }}" report-submit="true" class="noForward btn-color-gray" bindsubmit="wannerJoin">
+      <button formType="submit">
+        活动已结束
+        <text style='font-size:25rpx' wx:if="{{ joinBtnTips }}">{{ joinBtnTips }}</text>
+      </button>
+    </form>
+    <form wx:if="{{ joinBtnStatus == 7 }}" report-submit="true" class="noForward" style='background-color: {{bgColor}} !important;' bindsubmit="wannerJoin">
+      <button formType="submit">
+        审核中/取消报名
+        <text style='font-size:25rpx' wx:if="{{ joinBtnTips }}">{{ joinBtnTips }}</text>
+      </button>
+    </form>
+    <form wx:if="{{ joinBtnStatus == 8 }}" report-submit="true" class="noForward" style='background-color: {{bgColor}} !important;' bindsubmit="wannerJoin">
+      <button formType="submit">
+        审核中
+        <text style='font-size:25rpx' wx:if="{{ joinBtnTips }}">{{ joinBtnTips }}</text>
+      </button>
+    </form>
+    <form wx:if="{{ joinBtnStatus == 9 }}" report-submit="true" class="noForward" style='background-color: {{bgColor}} !important;' bindsubmit="wannerJoin">
+      <button formType="submit">
+        报名成功
+        <text style='font-size:25rpx' wx:if="{{ joinBtnTips }}">{{ joinBtnTips }}</text>
+      </button>
+    </form>
+    <form wx:if="{{ joinBtnStatus == 10 }}" report-submit="true" class="noForward btn-color-red" bindsubmit="wannerJoin">
+      <button formType="submit">
+        审核未通过
+        <text style='font-size:25rpx' wx:if="{{ joinBtnTips }}">{{ joinBtnTips }}</text>
+      </button>
+    </form>
+    <form wx:if="{{ joinBtnStatus == 11 }}" report-submit="true" class="noForward" style='background-color: {{bgColor}} !important;' bindsubmit="wannerJoin">
+      <button formType="submit">
+        已签到
+        <text style='font-size:25rpx' wx:if="{{ joinBtnTips }}">{{ joinBtnTips }}</text>
+      </button>
+    </form>
+    <form wx:if="{{ joinBtnStatus == 12 }}" report-submit="true" class="noForward btn-color-gray" bindsubmit="wannerJoin">
+      <button formType="submit">
+        报名未开始
+        <text style='font-size:25rpx' wx:if="{{ joinBtnTips }}">{{ joinBtnTips }}</text>
+      </button>
+    </form>
+  </view>
+</view>
+
+
+
+
+<!--mask-->
+<view class="drawer_screen {{ hideBlack?'dis-none':'' }}" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
+  <!--drawer content-->
+  <view class="drawer_content">
+    <button class="drawer_title line" open-type="share">邀请微信好友</button>
+    <button class="drawer_title line" wx:if="{{ authFlg }}" bindtap="toShare">生成分享图片</button>
+    <button class="drawer_title line" wx:if="{{ !authFlg }}" open-type="getUserInfo" bindgetuserinfo="getWxUserJoin">生成分享图片</button>
+    <button class="drawer_title line" bindtap="toCode">生成该活动小程序码</button>
+    <!-- <button class="drawer_title line" bindtap='toAccounts'>嵌入到公众号文章</button> -->
+    <button class="drawer_title" data-statu="close" bindtap="powerDrawer">取消</button>
+  </view>
+</view>
+<returnhome bindtap="returnHome" wx:if="{{returnHome}}"></returnhome>

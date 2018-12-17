@@ -1,0 +1,20 @@
+<!-- pages/enterprise/groupdetail/actlist/index/index.wxml -->
+<block wx:for='{{dataList}}' wx:for-item='detailData' wx:key="">
+  <actitem activity="{{detailData}}" bind:jump="jumpToDetail"></actitem>
+</block>
+<block wx:if='{{dataList.length<=0}}'>
+  <view class="empty-content" style="margin-top:{{500/2}}rpx">
+    <image src="/resources/images/icon_none_team.png"></image>
+    <view>
+      <view style='color:#c1c1c1'>
+        <text>还没有活动哦
+      发布活动约起来吧！</text>
+      </view>
+    </view>
+  </view>
+</block>
+<view style='height: 118rpx;'></view>
+<view wx:if="{{ createPermFlg }}" class='pubbtn' style='background:{{bgColor}}' bindtap='goPublish'>
+  <image src='/resources/images/active_fbhd.png'></image>
+  发布活动
+</view>

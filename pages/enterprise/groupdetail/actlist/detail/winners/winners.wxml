@@ -1,0 +1,45 @@
+<!--pages/enterprise/groupdetail/actlist/detail/winners/winners.wxml-->
+<authorization isshow="{{ authFlg }}" bind:alertClick="AuthorCallback"></authorization>
+
+<view class='nav'>
+  <view>已领取人数：{{ hadReceiveNum }}</view>
+  <view>总中奖人数：{{ hadLotteryNum }}</view>
+</view>
+
+<view class='box'>
+  <block wx:if='{{ isShow }}'>
+    <block wx:if='{{ list.length > 0 }}'>
+      <view wx:key="" wx:for='{{ list }}' class='item {{ sceneFlg == 1 ? "scene" : "" }}'>
+        <view class='winner'>
+          <image class='{{ item.gender == 2 ? "girl":"" }}' src='{{ item.face }}'></image>
+          <view class='name'>
+            <view>{{ item.name }}</view>
+            <view>{{ item.prizeName }}</view>
+          </view>
+          <view wx:if='{{ sceneFlg == 1 }}' class='type' style='{{item.receiveFlg==0?("color: "+fontColor):""}}'>
+            {{ item.receiveFlg == 1 ? '已领' : '未领' }}
+          </view>
+        </view>
+        <block wx:if='{{ sceneFlg == 0 }}'>
+          <view wx:if='{{ item.recName }}' class='info'>
+            {{ item.recName }}，{{ item.recPhone }}，{{ item.recAddress }}{{ item.recMark ? '，' + item.recMark : '' }}
+          </view>
+          <view wx:else class='info none'>
+            未填写
+          </view>
+        </block>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="content" style="margin-top:{{scrollHeight/2}}rpx">
+        <view>
+          <image mode='widthFix' src="/resources/images/icon_none_team.png"></image>
+        </view>
+        <view>
+          <view>无人中奖</view>
+        </view>
+      </view>
+    </block>
+  </block>
+</view>
+<view class='export' bindtap='export_e' wx:if="{{ exportFlg == 1 }}" style='background-color: {{bgColor}};'>导出得奖名单</view>

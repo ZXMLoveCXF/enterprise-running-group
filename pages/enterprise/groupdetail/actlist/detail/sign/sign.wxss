@@ -1,0 +1,103 @@
+/* pages/enterprise/groupdetail/actlist/detail/sign/sign.wxss */
+.navbar {
+  overflow: hidden;
+  position: fixed;
+  z-index: 999;
+  width: 750rpx;
+  background-color: #fff;
+}
+
+.navbar .inner {
+  display: flex;
+  height: 88rpx;
+}
+
+.box {
+  padding-top: 110rpx;
+}
+
+.box .item {
+  margin-left: 30rpx;
+  padding: 30rpx 30rpx 30rpx 0;
+  border-bottom: 1rpx solid #f1f1f1;
+  display: flex;
+  align-items: center;
+}
+
+.box .item image {
+  width: 100rpx;
+  height: 100rpx;
+  border: 4rpx solid #4db0f4;
+  border-radius: 50%;
+}
+
+.box .item image.girl {
+  border: 4rpx solid #fc7d92;
+}
+
+.box .item view {
+  flex: 1;
+  padding-left: 20rpx;
+}
+
+.box .item text {
+  color: #aaa;
+}
+
+.content {
+  width: 550rpx;
+  margin: 100rpx;
+  text-align: center;
+}
+
+.content image {
+  width: 90rpx;
+  padding-bottom: 20rpx;
+}
+
+.content view view {
+  color: #c2c2c2;
+  line-height: 60rpx;
+}
+
+.loadstatus {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #888;
+  padding: 15rpx 0;
+}
+
+.loadstatus icon {
+  vertical-align: middle;
+  height: 44rpx;
+}
+
+button::after {
+  border: none;
+}
+
+.navbar .inner .nav {
+  flex: 1;
+  height: 96rpx;
+  text-align: center;
+  color: #c1c1c1;
+  position: relative
+}
+
+.navbar .inner .nav .underLine {
+  height: 5rpx;
+  width: 90rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+.navbar .inner .nav text {
+  display: inline-block;
+  height: 82rpx;
+  line-height: 82rpx;
+}

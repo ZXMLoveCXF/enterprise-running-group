@@ -1,0 +1,116 @@
+/* pages/enterprise/groupdetail/moments/index/index.wxss */
+.dynamic-list{
+    display: flex;
+    justify-content: space-around;
+    padding: 36rpx 30rpx;
+}
+page{
+    padding-bottom: 118rpx;
+}
+.dynamic-list .head-img image{
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 100%;
+    margin-right: 20rpx;
+}
+.list-right{
+    padding-left: 20rpx;
+    display: flex;
+    flex-direction: column;
+    flex: 1
+}
+.list-right .list-name{
+    color: #797DA1;
+    font-size: 30rpx;
+
+}
+.list-text{
+    font-size: 30rpx;
+    margin-top: 16rpx;
+    display: block;
+    word-break: break-all;
+}
+.list-img image{
+    margin-top: 12rpx;
+    background: #fff;
+}
+
+.list-img .img-one{
+    width: 332rpx;
+    display: block;
+}
+.list-img .img{
+    width: 156rpx;
+    height: 156rpx;
+    display: inline-block;
+    margin-right: 20rpx;
+}
+.img:nth-child(3n){
+    margin-right: 0;
+}
+.list-bottom{
+    display: flex;
+    justify-content: space-between;
+    font-size: 24rpx;
+    align-content: center;
+    margin-top: 20rpx;
+}
+.list-date{
+    color:#A9A9A9;
+    margin-right: 10rpx;
+}
+.list-praise{
+    display: flex;
+}
+.list-praise image{
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+}
+.list-praise view{
+    color: #aaa
+}
+.release-btn{
+    position: fixed;
+    width: 750rpx;
+    height: 118rpx;
+    line-height: 118rpx;
+    border-radius: 0;
+    bottom: 0;
+    text-align: center;
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #fff;
+    opacity: .94;
+}
+.release-btn text{
+    vertical-align: middle;
+}
+.btn-img{
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 10rpx;
+    vertical-align: middle;
+}
+.list-left{
+    display: flex;
+}
+.no-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200rpx;
+}
+.no-content image{
+    width: 90rpx;
+    height: 90rpx;
+    margin-bottom: 28rpx;
+}
+.no-content text{
+    color: #A9A9A9;
+    font-size: 30rpx;
+}
+.pheight{
+    padding-top: 100rpx;
+}

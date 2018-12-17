@@ -1,0 +1,49 @@
+<!--pages/enterprise/groupdetail/actlist/detail/join/join.wxml-->
+<loading id="loading"></loading>
+
+<view class='userList' wx:if="{{ totalUserCnt != 0 }}">
+  <block wx:for="{{ aMemerList }}" wx:key="">
+    <view class='user' bindtap='toDetail' data-id="{{ item.memberId }}" data-checkFlg="{{ item.checkFlg }}">
+      <view class="face">
+        <image class="{{ (item.gender == 2)?'female':'male' }}" src='{{ item.face }}'></image>
+      </view>
+      <view class='name'>
+        <view>
+          {{ item.name }}
+        </view>
+        <view style='color:#ababab'>
+          {{ item.joinDate }}
+        </view>
+      </view>
+      <view class='time' hidden='{{!createFlg}}'>
+        <view wx:if="{{ entryCheckFlg == 1 && item.checkFlg == 1 }}" style='color: {{fontColor}};'>
+          已通过
+        </view>
+        <view class='text-red' wx:if="{{ entryCheckFlg == 1 && item.checkFlg == -1 }}">
+          已拒绝
+        </view>
+        <view wx:if="{{ entryCheckFlg == 1 && item.checkFlg == 2 }}">
+          已过期
+        </view>
+        <view wx:if="{{ entryCheckFlg == 1 && item.checkFlg == 0 }}" class='time-btn' style='background-color: {{bgColor}};'>
+          审核
+        </view>
+        <view style='margin-top:-5rpx;'>
+          <image mode='widthFix' src='/resources/images/icon_More.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='line'></view>
+  </block>
+</view>
+<view class='export' bindtap='export_e' wx:if="{{ exportFlg == 1 && createFlg}}" style='background-color:{{bgColor}};'>导出报名表格</view>
+
+
+<view wx:if="{{ totalUserCnt == 0 }}" class="content" style="margin-top:{{scrollHeight/2}}rpx">
+  <view>
+    <image mode='widthFix' src="/resources/images/icon_none_team.png"></image>
+  </view>
+  <view>
+    <view>暂无报名人员</view>
+  </view>
+</view>

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "活动详情",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "loading": "/pages/components/loading/loading",
+    "my-alert": "/pages/components/my-alert/my-alert",
+    "authorization": "/pages/components/authorization/authorization",
+    "returnhome":"/pages/components/returnHome/returnHome"
+  }
+}

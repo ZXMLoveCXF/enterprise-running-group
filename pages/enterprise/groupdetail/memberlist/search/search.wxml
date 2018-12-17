@@ -1,0 +1,19 @@
+<!--pages/enterprise/groupdetail/memberlist/search/search.wxml-->
+<loading id="loading"></loading>
+<view class="search">
+    <view class="toSearch">
+        <image src="{{ imgPath }}search.png" />
+        <input bindconfirm="confirm" confirm-type="search" focus="true" placeholder-style="color:#c1c1c1" placeholder="输入名称搜索" />
+    </view>
+    <view class="cancel" bindtap="cancel" style="color:{{ fontColor }}">取消</view>
+</view>
+<view class="groupList">
+    <rankItem wx:for="{{ aMemberList }}" bind:toInformation="toInformation" wx:key="" isDetail="{{ false }}" isRank="{{ false }}" isMe="{{ false }}" memberId="{{ item.memberId }}" gender="{{ item.gender }}" face="{{ item.face }}" name="{{ item.name }}" num="{{ item.value }}" rankNum="{{ item.rank }}"></rankItem>
+    <view class="noGroup" wx:if="{{ aMemberList.length == 0 }}">
+        <view class="img">
+            <image mode="widthFix" src="{{ imgPath }}icon_none_team.png" />
+        </view>
+        <view class="text">没有发现任何跑团成员</view>
+    </view>
+</view>
+<view wx:if="{{ !isMore && aMemberList.length > 0 }}" class="noMore">没有更多跑团成员</view>

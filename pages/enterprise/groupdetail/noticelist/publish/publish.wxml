@@ -1,0 +1,5 @@
+<!-- pages/enterprise/groupdetail/noticelist/publish/publish.wxml -->
+<form report-submit="true" bindsubmit="publish">
+    <textarea placeholder="请输入公告" placeholder-style="color:#c1c1c1" name="content" class="notice"></textarea>
+    <button disabled="{{ bSending }}" form-type="submit" style="background-color:{{ bgColor }}">发布公告</button>
+</form>

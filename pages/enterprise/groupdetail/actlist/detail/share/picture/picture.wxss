@@ -1,0 +1,8 @@
+/* pages/enterprise/groupdetail/actlist/detail/share/picture/picture.wxss */
+.can-box{padding:0 5px;background-color:#fff;}
+.btn-box{width:750rpx;background-color:#fff;height:80rpx;}
+.btn-box .btn{color:#fff;text-align:center;margin:0 30rpx;height:40px;border-radius:40px;line-height:40px;font-size:30rpx;margin-top:5px;}
+button{margin:0;padding:0}
+.page{
+  overflow: hidden
+}

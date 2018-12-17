@@ -1,0 +1,34 @@
+<!-- pages/enterprise/groupdetail/integral/integral.wxml -->
+<form report-submit="true" bindsubmit="save">
+    <view class="single">
+        <view class="title">跑团独立积分设置: {{ bIntegral?'已设置':'未设置' }}</view>
+        <view class="switch">
+            <switch checked="{{ bIntegral }}" bindchange="setSwitch" color="{{ bgColor }}" />
+        </view>
+    </view>
+    <view class='container'>
+        <view class='label'>积分汇率</view>
+        <view class='lightLine'></view>
+        <view class='input'>
+            <view class='quantity'>1KM=</view>
+            <input disabled="{{ !bIntegral }}" type='number' name="km" value="{{ sKm }}"></input>
+            <view class='unit'>积分</view>
+        </view>
+    </view>
+    <view class='thickLine'></view>
+    <view class='container'>
+        <view class='label' style='margin-top:30rpx;'>每日系数</view>
+        <view class='content'>
+            <block wx:for="{{ aWeek }}" wx:key="">
+                <view class='input'>
+                    <view class='quantity'>{{ item.text }}</view>
+                    <input disabled="{{ !bIntegral }}" name="{{ item.text }}" data-day="{{ item.day }}" type='digit' bindinput="input" value="{{ item.ratio }}"></input>
+                    <view class='unit'>倍</view>
+                </view>
+                <view wx:if="{{ index != (aWeek.length - 1)}}" class='whiteLine'></view>
+            </block>
+        </view>
+    </view>
+    <view class='rule'>计算规则:每日积分=每日跑量*当日汇率*当日系数</view>
+    <button formType="submit" class='save'>保存设置</button>
+</form>

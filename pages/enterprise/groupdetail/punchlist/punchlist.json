@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "打卡列表",
+    "navigationBarBackgroundColor":"#fff",
+    "enablePullDownRefresh": false,
+    "backgroundTextStyle": "white",
+    "usingComponents": {
+        "loading": "/pages/components/loading/loading",
+        "rankItem": "/pages/components/rankItem/rankItem"
+    }
+}

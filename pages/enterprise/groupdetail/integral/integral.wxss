@@ -1,0 +1,126 @@
+/* pages/enterprise/groupdetail/integral/integral.wxss */
+page {
+    font-size: 28rpx;
+}
+
+.single {
+    display: flex;
+    justify-content: space-between;
+    height: 80rpx;
+    line-height: 80rpx;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    margin-bottom: 30rpx
+}
+
+.single .title {
+    flex: 1;
+    color: #c2c2c2;
+    text-align: left
+}
+
+.single .switch {
+    text-align: right
+}
+
+.single .switch switch {
+    zoom: .8
+}
+
+.container {
+    width: 100%;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+}
+
+.label {
+    font-weight: bold;
+    margin-bottom: 30rpx;
+}
+
+.lightLine {
+    background-color: #f1f1f1;
+    height: 1rpx;
+    width: 100%;
+}
+
+.thickLine {
+    background-color: #f1f1f1;
+    height: 20rpx;
+    width: 100%;
+}
+
+.whiteLine {
+    background-color: #fff;
+    height: 2rpx;
+    width: 100%;
+}
+
+.content {
+    background-color: #f9f9f9;
+    padding: 1rpx 0;
+    box-sizing: border-box;
+}
+
+.input {
+    display: flex;
+    justify-content: space-between;
+    margin: 20rpx 0;
+}
+
+.input .quantity,
+.input .unit {
+    flex: 1;
+    line-height: 60rpx;
+}
+
+.input .quantity {
+    text-align: right;
+    margin-right: 10rpx;
+}
+
+.input .unit {
+    text-align: left;
+    margin-left: 10rpx;
+}
+
+.input input {
+    display: inline-block;
+    border: 1rpx solid #f1f1f1;
+    height: 60rpx;
+    text-align: center;
+    background-color: #f9f9f9;
+    font-weight: bold;
+    width: 300rpx;
+}
+
+.content input {
+    background-color: #fff;
+}
+
+.rule {
+    text-align: center;
+    color: #7a7a7a;
+    font-size: 26rpx;
+    margin-top: 20rpx;
+    padding-bottom: 120rpx
+}
+
+.save {
+    background-color: #4cb0f4;
+    color: #fff;
+    line-height: 100rpx;
+    text-align: center;
+    border: none;
+    border-radius: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 30rpx;
+    z-index: 1995;
+}
+
+.save::after {
+    border: none;
+}

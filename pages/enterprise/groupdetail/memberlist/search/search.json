@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "搜索跑团成员",
+    "enablePullDownRefresh": false,
+    "backgroundTextStyle": "white",
+    "usingComponents": {
+        "rankItem": "/pages/components/rankItem/rankItem",
+        "loading": "/pages/components/loading/loading"
+    }
+}

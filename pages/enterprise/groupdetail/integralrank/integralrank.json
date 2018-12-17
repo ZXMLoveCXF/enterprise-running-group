@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "周积分排行榜",
+    "navigationBarBackgroundColor":"#fff",
+    "enablePullDownRefresh": false,
+    "backgroundTextStyle": "white",
+    "usingComponents": {
+      "loading": "/pages/components/loading/loading",
+      "groupMini": "/pages/components/groupMini/groupMini"
+    }
+  }

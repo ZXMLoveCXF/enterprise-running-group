@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "中奖者信息",
+  "usingComponents": {
+    "authorization": "/pages/components/authorization/authorization"
+  }
+}

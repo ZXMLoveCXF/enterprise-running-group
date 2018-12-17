@@ -1,0 +1,59 @@
+/* pages/enterprise/groupdetail/punchlist/punchlist.wxss */
+.sign{
+    width: 690rpx;
+    left: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+}
+.sign .SignNum{
+    height: 80rpx;
+    flex: 1;
+    position: relative;
+    line-height: 80rpx;
+    color: #000;
+    box-sizing: border-box;
+}
+
+.sign .choose{
+    line-height: 80rpx;
+    width: 100rpx;
+}
+.sign .choose image{
+    width: 30rpx;
+    height: 30rpx;
+    vertical-align: middle
+}
+.container{
+    margin-top: 90rpx;
+    border-top: 1rpx solid #e6e6e6
+}
+.lightLine {
+    height: 1rpx;
+    width: 100%;
+    background-color: #f1f1f1
+}
+
+.noMore{
+    text-align: center;
+    color: #c1c1c1;
+    width: 100%;
+    margin: 20rpx 0;
+    font-size: 26rpx;
+}
+.none-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30rpx;
+    color: #A9A9A9;
+    margin-top: 300rpx;
+}
+.none-box image{
+    width: 90rpx;
+    height: 90rpx;
+    margin-bottom: 28rpx;
+}

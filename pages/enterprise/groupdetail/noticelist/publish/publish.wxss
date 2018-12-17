@@ -1,0 +1,17 @@
+/* pages/enterprise/groupdetail/noticelist/publish/publish.wxss */
+page{
+    padding: 0 30rpx;
+    box-sizing: border-box;
+}
+textarea{
+    padding: 30rpx;
+    border: 1rpx solid #f1f1f1;
+    width: 100%;
+    box-sizing: border-box
+}
+button{
+    border-radius: 100rpx;
+    margin-top: 30rpx;
+    color: #fff;
+    font-size: 30rpx
+}   

@@ -1,0 +1,26 @@
+/* pages/enterprise/groupdetail/actlist/detail/cancel/cancel.wxss */
+.cancel{
+  text-align: center;
+  margin-top: 20vh;
+}
+.cancel image{
+  width: 90rpx;
+  height: 90rpx;
+}
+.cancel .text{
+  margin-top: 50rpx;
+  color: #aaa;
+  font-size: 30rpx;
+}
+.btn{
+  margin: 0 auto;
+  margin-top: 100rpx;
+  border-radius: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 33rpx;
+  width: 60%;
+  border:none;
+  color: #fff;
+  height: 100rpx
+}

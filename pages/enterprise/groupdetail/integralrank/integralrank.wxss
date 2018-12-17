@@ -1,0 +1,287 @@
+/* pages/enterprise/groupdetail/integralrank/integralrank.wxss */
+.navbar {
+    z-index: 999;
+    width: 100%;
+    background-color: #fff;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0rpx;
+    display: flex;
+    padding: 0 30rpx 20rpx 30rpx;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-bottom: 1rpx solid #f1f1f1;
+  }
+  
+  .navbar .navbar-pull {
+    color: #8f8f8f;
+  }
+  
+  .navbar .navbar-pull image {
+    width: 30rpx;
+    height: 30rpx;
+    vertical-align: middle;
+  }
+  
+  .lightLine {
+    width: 100%;
+    height: 1rpx;
+    background-color: #f1f1f1;
+  }
+  
+  .navbar .inner {
+    display: flex;
+    border-bottom: 2rpx solid #f4f4f4;
+    height: 100rpx;
+  }
+  
+  .navbar .inner .nav {
+    flex: 1;
+    height: 96rpx;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .navbar .inner .nav .underLine {
+    background-color: #4db0f4;
+    height: 5rpx;
+    width: 90rpx;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -4rpx;
+  }
+  
+  .navbar .inner .nav text {
+    display: inline-block;
+    height: 96rpx;
+    line-height: 96rpx;
+    color: #c1c1c1;
+  }
+  
+  .navbar .inner .nav image {
+    width: 30rpx;
+    height: 30rpx;
+  }
+  
+  .navbar .inner .nav.active text {
+    color: #4db0f4;
+    font-size: 30rpx;
+    font-weight: bold;
+  }
+  
+  .navbar .inner .nav picker {
+    width: 100%;
+    height: 96rpx;
+  }
+  
+  .navbar .inner .nav picker view {
+    flex: 1;
+    height: 96rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .line {
+    border-bottom: 20rpx solid #f1f1f1;
+  }
+  
+  .box {
+    padding-top: 60rpx;
+  }
+  
+  .list {
+    margin: 0 20rpx;
+    padding: 30rpx 0;
+    border-bottom: 2rpx solid #f1f1f1;
+    display: flex;
+    align-items: center;
+  }
+  
+  .list view.index {
+    color: #4db0f4;
+    min-width: 40rpx;
+  }
+  
+  .list view.index.num {
+    font-size: 36rpx;
+    font-weight: bold;
+    font-style: oblique;
+  }
+  
+  .list image.index {
+    width: 40rpx;
+    height: 40rpx;
+  }
+  
+  .list .logo {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    border: 5rpx solid #4db0f4;
+    margin-left: 20rpx;
+  }
+  
+  .list .logo.female {
+    border: 5rpx solid #fc7d92;
+  }
+  
+  .list .name {
+    flex: 1;
+    margin-left: 20rpx;
+  }
+  
+  .list .runVolume {
+    color: #4db0f4;
+  }
+  
+  .list .noRunVolume {
+    color: #8a8a8a;
+  }
+  
+  .mask{
+    background-color: rgba(0,0,0,.3);
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 997;
+  }
+  .dis-none{
+    display: none;
+  }
+  .chooseContainer {
+    position: fixed;
+    z-index: 998;
+    top:-525rpx;
+    background-color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 30rpx 30rpx 30rpx;
+    border-bottom: 1rpx solid #f1f1f1;
+  }
+  
+  .chooseContainer .label {
+    font-weight: bold;
+    margin: 30rpx 0;
+  }
+  
+  .chooseContainer .btns {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .chooseContainer .btns .CBtn {
+    width: 150rpx;
+    text-align: center;
+    border-radius: 100rpx;
+    line-height: 60rpx;
+  }
+  .chooseContainer .btns .beginTime,.chooseContainer .btns .endTime{
+    flex: 1;
+  }
+  .chooseContainer .btns .middle{
+    color: #e0e0e0;
+    width: 100rpx;
+    text-align: center;
+  }
+  .chooseContainer .btns .middle text{
+    position: relative;
+    top: 70rpx;
+  }
+  .chooseContainer .btns .beginTime .btLabel,.chooseContainer .btns .endTime .etLabel{
+    color: #e0e0e0;
+    margin-bottom: 20rpx;
+    box-sizing: border-box;
+    padding-left: 30rpx;
+  }
+  .chooseContainer .btns .beginTime .btPicker,.chooseContainer .btns .endTime .etPicker{
+    box-sizing: border-box;
+    padding: 10rpx 20rpx;
+    border-radius: 100rpx;
+    position: relative;
+  }
+  .chooseContainer .btns .beginTime .btPicker image,.chooseContainer .btns .endTime .etPicker image{
+    width: 30rpx;
+    height: 30rpx;
+    position: absolute;
+    right: 30rpx;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .chooseContainer .submit {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30rpx;
+  }
+  
+  .chooseContainer .submit .submitCancel {
+    width: 320rpx;
+    text-align: center;
+    border: 1rpx solid #4db0f4;
+    line-height: 80rpx;
+    color: #4db0f4;
+    border-radius: 5rpx;
+  }
+  
+  .chooseContainer .submit .submitSub {
+    width: 320rpx;
+    text-align: center;
+    border: 1rpx solid #4db0f4;
+    line-height: 80rpx;
+    color: #fff;
+    background-color: #4db0f4;
+    border-radius: 5rpx;
+  }
+  .chooseContainer .submit .submitSub.gray{
+    border: 1rpx solid #e0e0e0;
+    background-color: #e0e0e0;
+  }
+  .chooseContainer .submit .submitSub.blue{
+    background-color: #4db0f4;
+    border: 1rpx solid #4db0f4;
+  }
+  
+  .btnBlue {
+    border: 1rpx solid #4db0f4;
+    color: #4db0f4;
+  }
+  .btnGray {
+    border: 1rpx solid #e0e0e0;
+    color: #e0e0e0;
+  }
+  
+  @keyframes slidown {
+    from {
+      transform: translateY(0%);
+    }
+  
+    to {
+      transform: translateY(110%);
+    }
+  }
+  
+  .slidown {
+    display: block;
+    animation: slidown 0.1s ease-in both;
+  }
+  
+  @keyframes slidup {
+    from {
+      transform: translateY(100%);
+    }
+  
+    to {
+      transform: translateY(0%);
+    }
+  }
+  
+  .slidup {
+    display: block;
+    animation: slidup 0.2s ease-in both;
+  }
+  

@@ -1,0 +1,71 @@
+/* pages/enterprise/groupdetail/actlist/detail/export/export.wxss */
+.line {
+  background-color: #f0f0f0;
+  height: 2rpx;
+  width: 100%;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+}
+
+.export {
+  width: 690rpx;
+  margin: 0 auto;
+  margin-bottom: 60rpx;
+}
+
+.export .title {
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.export .send {
+  display: flex;
+}
+
+.export .send .label {
+  width: 130rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.export .send .input {
+  flex: 1
+}
+
+.export .send .input input {
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 95%;
+}
+
+.export .send .input .link {
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 370rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.export .send .button {
+  width: 180rpx;
+}
+
+.export .send .button .btn {
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background-color: #c1c1c1;
+  border-radius: 100rpx;
+  width: 100%;
+  color: #fff;
+}
+
+.export .comments {
+  font-size: 28rpx;
+  color: #aaa;
+}
+
+.export .send .button .btn.active {
+  background-color: #4db0f4;
+}

@@ -1,0 +1,55 @@
+/* pages/enterprise/groupdetail/actlist/detail/share/qrcode/qrcode.wxss */
+page {
+  background-color: #f1f1f1;
+}
+
+.content {
+  background-color: #fff;
+  width: 100%;
+  padding-bottom: 60rpx;
+}
+
+.content .qrcode {
+  width: 610rpx;
+  margin-left: 70rpx;
+  height: 610rpx;
+}
+
+.content .banner {
+  width: 690rpx;
+  margin-left: 30rpx;
+  height: 552rpx;
+}
+
+.btn {
+  background-color: #4db0f4;
+  color: #fff;
+  width: 690rpx;
+  margin: 0 auto;
+  margin-top: 60rpx;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.copyUrl {
+  background-color: #fff;
+  width: 100%;
+  margin-top: 30rpx;
+  padding-top: 60rpx
+}
+.copyUrl .url{
+  width: 690rpx;
+  margin: 0 auto;
+  word-break:break-word;
+}
+
+.copyUrl .btn {
+  color: #fff;
+  width: 690rpx;
+  margin: 0 auto;
+  margin-top: 60rpx;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+}

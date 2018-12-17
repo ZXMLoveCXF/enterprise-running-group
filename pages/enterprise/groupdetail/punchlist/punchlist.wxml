@@ -1,0 +1,18 @@
+<!-- pages/enterprise/groupdetail/punchlist/punchlist.wxml -->
+<loading id="loading"></loading>
+<view class="sign">
+    <view class="SignNum">今日打卡人数: {{ sAllSignCount }}</view>
+    <picker class="choose" style="color:{{ fontColor }}" bindchange="bindPickerChange" value="{{ index }}" range="{{ aOptions }}">
+        <image src="{{ templateUrl }}choose.png" />
+        筛选
+    </picker>
+</view>
+<view class="lightLine"></view>
+<view class="container" wx:if="{{aListToV.length>0}}">
+    <rankItem wx:for="{{ aListToV }}" wx:key="" isDetail="{{ false }}" isRank="{{ false }}" isMe="{{ false }}" memberId="{{ item.memberId }}" gender="{{ item.sex }}" face="{{ item.face }}" name="{{ item.nickname }}" num="{{ item.km }}" rankNum="{{ item.rank }}" time="{{ item.startTime }}" select="{{ sType }}"></rankItem>
+    <view wx:if="{{ !isMore && aListToV.length > 0 }}" class="noMore">没有更多打卡成员</view>
+</view>
+<view wx:else class="none-box">
+    <image src="{{imgPath}}icon_none_team.png" />
+    暂时还没有人打卡
+</view>

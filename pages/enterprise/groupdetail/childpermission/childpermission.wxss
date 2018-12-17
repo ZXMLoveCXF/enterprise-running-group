@@ -1,0 +1,20 @@
+/* pages/enterprise/groupdetail/childpermission/childpermission.wxss */
+page{
+    background-color: #f6f7ff
+}
+.label{
+    margin: 30rpx;
+    font-weight: bold
+}
+.switch{
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    height: 100rpx;
+    line-height: 100rpx;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+}
+.switch switch{
+    zoom: .8;
+}

@@ -1,0 +1,200 @@
+<!--pages/enterprise/groupdetail/actlist/detail/enrolment/enrolment.wxml-->
+<loading id="loading"></loading>
+
+<view wx:if="{{ isShow }}">
+  <form report-submit='true' wx:if="{{ !loadOver }}" bindsubmit="formSubmit" class='enrolment'>
+    <block wx:for='{{ list }}' wx:key="">
+      <block wx:if='{{ item.inputFlg }}'>
+        <view class='item' wx:if='{{ item.inputType == 1 }}'>
+          <view class='title'><text class='f-red' wx:if="{{ item.showType == 0 }}">*</text>{{item.title}}<image wx:if='{{ item.remark }}' mode='widthFix' src="{{(templateUrl+'mark-icon.png')}}" data-mark="{{item.remark}}" bindtap='toMark'></image>：</view>
+        </view>
+        <view class='item'>
+          <view class='title' wx:if='{{ item.inputType == 0 }}'><text class='f-red' wx:if="{{ item.showType == 0 }}">*</text>{{item.title}}<image wx:if='{{ item.remark }}' mode='widthFix' src="{{(templateUrl+'mark-icon.png')}}" data-mark="{{item.remark}}" bindtap='toMark'></image>：</view>
+          <input class='{{ item.showType == 1 ? "pad" : "" }}' data-index="{{ index }}" type='{{ item.typeVal }}' placeholder='请填写' value='{{ item.defaultVal }}' maxlength='{{ item.maxLength }}' bindinput='bindInput'></input>
+        </view>
+      </block>
+      <block wx:else>
+        <block wx:if='{{ item.typeVal == "selector" }}'>
+          <view wx:if='{{ item.inputType == 1 }}' class='item'>
+            <view class='title'><text class='f-red' wx:if="{{ item.showType == 0 }}">*</text>{{item.title}}<image wx:if='{{ item.remark }}' mode='widthFix' src="{{(templateUrl+'mark-icon.png')}}" data-mark="{{item.remark}}" bindtap='toMark'></image>：</view>
+          </view>
+          <picker id="{{ item.id }}" bindchange="bindSelector" range='{{ item.options }}' data-index="{{ index }}">
+            <view class='item'>
+              <view class='title' wx:if='{{ item.inputType == 0 }}'><text class='f-red' wx:if="{{ item.showType == 0 }}">*</text>{{item.title}}<image wx:if='{{ item.remark }}' mode='widthFix' src="{{(templateUrl+'mark-icon.png')}}" data-mark="{{item.remark}}" catchtap='toMark'></image>：</view>
+              <view class="picker {{ item.defaultVal === '' ? 'col-c2' : '' }} {{ item.showType == 1 ? 'pad' : '' }}">
+                {{ item.defaultVal === '' ? '请选择' : item.defaultVal }}
+              </view>
+              <image mode='widthFix' src='/resources/images/icon_More.png'></image>
+            </view>
+          </picker>
+        </block>
+        <block wx:elif='{{ item.typeVal == "multiSelector" }}'>
+          <view wx:if='{{ item.inputType == 1 }}' class='item'>
+            <view class='title'><text class='f-red' wx:if="{{ item.showType == 0 }}">*</text>{{item.title}}<image wx:if='{{ item.remark }}' mode='widthFix' src="{{(templateUrl+'mark-icon.png')}}" data-mark="{{item.remark}}" bindtap='toMark'></image>：</view>
+          </view>
+          <picker id="{{ item.id }}" mode="multiSelector" bindchange="bindMultiSelector" range='{{ item.options.length == 0 ? timeArr : item.options }}' data-index="{{ index }}">
+            <view class='item'>
+              <view class='title' wx:if='{{ item.inputType == 0 }}'><text class='f-red' wx:if="{{ item.showType == 0 }}">*</text>{{item.title}}<image wx:if='{{ item.remark }}' mode='widthFix' src="{{(templateUrl+'mark-icon.png')}}" data-mark="{{item.remark}}" catchtap='toMark'></image>：</view>
+              <view class="picker {{ item.defaultVal === '' ? 'col-c2' : '' }} {{ item.showType == 1 ? 'pad' : '' }}">
+                {{ item.defaultVal === '' ? '请选择' : item.defaultVal }}
+              </view>
+              <image mode='widthFix' src='/resources/images/icon_More.png'></image>
+            </view>
+          </picker>
+        </block>
+        <block wx:elif='{{ item.typeVal == "time" }}'>
+          <view wx:if='{{ item.inputType == 1 }}' class='item'>
+            <view class='title'><text class='f-red' wx:if="{{ item.showType == 0 }}">*</text>{{item.title}}<image wx:if='{{ item.remark }}' mode='widthFix' src="{{(templateUrl+'mark-icon.png')}}" data-mark="{{item.remark}}" bindtap='toMark'></image>：</view>
+          </view>
+          <picker id="{{ item.id }}" mode="time" bindchange="bindPicker" range='{{ item.options }}' data-index="{{ index }}" bindinput='bindTime'>
+            <view class='item'>
+              <view class='title' wx:if='{{ item.inputType == 0 }}'><text class='f-red' wx:if="{{ item.showType == 0 }}">*</text>{{item.title}}<image wx:if='{{ item.remark }}' mode='widthFix' src="{{(templateUrl+'mark-icon.png')}}" data-mark="{{item.remark}}" catchtap='toMark'></image>：</view>
+              <view class="picker {{ item.defaultVal === '' ? 'col-c2' : '' }} {{ item.showType == 1 ? 'pad' : '' }}">
+                {{ item.defaultVal === '' ? '请选择' : item.defaultVal }}
+              </view>
+              <image mode='widthFix' src='/resources/images/icon_More.png'></image>
+            </view>
+          </picker>
+        </block>
+        <block wx:elif='{{ item.typeVal == "date" }}'>
+          <view wx:if='{{ item.inputType == 1 }}' class='item'>
+            <view class='title'><text class='f-red' wx:if="{{ item.showType == 0 }}">*</text>{{item.title}}<image wx:if='{{ item.remark }}' mode='widthFix' src="{{(templateUrl+'mark-icon.png')}}" data-mark="{{item.remark}}" bindtap='toMark'></image>：</view>
+          </view>
+          <picker id="{{ item.id }}" mode="date" bindchange="bindPicker" range='{{ item.options }}' data-index="{{ index }}" bindinput='bindTime'>
+            <view class='item'>
+              <view class='title' wx:if='{{ item.inputType == 0 }}'><text class='f-red' wx:if="{{ item.showType == 0 }}">*</text>{{item.title}}<image wx:if='{{ item.remark }}' mode='widthFix' src="{{(templateUrl+'mark-icon.png')}}" data-mark="{{item.remark}}" catchtap='toMark'></image>：</view>
+              <view class="picker {{ item.defaultVal === '' ? 'col-c2' : '' }} {{ item.showType == 1 ? 'pad' : '' }}">
+                {{ item.defaultVal === '' ? '请选择' : item.defaultVal }}
+              </view>
+              <image mode='widthFix' src='/resources/images/icon_More.png'></image>
+            </view>
+          </picker>
+        </block>
+        <block wx:elif='{{ item.typeVal == "region" }}'>
+          <view wx:if='{{ item.inputType == 1 }}' class='item'>
+            <view class='title'><text class='f-red' wx:if="{{ item.showType == 0 }}">*</text>{{item.title}}<image wx:if='{{ item.remark }}' mode='widthFix' src="{{(templateUrl+'mark-icon.png')}}" data-mark="{{item.remark}}" bindtap='toMark'></image>：</view>
+          </view>
+          <picker id="{{item.id}}" mode="region" bindchange="bindRegion" data-index="{{ index }}">
+            <view class='item'>
+              <view class='title' wx:if='{{ item.inputType == 0 }}'><text class='f-red' wx:if="{{ item.showType == 0 }}">*</text>{{item.title}}<image wx:if='{{ item.remark }}' mode='widthFix' src="{{(templateUrl+'mark-icon.png')}}" data-mark="{{item.remark}}" catchtap='toMark'></image>：</view>
+              <view class="picker {{ item.defaultVal === '' ? 'col-c2' : '' }} {{ item.showType == 1 ? 'pad' : '' }}">
+                {{ item.defaultVal === '' ? '请选择' : item.defaultVal }}
+              </view>
+              <image mode='widthFix' src='/resources/images/icon_More.png'></image>
+            </view>
+          </picker>
+        </block>
+        <block wx:elif='{{ item.typeVal == "textarea" }}'>
+          <view wx:if='{{ item.inputType == 1 }}' class='item'>
+            <view class='title'><text class='f-red' wx:if="{{ item.showType == 0 }}">*</text>{{item.title}}<image wx:if='{{ item.remark }}' mode='widthFix' src="{{(templateUrl+'mark-icon.png')}}" data-mark="{{item.remark}}" bindtap='toMark'></image>：</view>
+          </view>
+          <view class='item textarea'>
+            <view class='title' wx:if='{{ item.inputType == 0 }}'><text class='f-red' wx:if="{{ item.showType == 0 }}">*</text>{{item.title}}<image wx:if='{{ item.remark }}' mode='widthFix' src="{{(templateUrl+'mark-icon.png')}}" data-mark="{{item.remark}}" bindtap='toMark'></image>：</view>
+            <textarea class="{{ item.showType == 1 ? 'pad' : '' }}" placeholder='请填写' value='{{ item.defaultVal }}' maxlength='{{ item.maxLength }}' bindinput='bindInput' data-index="{{ index }}" type='{{ item.type }}'></textarea>
+          </view>
+        </block>
+        <block wx:elif='{{ item.typeVal == "image" }}'>
+          <view class='item noneBorder'>
+            <view class='title'><text class='f-red' wx:if="{{ item.showType == 0 }}">*</text>{{item.title}}<image wx:if='{{ item.remark }}' mode='widthFix' src="{{(templateUrl+'mark-icon.png')}}" data-mark="{{item.remark}}" bindtap='toMark'></image>：</view>
+            <view class="right">
+              请上传附件照片
+            </view>
+          </view>
+          <view class='imgLists'>
+            <view wx:if="{{ item.defaultImage.length < 9 }}" class='imglist' bindtap='chooseImage' data-index="{{ index }}">
+              <image src='/resources/images/addImage.png'></image>
+            </view>
+            <block wx:for="{{ item.defaultImage }}" wx:key='' wx:for-index="imgImg">
+              <view class='imglist'>
+                <image src='{{ item }}'></image>
+                <image id="{{ imgImg }}" src='/resources/images/del_img.png' bindtap='deleteImage' data-index="{{ index }}"></image>
+              </view>
+            </block>
+          </view>
+        </block>
+        <block wx:elif='{{ item.typeVal == "multiPicker" }}'>
+          <view class='item noneBorder'>
+            <view class='title'><text class='f-red' wx:if="{{ item.showType == 0 }}">*</text>{{item.title}}<image wx:if='{{ item.remark }}' mode='widthFix' src="{{(templateUrl+'mark-icon.png')}}" data-mark="{{item.remark}}" bindtap='toMark'></image>：</view>
+          </view>
+          <view class='multiPicker'>
+            <block wx:for="{{ item.defaultVals }}" wx:key="" wx:for-index="myindex" >
+              <view class='btn' id="{{ index }}" data-index="{{ myindex }}" bindtap='choosePicker' style='{{ item.check ? ("border: 2rpx solid "+fontColor+";color:"+fontColor+";"): "" }}'>{{ item.value }}</view>
+            </block>
+          </view>
+        </block>
+      </block>
+    </block>
+    <button formType="submit" wx:if='{{memberId == 0}}' style='background-color: {{bgColor}};'>确认报名</button>
+  </form>
+  <view class='enrolment' wx:if="{{ loadOver && list.length != 0  && memberId != 0}}">
+    <block wx:for='{{list}}' wx:key="">
+      <block wx:if='{{ item.type == 15}}'>
+        <view class='item noneBorder'>
+          <text>{{item.label}}：</text>
+        </view>
+        <view class='imgLists'>
+          <block wx:for="{{ item.value }}" wx:key=''>
+            <view class='imglist'>
+              <image src='{{ item }}' bindtap='previewImg' data-index='{{ index }}'></image>
+            </view>
+          </block>
+        </view>
+      </block>
+      <block wx:elif='{{ item.type == 16}}'>
+        <view wx:if='{{ item.inputType == 1 }}' class='item'>
+          <text>{{item.label}}：</text>
+        </view>
+        <view class='item textarea'>
+          <text wx:if='{{ item.inputType == 0 }}'>{{item.label}}：</text>
+          <textarea class="{{ item.showType == 1 ? 'pad' : '' }}" placeholder='请填写' value='{{ item.value }}' disabled></textarea>
+        </view>
+      </block>
+      <block wx:elif='{{ item.type == 9}}'>
+        <view class='item noneBorder'>
+            <view class='title'>{{item.label}}：</view>
+          </view>
+          <view class='multiPicker'>
+            <block wx:for="{{ item.values }}" wx:key="" wx:for-index="myindex" >
+              <view class='btn do'>{{ item }}</view>
+            </block>
+          </view>
+      </block>
+      <block wx:else>
+        <view wx:if='{{ item.inputType == 1 }}' class='item'>
+          <text>{{item.label}}：</text>
+        </view>
+        <view class='item'>
+          <text wx:if='{{ item.inputType == 0 }}'>{{item.label}}：</text>
+          <input class="{{ item.showType == 1 ? 'pad' : '' }}" value='{{item.value}}' disabled></input>
+        </view>
+      </block>
+    </block>
+  </view>
+  <view class="content" style="margin-top:{{scrollHeight/2}}rpx" wx:if="{{ memberId != 0 && list.length == 0 }}">
+    <view>
+      <image mode='widthFix' src="/resources/images/icon_none_team.png"></image>
+    </view>
+    <view>
+      <view>无此人员信息</view>
+    </view>
+  </view>
+  <view class='review' wx:if='{{memberId != 0 && checkFlg == 0}}'>
+    <view class='review-no' bindtap='refuse' style='color: {{fontColor}};border: 1rpx solid {{fontColor}};'>拒绝</view>
+    <view class='review-yes' bindtap='pass' style='background-color: {{bgColor}};'>通过</view>
+  </view>
+</view>
+<view wx:if="{{ isRefuse }}" class='modal'>
+  <view class='box'>
+    <view class='text'>
+      <view class='title'>清选择拒绝理由</view>
+      <view>
+        <view wx:for="{{ refuseArr }}" wx:key="" class='checkbtn' bindtap='checkbtn' data-index="{{ index + 1 }}" style='{{ refuseIndex == index + 1 ? ("border: 2rpx solid "+fontColor+";color:"+fontColor+";"): "" }}'>{{ item.refusal }}</view>
+        <input bindfocus='refuseFocus' bindblur='refuseBlur' placeholder='{{ placeholder }}' value='{{ refuseInput }}' bindinput='refuseInput'></input>
+      </view>
+    </view>
+    <view class='btn'>
+      <view class='sure' bindtap='cancelRefuse'>取消</view>
+      <view class='sure' bindtap='{{ isRefuseBtn ? "toRefuse" : "" }}' style='{{ isRefuseBtn ? ("border: 2rpx solid "+fontColor+";color:"+fontColor+";"): "" }}'>拒绝</view>
+    </view>
+  </view>
+</view>

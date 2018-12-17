@@ -1,0 +1,218 @@
+/* pages/enterprise/groupdetail/actlist/detail/enrolment/enrolment.wxss */
+.enrolment {
+  padding-bottom: 120rpx;
+  display: block;
+}
+
+.enrolment .item {
+  margin-left: 20rpx;
+  border-bottom: 1px solid #f4f4f4;
+  display: flex;
+  align-items: center;
+  padding: 30rpx 20rpx 30rpx 0;
+  /* height: 60rpx; */
+}
+
+.enrolment .noneBorder {
+  border: 0;
+}
+
+.enrolment .item input, .picker {
+  flex: 1;
+}
+.enrolment .item textarea {
+  flex: 1;
+  height: 100rpx;
+  padding: 5rpx 0;
+}
+.enrolment .item.textarea {
+  align-items: flex-start;
+}
+
+.col-c2 {
+  color: #6e6e6e;
+}
+
+.enrolment .item .right {
+  flex: 1;
+  text-align: right;
+  color: #c2c2c2;
+}
+
+.enrolment .item image {
+  width: 12rpx;
+}
+.enrolment .item .title {
+  display: flex;
+  align-items: center;
+}
+
+.enrolment button {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  font-size: 28rpx;
+  border-radius: 0;
+  line-height: 100rpx;
+  z-index: 1000;
+}
+
+.review {
+  position: fixed;
+  bottom: 30rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.review-no {
+  width: 45%;
+  height: 100rpx;
+  border-radius: 5rpx;
+  background-color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+  box-sizing: border-box;
+}
+
+.review-yes {
+  width: 45%;
+  height: 100rpx;
+  border-radius: 5rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+  box-sizing: border-box;
+}
+
+.imgLists{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 30rpx; 
+  border-bottom: 1px solid #f4f4f4;
+}
+.imgLists .imglist{
+  width: 210rpx;
+  height: 210rpx;
+  margin-right: 30rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+.imgLists .imglist image:nth-child(1){
+  width: 210rpx;
+  height: 210rpx;
+}
+.imgLists .imglist image:nth-child(2){
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+}
+
+.multiPicker{
+  padding-left: 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #f4f4f4;
+}
+.multiPicker .btn{
+  width: 210rpx;
+  border: 2rpx solid #e0e0e0;
+  border-radius: 100rpx;
+  padding: 10rpx 0;
+  text-align: center;
+  margin-bottom: 20rpx;
+  margin-right: 30rpx;
+  color: #e0e0e0;
+  box-sizing: border-box;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.content {
+  width: 550rpx;
+  margin: 100rpx;
+  text-align: center;
+}
+
+.content image {
+  width: 90rpx;
+  padding-bottom: 20rpx;
+}
+
+.content view view {
+  color: #c2c2c2;
+  line-height: 60rpx;
+}
+
+
+.modal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 99999;
+}
+.modal .box{
+  background-color: white;
+  border-radius: 10rpx;
+  width: 600rpx;
+  overflow: hidden;
+}
+.modal .text{
+  border-bottom: 1rpx solid #e0e0e0;
+  padding: 30rpx 0;
+  text-align: center;
+}
+.modal .text view{
+  margin: 20rpx auto 0;
+}
+.modal .text .checkbtn{
+  border: 1rpx solid #e0e0e0;
+  border-radius: 100rpx;
+  color: #c1c1c1;
+  width: 400rpx;
+  text-align: center;
+  padding: 10rpx 0;
+}
+.modal .text input{
+  margin: 20rpx auto 0;
+  border-bottom: 1rpx solid #e0e0e0;
+  width: 400rpx;
+  text-align: left;
+}
+
+.modal .text .title{
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.modal .btn{
+  display: flex;
+  align-items: center;
+}
+.modal .btn .sure{
+  padding: 30rpx 0;
+  flex: 1;
+  text-align: center;
+  color: #c1c1c1;
+}
+.modal .btn .sure:first-child{
+  border-right: 1rpx solid #e0e0e0;
+}
+
+.f-red{
+  color: red;
+}
+
+.pad{
+  padding-left: 60rpx;
+}

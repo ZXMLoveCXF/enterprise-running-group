@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "活动报名",
+  "usingComponents": {
+    "loading": "/pages/components/loading/loading"
+  }
+}

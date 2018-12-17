@@ -1,0 +1,86 @@
+<!--pages/enterprise/groupdetail/memberlist/information/information.wxml-->
+<loading id="loading"></loading>
+<view class='container'>
+  <!--个人信息-->
+  <view style='margin: 30rpx'>个人信息</view>
+
+  <view class='mode-container'>
+    <view class='infodetail'>
+      <view class='defaut-content'>
+        <view class='left-title'>姓名</view>
+        <view class='right-title'>
+          {{obj.name}}
+        </view>
+      </view>
+    </view>
+    <view class='lightLine'></view> 
+
+    <view class='infodetail'>
+      <view class='defaut-content'>
+      
+        <view class="left-title">性别</view>
+        <view class='right-title'>
+          {{ (obj.gender == 2) ? '女' : '男'}}
+        </view>
+      </view>
+    </view>
+    <view class='lightLine'></view>
+
+    <view class='infodetail'>
+      <view class='defaut-content'>
+        <view class='left-title'>手机</view>
+        <view class='right-title'>
+          {{obj.mobile}}
+        </view>
+      </view>
+    </view>
+    <view class='lightLine'></view>
+
+    <view class='infodetail'>
+      <view class='defaut-content'>
+        <view class='left-title'>工号</view>
+        <view class='right-title'>
+          {{obj.no}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--服装信息-->
+  <view style='margin: 30rpx'>服装信息</view>
+
+  <view class='mode-container'>
+    <view class='infodetail'>
+      <view class='defaut-content'>
+        <view class='left-title'>上装尺码</view>
+        <view class='right-title'>
+          {{obj.clothesSize}}
+        </view>
+      </view>
+    </view>
+    <view class='lightLine'></view>
+
+
+    <view class='infodetail'>
+      <view class='defaut-content'>
+        <view class='left-title'>下装尺码</view>
+        <view class='right-title'>
+          {{obj.pantsSize}}
+        </view>
+      </view>
+    </view>
+    <view class='lightLine'></view>
+
+    <view class='infodetail'>
+      <view class='defaut-content'>
+        <view class='left-title'>鞋子尺码</view>
+        <view class='right-title'>
+          {{obj.shoeSize}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{ actionSheetItems.length > 0 }}" class='tapAction' bindtap='setting'>设置</view>
+
+</view>

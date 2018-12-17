@@ -1,0 +1,8 @@
+<!-- pages/enterprise/groupdetail/childpermission/childpermission.wxml -->
+<view class="label">子级跑团创建权限</view>
+<view class="switch">
+    <view class="text">开启后将允许成员创建子级跑团</view>
+    <view>
+        <switch checked="{{ sAllowChildFlg }}" bindchange="switch" color="{{ bgColor }}" />
+    </view>
+</view>

@@ -1,0 +1,58 @@
+<!--pages/enterprise/groupdetail/actlist/detail/sign/sign.wxml-->
+<loading id="loading"></loading>
+<view class="navbar">
+  <view class="inner">
+    <view data-index="1" bindtap="switchNavData" class="nav" style='{{index==1?("color: "+fontColor+";font-weight: 600;"):""}}'>
+      <text>已签到({{ signinNum }})</text>
+      <view wx:if="{{ index == 1 }}" class='underLine' style='background-color: {{bgColor}};'></view>
+    </view>
+    <view data-index="0" bindtap="switchNavData" class="nav" style='{{index==0?("color: "+fontColor+";font-weight: 600;"):""}}'>
+      <text>未签到({{ noSigninNum }})</text>
+      <view wx:if="{{ index == 0 }}" class='underLine' style='background-color: {{bgColor}};'></view>
+    </view>
+  </view>
+</view>
+<view class='box'>
+  <block wx:if='{{ index == 1}}'>
+    <block wx:if='{{ signinNum != 0}}'>
+      <view class='item' wx:for='{{ list }}' wx:key="">
+        <image class='{{ item.gender != 1 ? "girl":"" }}' src='{{ item.face }}'></image>
+        <view>{{ item.name }}</view>
+        <text>{{ item.signDate }}</text>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="content" style="margin-top:{{scrollHeight/2}}rpx">
+        <view>
+          <image mode='widthFix' src="/resources/images/icon_none_team.png"></image>
+        </view>
+        <view>
+          <view>暂无已签到人员</view>
+        </view>
+      </view>
+    </block>
+  </block>
+  <block wx:else>
+    <block wx:if='{{ noSigninNum != 0}}'>
+      <view class='item' wx:for='{{ list }}' wx:key="">
+        <image class='{{ item.gender != 1 ? "girl":"" }}' mode='widthFix' src='{{ item.face }}'></image>
+        <view>{{ item.name }}</view>
+      </view>
+      <view wx:if="{{!isNext}}">
+        <view class="loadstatus">
+          <text>没有更多内容了</text>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="content" style="margin-top:{{scrollHeight/2}}rpx">
+        <view>
+          <image mode='widthFix' src="/resources/images/icon_none_team.png"></image>
+        </view>
+        <view>
+          <view>暂无未签到人员</view>
+        </view>
+      </view>
+    </block>
+  </block>
+</view>

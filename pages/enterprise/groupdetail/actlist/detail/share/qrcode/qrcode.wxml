@@ -1,0 +1,11 @@
+<!--pages/enterprise/groupdetail/actlist/detail/share/qrcode/qrcode.wxml-->
+<view class='content'>
+  <image class="{{ (_type == 'code')?'qrcode':'banner' }} " src='{{ url }}'></image>
+  <view class='btn' bindtap='saveImgToPhotosAlbumTap'>保存图片</view>
+</view>
+
+<view class='copyUrl' wx:if="{{ _type == 'accounts' }}">
+  <view class='url'>{{ url }}</view>
+
+  <view class='btn' bindtap='copyUrl' style='background-color: {{bgColor}};'>复制路径</view>
+</view>

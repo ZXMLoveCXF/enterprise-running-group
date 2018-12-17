@@ -1,0 +1,84 @@
+/* pages/enterprise/groupdetail/actlist/detail/awardmember/awardaddress/awardaddress.wxss */
+page{
+  height:100%;
+  background-color:white}
+
+.box{
+  background-color:#fff;
+  margin-top:10rpx;
+}
+
+.box.dis{
+  margin-top:20rpx;
+}
+
+.box .int{
+  height:90rpx;
+  margin:10rpx 0;
+  padding:0 20rpx;
+  display:flex;
+  line-height:90rpx;
+}
+
+.box .int.sml{
+  border-bottom:1px solid #e0e0e0;
+}
+
+.box .int text{
+  width:140rpx;
+}
+
+.box .int input{
+  height:90rpx;
+  width:570rpx;
+}
+
+.box .text{
+  display:flex;
+}
+
+.box .text text{
+  width:130rpx;
+  padding:20rpx 20rpx;
+  padding-right:0
+}
+
+.box .text textarea{
+  height:200rpx;
+  width:570rpx;
+  padding-top:10rpx;
+}
+
+.btn{
+  color:#fff;
+  text-align:center;
+  height:100rpx;
+  width: 100%;
+  line-height:100rpx;
+  bottom:0;
+  border-radius: 0;
+  font-size:32rpx;
+  position: fixed;
+}
+
+.textarea {
+  padding-top:14rpx;
+  margin-left: 10rpx;
+}
+
+.award-container {
+  height: 160rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.awardcontent {
+  margin: 20rpx;
+}
+
+.color-view {
+  width: 100%;
+  height: 20rpx;
+  background: #f1f1f1;
+}

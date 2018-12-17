@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "跑团成员列表",
+    "navigationBarBackgroundColor":"#fff",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "white",
+    "usingComponents": {
+        "loading": "/pages/components/loading/loading",
+        "rankItem": "/pages/components/rankItem/rankItem"
+    }
+}

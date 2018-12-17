@@ -1,0 +1,60 @@
+/* pages/enterprise/groupdetail/memberlist/index/index.wxss */
+.search{
+    width: 690rpx;
+    left: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+}
+.search .toSearch{
+    background-color: #f6f7ff;
+    height: 80rpx;
+    flex: 1;
+    border-radius: 100rpx;
+    position: relative;
+    line-height: 80rpx;
+    color: #c1c1c1;
+    padding-left: 70rpx;
+    box-sizing: border-box;
+    margin-right: 20rpx;
+}
+.search .toSearch image{
+    position: absolute;
+    left: 30rpx;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30rpx;
+    height: 30rpx;
+}
+.search .choose{
+    line-height: 80rpx;
+    width: 100rpx;
+}
+.search .choose image{
+    width: 30rpx;
+    height: 30rpx;
+    vertical-align: middle
+}
+.container{
+    padding-top: 100rpx
+}
+.lightLine {
+    height: 1rpx;
+    width: 100%;
+    background-color: #f1f1f1
+}
+
+.noMore{
+    text-align: center;
+    color: #c1c1c1;
+    width: 100%;
+    margin: 20rpx 0;
+    font-size: 26rpx;
+}
+
+.label{
+    padding-left: 30rpx;
+    box-sizing: border-box
+}

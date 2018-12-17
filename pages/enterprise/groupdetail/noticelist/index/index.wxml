@@ -1,0 +1,24 @@
+<!-- pages/enterprise/groupdetail/noticelist/index/index.wxml -->
+<loading id="loading"></loading>
+<view class="lightLine"></view>
+<view class="container">
+    <view wx:for="{{ noticeList }}" class="item" wx:key="">
+        <view class="head">
+            <view class="icon">
+                <image src="{{ imgPath }}speaker.png" />
+            </view>
+            <view class="time">{{ item.datetime }}</view>
+            <view wx:if="{{ bDelNoticeFlg }}" class="del" data-id="{{ item.id }}" bindtap="del" style="color:{{ fontColor }}">删除</view>
+        </view>
+        <view class="body">
+            {{ item.content }}
+        </view>
+    </view>
+    <view wx:if="{{ !isMore && noticeList.length > 0 }}" class="noMore">没有更多公告</view>
+</view>
+<view class="noNotice" wx:if="{{ noticeList.length == 0 }}">
+    <image src="{{ imgPath }}noNotice.png" />
+    <view>暂无公告</view>
+</view>
+<view wx:if="{{ bCreateNoticeFlg }}" bindtap="publish" class="publish" style="background-color:{{ bgColor }}"><image src="{{ imgPath }}publishNotice.png" />发布公告</view>
+<returnhome bindtap="returnHome" wx:if="{{returnHome}}"></returnhome>
