@@ -1,0 +1,26 @@
+/* pages/mine/application/index/index.wxss */
+page{
+  background: white
+}
+
+.empty-content{
+  padding:100rpx;
+  text-align:center;
+  align-items: center;
+}
+
+.empty-content image{width:81rpx;padding-bottom:20rpx;height: 81rpx;}
+
+.loadstatus{
+  display:flex;
+  align-items:center;
+  align-self:center;
+  justify-content:center;
+  font-size:28rpx;
+  color:#a9a9a9;
+  padding:15rpx 0;
+}
+
+.tabPanel{
+  padding-top: 66rpx
+}

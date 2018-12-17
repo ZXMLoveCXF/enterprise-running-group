@@ -1,0 +1,35 @@
+<!--pages/mine/activity/index/index.wxml-->
+<tabs id="tabs" bFixed="{{ true }}" tabBgColor="{{ bgColor }}" bind:tabchange="onClick" activeFontSize="30" fontSize="30" activeFontWeight="bold" fontWeight="normal" itemColor="#fff" activeItemColor="#fff" showLine="{{ true }}" borderRadius="0" tabHeight="66" tabs="{{ tabs }}" lineColor="{{fontColor}}" lineWidth="40" activeFontColor="{{fontColor}}" fontColor="#a9a9a9"></tabs>
+
+<view class="tabPanel" hidden="{{index !== selectIndex}}" wx:for="{{ tabs }}" wx:for-item="tab" wx:key="">
+  <block wx:if="{{selectIndex == 0}}">
+    <block wx:for='{{dataList}}' wx:for-item='detailData' wx:key="">
+      <actitem activity="{{detailData}}" bind:jump="jumpToDetail"></actitem>
+    </block>
+    <block wx:if='{{dataList.length<=0}}'>
+      <view class="empty-content" style="margin-top:{{500/2}}rpx">
+        <image src="/resources/images/icon_none_team.png"></image>
+        <view>
+          <view style='color:#c1c1c1'>
+            <text>还没有活动哦！</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </block>
+  <block wx:if="{{selectIndex == 1}}">
+    <view style='height:30rpx;'></view>
+    <actcard wx:for="{{pkdataList}}" wx:key="" bgImg="{{item.image}}" title="{{item.title}}" actType="{{item.actType}}" num="{{item.groupNum}}" data-id="{{item.id}}" time="{{item.diffTime}}" bindtap="listDetail"></actcard>
+    <block wx:if='{{pkdataList.length<=0}}'>
+      <view class="empty-content" style="margin-top:{{500/2}}rpx">
+        <image src="/resources/images/icon_none_team.png"></image>
+        <view>
+          <view style='color:#c1c1c1'>
+            <text>还没有活动哦！</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </block>
+</view>
+

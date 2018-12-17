@@ -1,0 +1,97 @@
+/* pages/mine/information/information.wxss */
+page {
+  background: white;
+}
+
+.container {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding-bottom: 120rpx;
+  width: 750rpx;
+  background: white;
+}
+
+.mode-container {
+  margin: 0 30rpx;
+  border-radius: 30rpx;
+  background: white;
+  box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.infodetail {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  display: flex
+}
+
+.lightLine {
+  height: 2rpx;
+  background-color: #f1f1f1;
+}
+
+.defaut-content {
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  display: flex; 
+  font-size: 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  align-items: center;
+  flex: 1;
+  position: relative
+}
+
+.right-title, .right-title input{
+  top: 0;
+  height: 90rpx;
+  bottom: 0;
+  flex: 1
+}
+
+.left-title {
+  text-align: left;
+  padding-right: 30rpx;
+}
+
+.right-image {
+  width: 12rpx;
+  height: 21rpx;
+  left: 618rpx;
+  position: absolute;
+  top: 35rpx;
+}
+
+.lightGray {
+  color: #c1c1c1
+}
+
+.black {
+  color: #1e1e1e
+}
+
+.btmBtn {
+  width: 100%;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 90rpx;
+  border-radius: 0;
+  position: fixed;
+  bottom: 30rpx;
+  display: flex;
+  z-index: 999
+}
+
+.infoGoEdit {
+  width: 690rpx;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 90rpx;
+  border-radius: 45rpx;
+}
+
+.infoGoEdit::after {
+  border: none;
+}

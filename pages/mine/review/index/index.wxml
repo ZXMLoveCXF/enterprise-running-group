@@ -1,0 +1,29 @@
+<!--pages/mine/review/index/index.wxml-->
+<tabs id="tabs" bFixed="{{ true }}" tabBgColor="{{ bgColor }}" bind:tabchange="onClick" activeFontSize="30" fontSize="30" activeFontWeight="bold" fontWeight="normal" itemColor="#fff" activeItemColor="#fff" showLine="{{ true }}" borderRadius="0" tabHeight="66" tabs="{{ tabs }}" lineColor="{{fontColor}}" lineWidth="40" activeFontColor="{{fontColor}}" fontColor="#a9a9a9" defautIndex='{{defautIndex}}'></tabs>
+
+<view class='bottom' bindtap='goSetNotice'>
+  <view><image src="{{(templateUrl+'mine_review_notice.png')}}" class='notice'></image>
+开启消息提醒，重要审核信息不错过~</view>
+  <image class='arrow' src='/resources/images/icon_More.png'></image>
+</view>
+
+<view style='height:142rpx;'></view>
+<block wx:for='{{auditList}}' wx:for-item='detailData' wx:key="">
+  <reviewitem type='2' detailData="{{detailData}}" templateUrl='{{templateUrl}}' bind:jump="jumpToDetail"></reviewitem>
+</block>
+
+<block wx:if='{{auditList.length<=0}}'>
+  <view class="empty-content" style="margin-top:{{600/2}}rpx">
+    <image src="/resources/images/icon_none_team.png"></image>
+    <view>
+      <view style='color:#c1c1c1'>暂无数据</view>
+    </view>
+  </view>
+</block>
+<block wx:elif='{{noMore}}'>
+  <view class="loadstatus">
+    <text>没有更多内容了</text>
+  </view>
+</block>
+
+<returnhome bindtap="returnHome" wx:if="{{returnHome}}"></returnhome>

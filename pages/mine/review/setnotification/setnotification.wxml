@@ -1,0 +1,8 @@
+<!--pages/mine/review/setnotification/setnotification.wxml-->
+
+<view class='top'>微信消息模板推送</view>
+
+<view class='next'>
+  <view>开启后将收到审核需求微信推送</view>
+  <switch checked="{{isChecked}}" color='{{bgColor}}' bindchange="switchChange"/>
+</view>

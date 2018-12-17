@@ -1,0 +1,16 @@
+/* pages/mine/activity/index/index.wxss */
+page{
+  background: white
+}
+
+.tabPanel{
+  padding-top: 66rpx
+}
+
+.empty-content{
+  padding:100rpx;
+  text-align:center;
+  align-items: center;
+}
+
+.empty-content image{width:81rpx;padding-bottom:20rpx;height: 81rpx;}

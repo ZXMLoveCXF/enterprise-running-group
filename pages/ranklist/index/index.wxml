@@ -1,0 +1,179 @@
+<!--pages/ranklist/index/index.wxml-->
+<loading id="loading"></loading>
+<!-- <view style='background:{{bgColor}};height:150rpx;width:100%;'></view> -->
+<view style='background:#fff;height:140rpx;width:100%;'></view>
+<view class='gradientView' style="background:-webkit-linear-gradient({{bgColor}},rgba(255,255,255,1));height:{{height-140}}px;">
+</view>
+<view class='container'>
+  <tabs id="tabs" bFixed="{{ true }}" tabBgColor="{{ bgColor }}" bind:tabchange="onClick" activeFontSize="30" fontSize="30" activeFontWeight="bold" fontWeight="normal" showLine="{{ true }}" borderRadius="0" itemColor="{{bgColor}}" activeItemColor="{{bgColor}}" tabHeight="66" tabs="{{ tabs }}" lineColor="#fff" lineWidth="40" activeFontColor="#fff" fontColor="rgba(255,255,255,.5)"></tabs>
+  <view class="tabPanel" hidden="{{index !== selectIndex}}" wx:for="{{ tabs }}" wx:for-item="tab" wx:key="">
+    <view style="background:{{bgColor}};z-index: 99;width: 100%;position: fixed;top: 66rpx;left: 0rpx;height:80rpx">
+    </view>
+    <view class="navbar">
+      <block wx:if="{{selectIndex == 0}}">
+        <!-- <view class='navbar-title'>{{'按'+rankDesc[select1]+rankDesc1[select2]+'排行'}}</view> -->
+        <view class='navbar-title'>
+          <view class='navbar-item {{select2==0?"selected":""}}' bindtap='changeIndex' data-index='0'>总跑量</view>
+          <view class='navbar-item {{select2==1?"selected":""}}' bindtap='changeIndex' data-index='1'>人均跑量</view>
+        </view>
+      </block>
+      <block wx:elif="{{selectIndex == 1}}">
+        <view class='navbar-title'></view>
+      </block>
+      <view class='navbar-title'>
+        <view class='navbar-item' bindtap='showPopup' style='margin-right: 0;'>
+          {{selectIndex==1?rankDesc[select3]:rankDesc[select1]}}
+          <image src='/resources/images/rank_down.png'></image>
+        </view>
+      </view>
+    </view>
+
+    <view class='popview' hidden='{{!((selectIndex==0&&isPopShow1)||(selectIndex==1&&isPopShow2))}}'>
+      <image src='/resources/images/rank_trangle.png'></image>
+      <view class='popcontent' style='color:{{fontColor}}'>
+        <view style='border-bottom: 1rpx solid #E7E7E7;' bindtap='changeTimeIndex' data-index='0'>周</view>
+        <view style='border-bottom: 1rpx solid #E7E7E7;' bindtap='changeTimeIndex' data-index='1'>月</view>
+        <view bindtap='changeTimeIndex' data-index='2'>年</view>
+      </view>
+    </view>
+
+    <block wx:if="{{tab.content == 1 && !isLoading}}">
+      <view style='height:90rpx;'></view>
+
+      <view bindtouchstart='touchstart'>
+      <block wx:if='{{list.length<=0}}'>
+        <view class="empty-content" style="margin-top:{{200/2}}rpx">
+          <image src="/resources/images/rank_none.png"></image>
+          <view>
+            <view style='color:rgba(255,255,255,0.5)'>
+              <text>新一周跑团排行开始啦
+            加油噢~</text>
+            </view>
+          </view>
+        </view>
+      </block>
+
+      <view wx:if='{{list.length>0}}' class='first'>
+        <image src='/resources/images/default.png' hidden='{{imgLoadList[list[0].logo]}}'></image>
+        <image bindload="imgLoaded" src="{{list[0].logo}}" hidden='{{!imgLoadList[list[0].logo]}}' data-url='{{list[0].logo}}'></image>
+        <view class='bg1'>
+          <view class='tip'>
+            <text>{{list[0].result}}</text>
+              <text class='km' decode="{{true}}">KM</text>
+          </view>
+        </view>
+        <view class='teamname'>{{list[0].name}}</view>
+      </view>
+
+      <view class='next'>
+        <view wx:if='{{list.length>1}}' class='second'>
+          <image src='/resources/images/default.png' hidden='{{imgLoadList[list[1].logo]}}'></image>
+          <image bindload="imgLoaded" src="{{list[1].logo}}" hidden='{{!imgLoadList[list[1].logo]}}' data-url='{{list[1].logo}}'></image>
+          <view class='bg1'>
+            <view class='tip'>
+              <text>{{list[1].result}}</text>
+              <text class='km' decode="{{true}}">KM</text>
+            </view>
+          </view>
+          <view class='teamname'>{{list[1].name}}</view>
+        </view>
+
+        <view wx:if='{{list.length>2}}' class='second'>
+          <image src='/resources/images/default.png' hidden='{{imgLoadList[list[2].logo]}}'></image>
+          <image bindload="imgLoaded" src="{{list[2].logo}}" hidden='{{!imgLoadList[list[2].logo]}}' data-url='{{list[2].logo}}'></image>
+          <view class='bg1'>
+            <view class='tip'>
+              <text>{{list[2].result}}</text>
+              <text class='km' decode="{{true}}">KM</text>
+            </view>
+          </view>
+          <view class='teamname'>{{list[2].name}}</view>
+        </view>
+      </view>
+
+      <view class='listcontainner'>
+        <block wx:for="{{ list }}" wx:key="">
+          <block wx:if="{{ index > 2 }}">
+            <view class='list'>
+              <view class='index'>{{ index + 1 }}</view>
+              <image class='logo' src='/resources/images/default.png' hidden='{{imgLoadList[item.logo]}}'></image>
+              <image class='logo' bindload="imgLoaded" src="{{item.logo}}"  hidden='{{!imgLoadList[item.logo]}}' data-url='{{item.logo}}'></image>
+              <view class='name'>{{item.name}}</view>
+              <view class='runVolume'>
+                <view>{{item.result}}</view>
+                <view class='runVolumeKM'>KM</view>
+              </view>
+            </view>
+          </block>
+        </block>
+      </view>
+
+      </view>
+    </block>
+    <block wx:if="{{tab.content == 2 && !isLoading}}">
+      <view style='height:70rpx;'></view>
+
+      <view bindtouchstart='touchstart'>
+      <block wx:if='{{!kmChampion.nickname}}'>
+        <view class="empty-content" style="margin-top:{{200/2}}rpx">
+          <image src="/resources/images/rank_none.png"></image>
+          <view>
+            <view style='color:rgba(255,255,255,0.5)'>
+              <text>新一周冠军排行榜开始啦
+            加油噢~</text>
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class='cell'>
+          <view class='left-title'>总跑量</view>
+          <image class='head' src='/resources/images/default.png' hidden='{{imgLoadList[kmChampion.face]}}'></image>
+          <image class='head' bindload="imgLoaded" src="{{kmChampion.face}}" hidden='{{!imgLoadList[kmChampion.face]}}' data-url='{{kmChampion.face}}'></image>
+          <view class='right-view'>
+            <view>{{kmChampion.nickname}}</view>
+            <view class='tip'>
+              <text class='distance'>{{kmChampion.result}}</text>
+              <text class='km' decode="{{true}}">KM</text>
+            </view>
+          </view>
+        </view>
+
+        <view class='cell'>
+          <view class='left-title'>总时长</view>
+          <image class='head' src='/resources/images/default.png' hidden='{{imgLoadList[timeChampion.face]}}'></image>
+          <image class='head' bindload="imgLoaded" src="{{timeChampion.face}}" hidden='{{!imgLoadList[timeChampion.face]}}' data-url='{{timeChampion.face}}'></image>
+          <view class='right-view'>
+            <view>{{timeChampion.nickname}}</view>
+            <view class='tip'>
+              <view class='distance'>{{timeChampion.result}}</view>
+            </view>
+          </view>
+        </view>
+
+        <view class='cell'>
+          <view class='left-title'>平均配速</view>
+          <image class='head' src='/resources/images/default.png' hidden='{{imgLoadList[speedChampion.face]}}'></image>
+          <image class='head' bindload="imgLoaded" src="{{speedChampion.face}}" hidden='{{!imgLoadList[speedChampion.face]}}' data-url='{{speedChampion.face}}'></image>
+          <view class='right-view'>
+            <view>{{speedChampion.nickname}}</view>
+            <view class='tip'>
+              <view class='distance'>{{speedChampion.result}}</view>
+            </view>
+          </view>
+        </view>
+
+        <view class='bottom-tip' style='color:{{fontColor}};'>
+          <text>
+          配速大于12'00",小于3'00"的数据,视为无效数据,不做统计
+          </text>
+        </view>
+      
+      </block>
+
+      </view>
+    
+    </block>
+
+  </view>
+</view>

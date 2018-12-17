@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "入团申请",
+  "usingComponents": {
+    "reviewalert": "/pages/components/reviewalert/reviewalert"
+  }
+}

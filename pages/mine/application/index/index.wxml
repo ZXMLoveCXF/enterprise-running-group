@@ -1,0 +1,22 @@
+<!--pages/mine/application/index/index.wxml-->
+<tabs id="tabs" bFixed="{{ true }}" tabBgColor="{{ bgColor }}" bind:tabchange="onClick" activeFontSize="30" fontSize="30" activeFontWeight="bold" fontWeight="normal" itemColor="#fff" activeItemColor="#fff" showLine="{{ true }}" borderRadius="0" tabHeight="66" tabs="{{ tabs }}" lineColor="{{fontColor}}" lineWidth="40" activeFontColor="{{fontColor}}" fontColor="#a9a9a9"></tabs>
+
+<view style='height:66rpx;'></view>
+
+<block wx:for='{{applyList}}' wx:for-item='detailData' wx:key="">
+  <reviewitem type='1' detailData="{{detailData}}" templateUrl='{{templateUrl}}' bind:jump="jumpToDetail"></reviewitem>
+</block>
+
+<block wx:if='{{applyList.length<=0}}'>
+  <view class="empty-content" style="margin-top:{{500/2}}rpx">
+    <image src="/resources/images/icon_none_team.png"></image>
+    <view>
+      <view style='color:#c1c1c1'>暂无数据</view>
+    </view>
+  </view>
+</block>
+<block wx:elif='{{noMore}}'>
+  <view class="loadstatus">
+    <text>没有更多内容了</text>
+  </view>
+</block>

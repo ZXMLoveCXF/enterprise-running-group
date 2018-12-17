@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "actitem": "/pages/components/actitem/actitem",
+    "titlenav": "/pages/components/titlenav/titlenav",
+    "authorization": "/pages/components/authorization/authorization"
+  }
+}

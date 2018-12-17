@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "待我审核",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "tabs": "/pages/components/tabs/tabs",
+    "reviewitem": "/pages/components/reviewitem/reviewitem",
+    "returnhome":"/pages/components/returnHome/returnHome"
+  }
+}

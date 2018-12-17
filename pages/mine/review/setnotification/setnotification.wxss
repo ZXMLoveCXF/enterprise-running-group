@@ -1,0 +1,21 @@
+/* pages/mine/review/setnotification/setnotification.wxss */
+page{
+  background: #f6f7ff
+}
+
+.top {
+  margin: 30rpx;
+  height: 40rpx;
+  line-height: 30rpx;
+  font-weight: bold;
+}
+
+.next {
+  display: flex;
+  height: 40rpx;
+  align-items: center;
+  padding: 30rpx;
+  line-height: 40rpx;
+  justify-content: space-between;
+  background: white;
+}

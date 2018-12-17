@@ -1,0 +1,135 @@
+/* pages/mine/index/index.wxss */
+page {
+  background: #f6f7ff;
+}
+
+.container {
+  background: white;
+  position: relative
+}
+
+.header-view {
+  width: 100%;
+  height: 345rpx;
+  top: 0;
+}
+
+.header-view .bg {
+  position: absolute;
+  width: 100%;
+  height: 345rpx;
+  top: 0;
+  left: 0;
+}
+
+.header-view .head {
+  position: absolute;
+  top: 20rpx;
+  left: 300rpx;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 100%;
+  background: white;
+}
+
+.header-view .head image {
+  margin: 4rpx;
+  width: 142rpx;
+  height: 142rpx;
+  border-radius: 100%;
+
+}
+
+.header-view view {
+  color: white;
+  font-size: 32rpx;
+  position: absolute;
+  top: 190rpx;
+  width: 100%;
+  text-align: center;
+}
+
+.runInfo {
+  margin: 30rpx;
+  position: absolute; 
+  height: 150rpx;
+  border-radius: 30rpx;
+  top: 240rpx;
+  background: white;
+  box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around
+}
+
+.bindBtn {
+  color: white;
+  font-size: 32rpx;
+  height: 80rpx;
+  width: 320rpx;
+  border-radius: 40rpx;
+  line-height: 80rpx;
+}
+
+.boldnum {
+  font-size: 40rpx;
+  font-weight: bold
+}
+
+.contentinfo {
+  display: flex;
+  height: 40rpx;
+  align-items: center;
+  padding: 30rpx;
+  position: relative;
+  font-weight: bold
+}
+
+.content-right {
+  right: 30rpx;
+  top: 0;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  line-height: 100rpx;
+  position: absolute
+}
+
+.arrow {
+  width: 12rpx;
+  height: 21rpx;
+  margin-left: 20rpx;
+}
+
+.arrow2 {
+  position: absolute;
+  width: 12rpx;
+  height: 21rpx;
+  top: 65rpx;
+  right: 26rpx;
+}
+
+.numtip {
+  position: absolute;
+  width: 14rpx;
+  height: 14rpx;
+  top: 32rpx;
+  right: 48rpx;
+  border-radius: 100%;
+  color: white;
+  font-size: 20rpx;
+  background: #c22525;
+}
+
+.darkgray {
+  color: #c1c1c1;
+  font-size:28rpx;
+  font-weight:normal;
+}
+
+.padding30{
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  width: 690rpx;
+  height: 2rpx;
+  background:  #f1f1f1
+}

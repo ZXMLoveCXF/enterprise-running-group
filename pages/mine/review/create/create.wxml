@@ -1,0 +1,55 @@
+<!--pages/mine/review/create/create.wxml-->
+
+<view class='container' style="display:{{isLoading?'none':'block'}}">
+
+  <view class='title'>跑团背景图</view>
+  <image style='width:690rpx;height:345rpx;' src='{{detailData.banner}}'></image>
+  <view class='title'>跑团头像</view>
+  <image style='width:200rpx;height:200rpx;margin-bottom: 20rpx;' src='{{detailData.logo}}'></image>
+  <view class='lightColorLine'></view>
+
+  <!-- <view class='next'>
+    <view>跑团名称</view>
+    <view style='font-weight: normal'>{{detailData.name}}</view>
+  </view>
+  <view class='lightColorLine'></view> -->
+
+  <view class='title'>跑团名称</view>
+  <view class='content'>{{detailData.name}}</view>
+  <view class='lightColorLine'></view>
+
+  <view class='title'>跑团简介</view>
+  <view class='content'>{{detailData.description}}</view>
+  <view class='lightColorLine'></view>
+
+  <view class='next'>
+    <view>入团审核</view>
+    <switch checked="{{detailData.entryCheckFlg}}" color='{{bgColor}}' disabled='true'/>
+  </view>
+  <view class='lightColorLine'></view>
+
+  <block wx:if='{{cType==2}}'>
+    <view class='tipview'>
+      <image src='/resources/images/icon_notice.png'></image>
+      <view>审核通过自动加入跑团</view>
+    </view>
+    <view class='lightColorLine'></view>
+  </block>
+
+</view>
+
+
+<form report-submit="true" bindsubmit="operFunc">
+  <view class='btmBtn'>
+    <block wx:if='{{cType==1}}'>
+      <button formType="submit" class='infoGoEdit' style='color:{{fontColor}};border: 2rpx {{fontColor}} solid' data-type='2'>拒绝</button>
+      <button formType="submit" class='infoGoEdit' style='background-color:{{bgColor}}' data-type='1'>通过</button>
+    </block>
+    <block wx:else>
+      <view class='tipBtn'>已提交创建申请，请耐心等待管理员审核</view>
+    </block>
+    
+  </view>
+</form>
+
+<reviewalert type='2' isshow="{{isShow}}" bind:cancel="cancelAct" bind:refuse="refuseAct"></reviewalert>

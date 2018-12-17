@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "创建跑团",
+  "usingComponents": {
+    "reviewalert": "/pages/components/reviewalert/reviewalert"
+  }
+}

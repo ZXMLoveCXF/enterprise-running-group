@@ -1,0 +1,60 @@
+<!--pages/mine/review/join/join.wxml-->
+<view class='container' style="display:{{isLoading?'none':'block'}}">
+  <!--个人信息-->
+  <view style='margin: 30rpx;font-weight: bold'>个人信息</view>
+
+  <view class='mode-container'>
+    <view class='infodetail'>
+      <view class='defaut-content'>
+        <view class='left-title'>姓名</view>
+        <view class='right-title'>{{detailData.name}}</view>
+        <image class='right-image'  src='../../../../resources/images/icon_More.png'></image>
+      </view>
+    </view>
+    <view class='lightLine'></view> 
+
+    <view class='infodetail'>
+      <view class='defaut-content'>
+        <view class='left-title'>性别</view>
+        <view class='right-title'>{{detailData.gender==1?'男':'女'}}</view>
+        <image class='right-image'  src='../../../../resources/images/icon_More.png'></image>
+      </view>
+    </view>
+    <view class='lightLine'></view>
+
+    <view class='infodetail'>
+      <view class='defaut-content'>
+        <view class='left-title'>手机</view>
+        <view class='right-title'>{{detailData.mobile}}</view>
+        <image class='right-image'  src='../../../../resources/images/icon_More.png'></image>
+      </view>
+    </view>
+    <view class='lightLine'></view>
+
+    <view class='infodetail'>
+      <view class='defaut-content'>
+        <view class='left-title'>工号</view>
+        <view class='right-title'>{{detailData.no}}</view>
+        <image class='right-image'  src='../../../../resources/images/icon_More.png'></image>
+      </view>
+    </view>
+  </view>
+
+  <!--备注信息-->
+  <view wx:if='{{reason.length>0}}' style='margin: 30rpx;font-weight: bold'>备注信息</view>
+
+  <view wx:if='{{reason.length>0}}' class='mode-container'>
+    <view style='padding: 30rpx;'>{{reason}}</view>
+  </view>
+
+</view>
+<form report-submit="true" bindsubmit="operFunc">
+  <view class='btmBtn'>
+    <button formType="submit" class='infoGoEdit' style='color:{{fontColor}};border: 2rpx {{fontColor}} solid' data-type='2'>拒绝</button>
+    <button formType="submit" class='infoGoEdit' style='background-color:{{bgColor}}' data-type='1'>通过</button>
+  </view>
+</form>
+
+<reviewalert type='1' isshow="{{isShow}}" bind:cancel="cancelAct" bind:refuse="refuseAct"></reviewalert>
+
+

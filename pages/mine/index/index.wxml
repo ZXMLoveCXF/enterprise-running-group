@@ -1,0 +1,79 @@
+<!--pages/mine/index/index.wxml-->
+
+<view class='container' style="display:{{isLoading?'none':'block'}}">
+  <view class='header-view' style="background:{{bgColor}}">
+    <image class='bg' src='../../../resources/images/mine_bg.png'></image>
+
+    <view class='head'>
+      <image src='{{userInfo.face}}' bindtap='jumpUserInfo'></image>
+    </view>
+    
+    <view>{{userInfo.nickname}}</view>
+  </view>
+
+  <!-- <view class='lightColorLine'></view> -->
+  <view class='contentinfo' style='background:#f6f7ff'>
+  </view>
+
+  <view class='runInfo' style="padding-right:{{isBindApp?'30rpx;':'0rpx'}};width: {{isBindApp?'660rpx;':'690rpx'}};" bindtap='jumpKM'>
+    <block wx:if='{{isBindApp}}'>
+      <view class='center'>
+        <view class='boldnum'>{{userInfo.runreport.totalTime}}</view>
+        <view class='darkgray'>总时间</view>
+      </view>
+      <view class='center'>
+        <view class='boldnum'>{{userInfo.runreport.totalMileage}}</view>
+        <view class='darkgray'>总里程/KM</view>
+      </view>
+      <view class='center'>
+        <view class='boldnum'>{{userInfo.runreport.totalNum}}</view>
+        <view class='darkgray'>总次数</view>
+      </view>
+      <image class='arrow2' src='../../../resources/images/icon_More.png'></image>
+    </block>
+    <block wx:else>
+      <view class='bindBtn center' style='background:{{bgColor}}' bindtap='jumpBinding'>绑定APP</view>
+    </block>
+  </view>
+  
+  <block wx:if='{{userInfo.auth}}'>
+    <view class='contentinfo' bindtap='jumpMineActive'>我的活动
+      <view class='content-right'>
+        <view class='darkgray'></view>
+        <image class='arrow' src='../../../resources/images/icon_More.png'></image>
+      </view>
+    </view>
+    <view class='padding30'></view>
+    <view class='contentinfo' bindtap='jumpRequireCheck'>待我审核
+      <view class='content-right'>
+        <view class='darkgray'>{{userInfo.auditNum}}</view>
+        <image class='arrow' src='../../../resources/images/icon_More.png'></image>
+      </view>
+      <block wx:if='{{userInfo.auditNum>0}}'>
+        <view class='numtip'></view>
+      </block>
+    </view>
+    <view class='padding30'></view>
+    <view class='contentinfo' bindtap='jumpMyRequest'>我的申请
+      <view class='content-right'>
+        <view class='darkgray'>{{userInfo.applyNum}}</view>
+        <image class='arrow' src='../../../resources/images/icon_More.png'></image>
+      </view>
+    </view> 
+    <view class='lightColorLine'></view>
+  </block>
+
+  <!-- <block wx:if='{{userInfo.activity}}'> -->
+    
+    <!-- <actitem isOneline='true'></actitem> -->
+  <!-- </block> -->
+  
+  <!-- <view class='lightColorLine'></view> -->
+
+  <!-- <titlenav bFixed='true' topValue='330' bindtap:tapTitleNavIndex='tapTitleNavIndex' titleInfoList='{{menu}}'></titlenav> -->
+
+  <!-- <titlenav></titlenav> -->
+
+
+</view>
+

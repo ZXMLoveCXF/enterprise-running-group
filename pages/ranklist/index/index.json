@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "排行榜",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "tabs": "/pages/components/tabs/tabs",
+    "authorization": "/pages/components/authorization/authorization",
+    "loading": "/pages/components/loading/loading"
+  }
+}

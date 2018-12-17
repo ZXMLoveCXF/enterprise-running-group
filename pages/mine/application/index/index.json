@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的申请",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "tabs": "/pages/components/tabs/tabs",
+    "reviewitem": "/pages/components/reviewitem/reviewitem"
+  }
+}

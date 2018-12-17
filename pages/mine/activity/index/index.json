@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "我的活动",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "tabs": "/pages/components/tabs/tabs",
+    "actcard": "/pages/components/actCard/actCard",
+    "actitem": "/pages/components/actitem/actitem"
+  }
+}

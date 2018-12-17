@@ -1,0 +1,49 @@
+/* pages/mine/review/index/index.wxss */
+page{
+  background: white
+}
+
+.bottom {
+  height: 76rpx;
+  left: 0;
+  width: 690rpx;
+  top: 66rpx;
+  line-height: 76rpx;
+  color: #1e1e1e;
+  background: #F8F8F8;
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+  position: fixed;
+  justify-content: space-between;
+  z-index: 1999
+}
+
+.bottom .notice {
+  width: 28rpx;
+  height: 26rpx;
+  padding-right: 10rpx;
+}
+
+.bottom .arrow {
+  width: 12rpx;
+  height: 21rpx;
+}
+
+.empty-content{
+  padding:100rpx;
+  text-align:center;
+  align-items: center;
+}
+
+.empty-content image{width:81rpx;padding-bottom:20rpx;height: 81rpx;}
+
+.loadstatus{
+  display:flex;
+  align-items:center;
+  align-self:center;
+  justify-content:center;
+  font-size:28rpx;
+  color:#a9a9a9;
+  padding:15rpx 0;
+}

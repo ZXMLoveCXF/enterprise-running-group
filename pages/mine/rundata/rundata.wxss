@@ -1,0 +1,72 @@
+/* pages/mine/rundata/rundata.wxss */
+page {
+  background: white
+}
+
+.runInfo {
+  margin: 30rpx 30rpx;
+  height: 180rpx;
+  border-radius: 30rpx;
+  background: white;
+  box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  position: relative;
+}
+
+.d {
+  display: flex;
+}
+
+.vline {
+  width: 2rpx;
+  background: #f1f1f1;
+  height: 80rpx;
+  position: absolute;
+  left: 320rpx;
+  top: 50rpx;
+}
+
+.boldnum {
+  font-size: 60rpx;
+  font-weight: bold
+}
+
+.numtip {
+  font-size: 32rpx;
+  margin-top: 28rpx;
+}
+
+.darkgray {
+  color: #c1c1c1;
+  font-weight:normal;
+}
+
+.center2 {
+  margin: auto;
+  text-align: left;
+  margin-left: 50rpx;
+}
+
+.center3 {
+  margin: auto;
+  text-align: left;
+  margin-left: 120rpx;
+}
+
+.empty-content{
+  padding:100rpx;
+  text-align:center;
+  align-items: center;
+}
+
+.empty-content image{width:81rpx;padding-bottom:20rpx;height: 81rpx;}
+
+.loadstatus{
+  display:flex;
+  align-items:center;
+  align-self:center;
+  justify-content:center;
+  font-size:28rpx;
+  color:#a9a9a9;
+  padding:15rpx 0;
+}

@@ -1,0 +1,106 @@
+<!--pages/mine/information/information.wxml-->
+<form report-submit="true" bindsubmit="saveInfoFunc">
+  
+  <view class='container'>
+    <!--个人信息-->
+    <view style='margin: 30rpx'>个人信息</view>
+
+    <view class='mode-container'>
+      <view class='infodetail'>
+        <view class='defaut-content'>
+          <view class='left-title'>姓名</view>
+          <view class='right-title'>
+            <input name="name" data-statu="open" placeholder='请输入' maxlength='10' placeholder-style='color:#c1c1c1' value="{{userInfo.name}}" disabled='true'/>
+          </view>
+          <image class='right-image'  src='../../../resources/images/icon_More.png'></image>
+        </view>
+      </view>
+      <view class='lightLine'></view> 
+
+      <picker bindchange="bindPickerChange" value="{{(sexIndex == -1)?'':sexIndex}}" range="{{sexData}}" data-type='1'>
+        <view class='infodetail'>
+          <view class='defaut-content'>
+          
+            <view class="left-title">性别</view>
+            <view class='right-title'>
+              <text class="lightGray {{(sexIndex == -1)?'':'black'}}">{{ (sexIndex == -1) ? '请选择' : sexData[sexIndex]}} </text> 
+            </view>
+            <image class='right-image'  src='../../../resources/images/icon_More.png'></image>
+          </view>
+        </view>
+      </picker>
+      <view class='lightLine'></view>
+
+      <view class='infodetail'>
+        <view class='defaut-content'>
+          <view class='left-title'>手机</view>
+          <view class='right-title'>
+            <input name="mobile" type="number" placeholder='请输入' maxlength='11' placeholder-style='color:#c1c1c1' value="{{userInfo.mobile}}" disabled='true'/>
+          </view>
+          <image class='right-image'  src='../../../resources/images/icon_More.png'></image>
+        </view>
+      </view>
+      <view class='lightLine'></view>
+
+      <view class='infodetail'>
+        <view class='defaut-content'>
+          <view class='left-title'>工号</view>
+          <view class='right-title'>
+            <input name="no" data-statu="open" placeholder='请输入' maxlength='10' placeholder-style='color:#c1c1c1' value="{{userInfo.no}}" disabled='true' />
+          </view>
+          <image class='right-image'  src='../../../resources/images/icon_More.png'></image>
+        </view>
+      </view>
+    </view>
+
+    <!--服装信息-->
+    <view style='margin: 30rpx'>服装信息</view>
+
+    <view class='mode-container'>
+      <picker bindchange="bindPickerChange" value="{{(lapSizeIndex == -1)?'':lapSizeIndex}}" range="{{sizeData}}" data-type='2'>
+        <view class='infodetail'>
+          <view class='defaut-content'>
+            <view class='left-title'>上装尺码</view>
+            <view class='right-title'>
+              <text class="lightGray {{(lapSizeIndex == -1)?'':'black'}}">{{ (lapSizeIndex == -1) ? '请选择' : sizeData[lapSizeIndex]}} </text>
+            </view>
+            <image class='right-image'  src='../../../resources/images/icon_More.png'></image>
+          </view>
+        </view>
+      </picker>
+      <view class='lightLine'></view>
+
+
+      <picker bindchange="bindPickerChange" value="{{(trousersSizeIndex == -1)?'':trousersSizeIndex}}" range="{{sizeData}}" data-type='3'>
+        <view class='infodetail'>
+          <view class='defaut-content'>
+            <view class='left-title'>下装尺码</view>
+            <view class='right-title'>
+              <text class="lightGray {{(trousersSizeIndex == -1)?'':'black'}}">{{ (trousersSizeIndex == -1) ? '请选择' : sizeData[trousersSizeIndex]}} </text>
+            </view>
+            <image class='right-image'  src='../../../resources/images/icon_More.png'></image>
+          </view>
+        </view>
+      </picker>
+      <view class='lightLine'></view>
+
+      <picker bindchange="bindPickerChange" value="{{(shoesSizeIndex == -1)?'':shoesSizeIndex}}" range="{{shoesData}}" data-type='4'>
+        <view class='infodetail'>
+          <view class='defaut-content'>
+            <view class='left-title'>鞋子尺码</view>
+            <view class='right-title'>
+              <text class="lightGray {{(shoesSizeIndex == -1)?'':'black'}}">{{ (shoesSizeIndex == -1) ? '请选择' : shoesData[shoesSizeIndex]}} </text>
+            </view>
+            <image class='right-image'  src='../../../resources/images/icon_More.png'></image>
+          </view>
+        </view>
+      </picker>
+    </view>
+
+  </view>
+
+  <view class='btmBtn'>
+    <button formType="submit" class='infoGoEdit' style='background-color:{{bgColor}}'>保存设置</button>
+  </view>
+
+</form>

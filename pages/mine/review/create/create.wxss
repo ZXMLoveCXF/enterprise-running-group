@@ -1,0 +1,103 @@
+/* pages/mine/review/create/create.wxss */
+
+.container {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding-bottom: 120rpx;
+  width: 750rpx;
+  background: white;
+}
+
+.title {
+  font-weight: bold;
+  margin: 20rpx 30rpx 0;
+}
+
+image {
+  border-radius: 30rpx;
+  margin: 20rpx 30rpx 0;
+}
+
+.content {
+  margin: 20rpx 30rpx 30rpx;
+  padding: 30rpx;
+  border-radius: 30rpx;
+  background: #f8f8f8;
+}
+
+.next {
+  display: flex;
+  height: 40rpx;
+  align-items: center;
+  padding: 30rpx;
+  line-height: 40rpx;
+  justify-content: space-between;
+  background: white;
+  font-weight: bold;
+}
+
+.tipview {
+  display: flex;
+  align-items: center;
+  height: 50rpx;
+  line-height: 50rpx;
+  background: #f6f7ff;
+  text-align: center;
+  position: relative;
+}
+
+.tipview image{
+  position: absolute;
+  top: -10rpx;
+  left: 180rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.tipview view{
+  position: absolute;
+  top: 0;
+  left: 250rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #c1c1c1;
+  font-size: 28rpx;
+}
+
+.btmBtn {
+  background: white;
+  width: 100%;
+  font-size: 30rpx;
+  text-align: center;
+  height: 120rpx;
+  border-radius: 0;
+  position: fixed;
+  bottom: 0rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-top: 2rpx #e0e0e0 solid;
+  z-index: 999
+}
+
+.infoGoEdit {
+  width: 300rpx;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 88rpx;
+  height: 88rpx;
+  border-radius: 45rpx;
+  background-color:white;
+}
+
+.tipBtn {
+  color: white;
+  background: #F7C20B;
+  line-height: 88rpx;
+  height: 88rpx;
+  border-radius: 45rpx;
+  width: 690rpx;
+}
